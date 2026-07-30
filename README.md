@@ -20,46 +20,89 @@ exist.
 AURA.sln
 src/
   AURA.Core/                  Context, Rule Engine, Confidence Engine, Policy Engine,
-                              Connector/ActionHandler interfaces, mock connector, audit log,
+                              Connector/ActionHandler interfaces, mock connector, IAuditSink,
                               Document Standard Profile checker. Plain net8.0 - no Windows
-                              dependency, builds and tests on any OS.
+                              dependency, builds and tests on any OS. Has NO knowledge of any
+                              specific app, tenant, or storage choice - see "Architecture" below.
+  AURA.Host/                   Composition root: turns an AuraConfiguration (tenant.json) +
+                              ConnectorRegistry into a ready-to-use DetectionPipeline. Plain
+                              net8.0. This is what used to be hardcoded inside
+                              AssistantController's constructor.
   AURA.Desktop/                WPF tray app + floating robot avatar + control panel + alert
-                              bubble (net8.0-windows). Wired to AURA.Core using the mock
-                              connector by default.
+                              bubble (net8.0-windows). Owns UI state only - it asks App.xaml.cs
+                              for an already-built AuraHost, it doesn't build one itself.
   AURA.Connectors.Outlook/     Reads/writes Outlook drafts via Microsoft Graph REST + Azure.Identity.
   AURA.Connectors.Word/        Reads a .docx's real styles via the OpenXML SDK and scores them
                               against a Document Standard Profile.
+                              (Not yet registered in AURA.Host - see "What's implemented".)
 tests/
   AURA.Core.Tests/             xunit unit + integration tests for the Core pipeline.
+  AURA.Host.Tests/             xunit tests for configuration loading, the connector registry,
+                              and AuraHost.Build's end-to-end wiring.
 samples/
   rules/                       Example JSON rules (README §11 schema).
   profiles/                    Example Document Standard Profile JSON (README §13 schema).
+  host/                        Example tenant.json (AURA.Host.Configuration schema).
 design_handoff_aura/           The original design handoff package (spec + HTML prototype),
                               copied in verbatim as the source of truth for visual design.
 ```
 
+## Architecture
+
+This went through a full architecture review before this round of changes (see conversation
+history / commit log) - the short version of what changed and why:
+
+- **`AssistantController` used to be a god object**: it built the Rule/Confidence/Policy
+  engines, the audit log, and two mock connectors in its constructor, *and* owned every bit of
+  UI state. It now only owns UI state and windows. All service construction moved to
+  **`AuraHost.Build(configuration, registry)`** in the new `AURA.Host` project - `App.xaml.cs`
+  builds one `AuraHost` at startup and hands it to `AssistantController` via the constructor.
+- **`IAuditLog`/`FileAuditLog` were renamed to `IAuditSink`/`LocalFileAuditSink`** (not
+  duplicated) - same contract, plus a `DeleteAllAsync` method so "delete captured data" goes
+  through the abstraction instead of a UI-layer file path. The old doc comment overclaimed
+  "tamper-evident"; the new one says plainly that this local-file implementation is *not*
+  tamper-evident or encrypted, and that a real deployment needs a different `IAuditSink`.
+- **Connectors are now resolved through a `ConnectorRegistry`** instead of being `new`'d up by
+  name in a constructor. `IConnectorFactory` is the plugin seam; today only the two mock
+  factories are registered (`Aura.Host.Connectors.MockConnectorFactories.cs`) - proving the
+  mechanism, not yet a DLL-loading plugin system.
+- **Configuration is now a file** (`tenant.json`, loaded via `AuraConfigurationLoader`) instead
+  of hardcoded values in `AssistantController`: which rules directory, which policy ceilings,
+  which connectors are enabled. Still single-tenant/file-based on purpose - multi-tenancy
+  belongs in a future server/backend, not inside the Desktop Agent itself.
+- **`AuraContext` gained `User`/`Session`/`Security`/`Environment`** as optional nested objects,
+  additively - `Email`/`Document` and every existing rule/test that references them are
+  untouched.
+
+Deliberately **not** done in this pass (next up per the agreed phase order): redaction/PII
+detection/Privacy Zones, an AI Gateway or any LLM call, screen understanding (UIA/OCR/Vision),
+a no-code Rule Builder, identity/RBAC, or a plugin/DLL-loading connector model.
+
 ## Build & run
 
-- **`AURA.Core` and `AURA.Core.Tests`** target plain `net8.0` and have no Windows dependency —
-  they build and `dotnet test` on Linux/macOS/Windows/CI.
+- **`AURA.Core`, `AURA.Host`, and their test projects** target plain `net8.0` and have no
+  Windows dependency — they build and `dotnet test` on Linux/macOS/Windows/CI.
 - **`AURA.Desktop`** targets `net8.0-windows` (WPF + WinForms for the tray icon) and can only be
   built/run on Windows with the `Microsoft.NET.Sdk.WindowsDesktop` workload.
 - **`AURA.Connectors.Outlook`/`AURA.Connectors.Word`** target plain `net8.0` (Graph is just
   HTTP; OpenXML is pure managed code) so they can be unit tested cross-platform too, even
-  though the Desktop app that consumes them is Windows-only.
+  though they aren't referenced by the Desktop app yet (see "What's implemented").
 
 ```powershell
 dotnet build AURA.sln
 dotnet test tests/AURA.Core.Tests/AURA.Core.Tests.csproj
+dotnet test tests/AURA.Host.Tests/AURA.Host.Tests.csproj
 dotnet run --project src/AURA.Desktop/AURA.Desktop.csproj   # Windows only
 ```
 
-> **This code was written and reviewed without a .NET toolchain available in the authoring
-> environment** — outbound access to NuGet, dot.net, and the package archive was blocked by
-> the sandbox's egress policy, so none of the above commands could actually be run here. The
-> code was written carefully and reviewed line-by-line for correctness, but please run
-> `dotnet build`/`dotnet test` yourself before relying on it, and open an issue (or just fix it
-> — it's a normal C# repo) if something doesn't compile.
+> **This code, including the `AURA.Host` project added in this pass, was written and reviewed
+> without a .NET toolchain available in the authoring environment** — outbound access to
+> NuGet, dot.net, and the package archive is blocked by the sandbox's egress policy (checked
+> and re-confirmed blocked more than once), so none of the above commands could actually be run
+> here. Every file was written carefully and reviewed line-by-line for correctness (including a
+> structural brace/paren balance pass), but this is still **the single highest-risk item in the
+> repo** — please run `dotnet build`/`dotnet test` on a real machine or CI before relying on any
+> of it, and treat that as blocking further work, not optional.
 
 Once running, the Desktop app shows the tray icon and the robot avatar immediately. Use the
 **Control Panel** (tray icon → *Open Control Panel*, or double-click the tray icon) to pick a
@@ -120,9 +163,38 @@ know profiles exist.
 ## Adding a new connector
 
 Implement `Aura.Core.Connectors.IConnector` (fills a `Context`) and, if the app supports
-automated fixes, `Aura.Core.Actions.IActionHandler` (Preview/Apply/Verify). Register an instance
-with `DetectionPipeline` and the rest of the pipeline (Rule → Confidence → Policy → Suggestion →
-Audit) works unchanged — that's the whole point of the interface boundary.
+automated fixes, `Aura.Core.Actions.IActionHandler` (Preview/Apply/Verify) - this part hasn't
+changed. What has changed: instead of `new`-ing your connector up inside a UI controller, write
+an `Aura.Host.Connectors.IConnectorFactory` for it (see `MockConnectorFactories.cs` for the
+two existing examples) and register the factory instance where `App.xaml.cs` builds the
+`ConnectorRegistry`. Enable it for a tenant by adding an entry under `connectors` in
+`tenant.json` with your factory's `Implementation` key - the Rule Engine, Confidence Engine,
+Policy Engine, and `DetectionPipeline` never change.
+
+## Configuring a tenant
+
+`AURA.Desktop` loads `tenant.json` next to the executable at startup (falling back to a bundled
+default if the file is missing) via `Aura.Host.Configuration.AuraConfigurationLoader`:
+
+```jsonc
+{
+  "tenantId": "default",
+  "rulesDirectory": "Rules",
+  "auditSink": "local-file",
+  "auditFilePath": "{localAppData}/AURA/audit.jsonl",
+  "policies": [
+    { "app": "*", "ceiling": "askAndAct" }
+  ],
+  "connectors": [
+    { "implementation": "mock-outlook", "enabled": true },
+    { "implementation": "mock-word", "enabled": true }
+  ]
+}
+```
+
+This is deliberately a single file for a single running Agent instance, not a multi-tenant
+database - per the architecture review, multi-tenancy belongs in a future server/backend that
+this Agent would talk to, not inside the Desktop process itself.
 
 ## What's implemented vs. deferred
 
@@ -142,9 +214,17 @@ Implemented, matching the build order in the brief:
   any hard-coded font values.
 - **Outlook connector** (Microsoft Graph REST + Azure.Identity) and **Word connector**
   (OpenXML SDK) behind the `IConnector`/`IActionHandler` interfaces — read real drafts/documents,
-  though not yet wired into the Desktop app's default startup path (which still uses the mock
-  connector, per the brief: "wire the pipeline against a mock connector before integrating
-  Graph API").
+  though not yet registered in `AURA.Host`'s `ConnectorRegistry` (which still only enables the
+  two mock factories by default, per the brief: "wire the pipeline against a mock connector
+  before integrating Graph API").
+- **`AURA.Host` composition root** — `AuraConfiguration`/`tenant.json`, `ConnectorRegistry` +
+  `IConnectorFactory`, and `AuraHost.Build` turning both into a ready `DetectionPipeline`.
+  `AssistantController` now only owns UI state and windows.
+- **`IAuditSink`** (renamed from `IAuditLog`) with a `DeleteAllAsync` method, so "delete captured
+  data" and swapping the storage backend both go through the interface, not a UI-layer file path.
+- **`AuraContext`'s `User`/`Session`/`Security`/`Environment`** sections exist as a stable shape
+  for future connectors/AI Gateway/identity work to populate - additive, nothing consumes them
+  yet.
 
 Deliberately deferred (later roadmap items, §16, or explicitly lower priority in the brief):
 
@@ -158,8 +238,14 @@ Deliberately deferred (later roadmap items, §16, or explicitly lower priority i
 - **"Teach AURA" no-code Rule Builder UI** — point-at-an-element, label it, describe the rule in
   plain language, compile to JSON. The JSON rule format and loader exist; the authoring UI
   doesn't.
-- **Admin Portal, Knowledge/RAG packs, Workflow agent, multi-tenant RBAC, licensing/deployment**
-  — roadmap V0.6-V1.0, out of scope for this pass.
+- **Redaction/PII detection, Privacy Zones, session-scoped monitoring** — next phase after this
+  one, deliberately sequenced before any AI Gateway/screen-understanding work.
+- **AI Gateway (`IAiProvider`/Model Router), any LLM call** — `ConfidenceEngine` stays the
+  deterministic heuristic it already was; no AI abstraction exists yet.
+- **Real plugin/DLL-loading connector model** — `ConnectorRegistry` today is populated in code
+  at startup (two mock factories), not from a manifest or loaded assembly.
+- **Admin Portal, Knowledge/RAG packs, Workflow agent, multi-tenant backend, identity/RBAC,
+  licensing/deployment** — roadmap V0.6-V1.0, out of scope for this pass.
 
 ## A note on the rest of this repository
 

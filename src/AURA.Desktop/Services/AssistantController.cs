@@ -1,25 +1,18 @@
-using System.IO;
 using System.Windows;
 using Aura.Core.Actions;
-using Aura.Core.Audit;
-using Aura.Core.Confidence;
-using Aura.Core.Connectors;
-using Aura.Core.Pipeline;
-using Aura.Core.Policy;
-using Aura.Core.Rules;
 using Aura.Desktop.Views;
+using Aura.Host;
 
 namespace Aura.Desktop.Services;
 
 /// <summary>
-/// Composition root wiring the Core pipeline (README §6-9) to the tray, avatar, control panel,
-/// and alert bubble. Uses a mock connector for now (README build order: "wire the pipeline
-/// against a mock connector before integrating Graph API").
+/// Owns UI state and window lifecycle only - tray, avatar, control panel, alert bubble. All
+/// service construction (Rule/Confidence/Policy engines, audit sink, connectors) now happens in
+/// <see cref="AuraHost"/>; this class just consumes the built <see cref="AuraHost"/> instance.
 /// </summary>
 public sealed class AssistantController : IDisposable
 {
-    private readonly DetectionPipeline _pipeline;
-    private readonly FileAuditLog _auditLog;
+    private readonly AuraHost _host;
     private readonly TrayIconService _tray;
     private readonly AvatarWindow _avatar;
     private readonly ControlPanelWindow _controlPanel;
@@ -32,27 +25,9 @@ public sealed class AssistantController : IDisposable
     private string _language = "en";
     private MonitoringScope _scope = MonitoringScope.Region;
 
-    public AssistantController()
+    public AssistantController(AuraHost host)
     {
-        var ruleEngine = new RuleEngine();
-        ruleEngine.LoadRulesFromDirectory(Path.Combine(AppContext.BaseDirectory, "Rules"));
-
-        var confidenceEngine = new ConfidenceEngine();
-
-        var policyEngine = new PolicyEngine();
-        policyEngine.Configure(new[] { new PolicyRule { App = "*", Ceiling = AutonomyLevel.AskAndAct } });
-
-        var auditPath = Path.Combine(
-            Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
-            "AURA", "audit.jsonl");
-        _auditLog = new FileAuditLog(auditPath);
-
-        _pipeline = new DetectionPipeline(
-            ruleEngine,
-            confidenceEngine,
-            policyEngine,
-            _auditLog,
-            new IActionHandler[] { new MockActionHandler("outlook"), new MockActionHandler("word") });
+        _host = host;
 
         _avatar = new AvatarWindow();
         _controlPanel = new ControlPanelWindow();
@@ -124,23 +99,25 @@ public sealed class AssistantController : IDisposable
 
     private async Task BeginWatchingAsync()
     {
+        var app = _controlPanel.IsOutlookScenarioSelected ? "outlook" : "word";
+
+        if (!_host.Connectors.TryGetValue(app, out var connector))
+        {
+            _controlPanel.SetStatus($"No connector is enabled for '{app}' in the current configuration.");
+            return;
+        }
+
         _mode = AssistantMode.Watching;
         _avatar.SetMode(AssistantMode.Watching);
         _avatar.SetMood(RobotMood.Thinking);
         _controlPanel.SetStartStopLabel("Stop");
         _controlPanel.SetStatus("Thinking…");
-
-        var app = _controlPanel.IsOutlookScenarioSelected ? "outlook" : "word";
         _controlPanel.SetPrivacyStatus($"{app} · {_scope} · Local AI");
 
         await Task.Delay(TimeSpan.FromMilliseconds(1600));
 
-        var connector = _controlPanel.IsOutlookScenarioSelected
-            ? MockConnector.OutlookComposeMissingSubjectAndAttachment()
-            : MockConnector.WordDocumentOffProfile();
-
         var context = await connector.CaptureAsync();
-        var suggestions = _pipeline.Process(context);
+        var suggestions = _host.Pipeline.Process(context);
 
         _pending.Clear();
         _pending.AddRange(suggestions);
@@ -182,7 +159,7 @@ public sealed class AssistantController : IDisposable
         }
 
         var suggestion = _pending[_currentIndex];
-        var preview = await _pipeline.PreviewAsync(suggestion);
+        var preview = await _host.Pipeline.PreviewAsync(suggestion);
         var message = suggestion.Finding.Rule.Message?.Get(_language) ?? suggestion.Finding.Rule.Name;
 
         _alertWindow ??= CreateAlertWindow();
@@ -210,7 +187,7 @@ public sealed class AssistantController : IDisposable
 
         _alertWindow.SetBusy(true);
         var suggestion = _pending[_currentIndex];
-        await _pipeline.ApproveAsync(suggestion, approvedBy: Environment.UserName);
+        await _host.Pipeline.ApproveAsync(suggestion, approvedBy: Environment.UserName);
         _avatar.SetMood(RobotMood.Happy);
         _alertWindow.SetBusy(false);
         await RemoveCurrentAndAdvanceAsync();
@@ -224,7 +201,7 @@ public sealed class AssistantController : IDisposable
         }
 
         var suggestion = _pending[_currentIndex];
-        await _pipeline.IgnoreAsync(suggestion);
+        await _host.Pipeline.IgnoreAsync(suggestion);
         await RemoveCurrentAndAdvanceAsync();
     }
 
@@ -280,23 +257,14 @@ public sealed class AssistantController : IDisposable
 
     private async Task DeleteCapturedDataAsync()
     {
-        var path = Path.Combine(
-            Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
-            "AURA", "audit.jsonl");
-
-        if (File.Exists(path))
-        {
-            File.Delete(path);
-        }
-
+        await _host.AuditSink.DeleteAllAsync();
         _controlPanel.SetAuditEntries(Array.Empty<string>());
         _controlPanel.SetPrivacyStatus("Captured data deleted.");
-        await Task.CompletedTask;
     }
 
     private async Task RefreshAuditAsync()
     {
-        var entries = await _auditLog.ReadAllAsync();
+        var entries = await _host.AuditSink.ReadAllAsync();
         _controlPanel.SetAuditEntries(entries.Select(entry =>
             $"{entry.Timestamp:g} · {entry.App} · {entry.RuleName} · {entry.Action} · by {entry.ApprovedBy}"));
     }

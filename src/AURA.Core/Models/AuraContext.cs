@@ -19,8 +19,53 @@ public sealed class AuraContext
     public EmailContext? Email { get; init; }
     public DocumentContext? Document { get; init; }
 
+    /// <summary>Who/what session this capture belongs to - additive, optional; existing
+    /// connectors and rules that only ever set Email/Document keep working unchanged.</summary>
+    public UserContext? User { get; init; }
+    public SessionContext? Session { get; init; }
+    public SecurityContext? Security { get; init; }
+    public EnvironmentContext? Environment { get; init; }
+
     public DateTimeOffset CapturedAt { get; init; } = DateTimeOffset.UtcNow;
     public bool SensitiveRedacted { get; init; }
+}
+
+/// <summary>The authenticated principal a capture is attributed to - not yet populated by any
+/// connector (no identity provider exists yet); the shape exists now so Rule/Policy/Audit
+/// don't need to change again once one does.</summary>
+public sealed class UserContext
+{
+    public string? UserId { get; init; }
+    public string? DisplayName { get; init; }
+    public IReadOnlyList<string> Roles { get; init; } = Array.Empty<string>();
+}
+
+/// <summary>The monitoring session a capture happened within, e.g. for session-scoped
+/// permissions like "Monitor Outlook for 30 min" (README §10) - not yet enforced anywhere.</summary>
+public sealed class SessionContext
+{
+    public string? SessionId { get; init; }
+    public DateTimeOffset StartedAt { get; init; } = DateTimeOffset.UtcNow;
+    public TimeSpan? TimeLimit { get; init; }
+}
+
+/// <summary>Tenant/processing-location metadata a capture happened under. <see cref="ProcessingLocation"/>
+/// should reflect a real routing decision once an AI Gateway exists - today nothing sets it from
+/// live logic, so treat any non-default value here as informational, not a verified guarantee.</summary>
+public sealed class SecurityContext
+{
+    public string? TenantId { get; init; }
+    public string ProcessingLocation { get; init; } = "local";
+    public bool RedactionApplied { get; init; }
+}
+
+/// <summary>Device/config metadata useful for audit and staged policy rollouts.</summary>
+public sealed class EnvironmentContext
+{
+    public string? DeviceId { get; init; }
+    public string? OsVersion { get; init; }
+    public string? PolicyVersion { get; init; }
+    public string? ConfigurationVersion { get; init; }
 }
 
 public sealed class EmailContext

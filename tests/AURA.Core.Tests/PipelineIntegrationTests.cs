@@ -39,10 +39,10 @@ public class PipelineIntegrationTests : IDisposable
         var policyEngine = new PolicyEngine();
         policyEngine.Configure(new[] { new PolicyRule { App = "outlook", Ceiling = outlookCeiling } });
 
-        var auditLog = new FileAuditLog(_auditFile);
+        var auditSink = new LocalFileAuditSink(_auditFile);
         var handler = new MockActionHandler("outlook");
 
-        return new DetectionPipeline(ruleEngine, confidenceEngine, policyEngine, auditLog, new[] { handler });
+        return new DetectionPipeline(ruleEngine, confidenceEngine, policyEngine, auditSink, new[] { handler });
     }
 
     [Fact]
@@ -68,8 +68,8 @@ public class PipelineIntegrationTests : IDisposable
         Assert.Equal(SuggestionState.Verified, suggestion.State);
         Assert.NotNull(suggestion.VerificationMessage);
 
-        var auditLog = new FileAuditLog(_auditFile);
-        var entries = await auditLog.ReadAllAsync();
+        var auditSink = new LocalFileAuditSink(_auditFile);
+        var entries = await auditSink.ReadAllAsync();
         Assert.Single(entries);
         Assert.Equal("outlook", entries[0].App);
         Assert.Equal("Missing Email Subject", entries[0].RuleName);
@@ -88,8 +88,8 @@ public class PipelineIntegrationTests : IDisposable
 
         Assert.Equal(SuggestionState.Ignored, suggestion.State);
 
-        var auditLog = new FileAuditLog(_auditFile);
-        var entries = await auditLog.ReadAllAsync();
+        var auditSink = new LocalFileAuditSink(_auditFile);
+        var entries = await auditSink.ReadAllAsync();
         Assert.Empty(entries);
     }
 

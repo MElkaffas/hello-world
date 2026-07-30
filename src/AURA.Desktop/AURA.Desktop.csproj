@@ -14,13 +14,15 @@
 
   <ItemGroup>
     <ProjectReference Include="..\AURA.Core\AURA.Core.csproj" />
-    <ProjectReference Include="..\AURA.Connectors.Outlook\AURA.Connectors.Outlook.csproj" />
-    <ProjectReference Include="..\AURA.Connectors.Word\AURA.Connectors.Word.csproj" />
+    <ProjectReference Include="..\AURA.Host\AURA.Host.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <None Include="..\..\samples\rules\**\*.json" LinkBase="Rules" CopyToOutputDirectory="PreserveNewest" />
     <None Include="..\..\samples\profiles\**\*.json" LinkBase="Profiles" CopyToOutputDirectory="PreserveNewest" />
+    <!-- Ships as tenant.json at the output root so App.xaml.cs's LoadConfiguration finds it -
+         edit or replace this file per tenant/deployment without touching any code. -->
+    <None Include="..\..\samples\host\tenant.default.json" Link="tenant.json" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
 
 </Project>

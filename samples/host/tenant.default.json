@@ -1,0 +1,13 @@
+{
+  "tenantId": "default",
+  "rulesDirectory": "Rules",
+  "auditSink": "local-file",
+  "auditFilePath": "{localAppData}/AURA/audit.jsonl",
+  "policies": [
+    { "app": "*", "ceiling": "askAndAct" }
+  ],
+  "connectors": [
+    { "implementation": "mock-outlook", "enabled": true },
+    { "implementation": "mock-word", "enabled": true }
+  ]
+}

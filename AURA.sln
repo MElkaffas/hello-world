@@ -13,6 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AURA.Connectors.Word", "src
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AURA.Core.Tests", "tests\AURA.Core.Tests\AURA.Core.Tests.csproj", "{5B326AB5-47AA-4F3A-8A05-8FD3CAD515CF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AURA.Host", "src\AURA.Host\AURA.Host.csproj", "{17F03245-B58C-4DB0-8CF9-264DBF8DD6AE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AURA.Host.Tests", "tests\AURA.Host.Tests\AURA.Host.Tests.csproj", "{A6C1B7EF-AE43-4A68-851E-E5E2AB80380D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +43,14 @@ Global
 		{5B326AB5-47AA-4F3A-8A05-8FD3CAD515CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5B326AB5-47AA-4F3A-8A05-8FD3CAD515CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5B326AB5-47AA-4F3A-8A05-8FD3CAD515CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17F03245-B58C-4DB0-8CF9-264DBF8DD6AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17F03245-B58C-4DB0-8CF9-264DBF8DD6AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17F03245-B58C-4DB0-8CF9-264DBF8DD6AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17F03245-B58C-4DB0-8CF9-264DBF8DD6AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6C1B7EF-AE43-4A68-851E-E5E2AB80380D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6C1B7EF-AE43-4A68-851E-E5E2AB80380D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6C1B7EF-AE43-4A68-851E-E5E2AB80380D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6C1B7EF-AE43-4A68-851E-E5E2AB80380D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNotes = FALSE

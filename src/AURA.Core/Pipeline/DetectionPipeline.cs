@@ -17,20 +17,20 @@ public sealed class DetectionPipeline
     private readonly IRuleEngine _ruleEngine;
     private readonly IConfidenceEngine _confidenceEngine;
     private readonly IPolicyEngine _policyEngine;
-    private readonly IAuditLog _auditLog;
+    private readonly IAuditSink _auditSink;
     private readonly Dictionary<string, IActionHandler> _handlers;
 
     public DetectionPipeline(
         IRuleEngine ruleEngine,
         IConfidenceEngine confidenceEngine,
         IPolicyEngine policyEngine,
-        IAuditLog auditLog,
+        IAuditSink auditSink,
         IEnumerable<IActionHandler> handlers)
     {
         _ruleEngine = ruleEngine;
         _confidenceEngine = confidenceEngine;
         _policyEngine = policyEngine;
-        _auditLog = auditLog;
+        _auditSink = auditSink;
         _handlers = handlers.ToDictionary(h => h.App, StringComparer.OrdinalIgnoreCase);
     }
 
@@ -81,7 +81,7 @@ public sealed class DetectionPipeline
 
         if (suggestion.Finding.Rule.Audit)
         {
-            await _auditLog.RecordAsync(new AuditEntry
+            await _auditSink.RecordAsync(new AuditEntry
             {
                 App = suggestion.Finding.Context.App,
                 RuleName = suggestion.Finding.Rule.Name,
