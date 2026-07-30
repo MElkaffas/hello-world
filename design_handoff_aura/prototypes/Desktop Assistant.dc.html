@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/industry-e56b27ae-2f68-430b-8576-71111d0dbce4/styles.css">
+<script src="_ds/industry-e56b27ae-2f68-430b-8576-71111d0dbce4/_ds_bundle.js"></script>
+<style>
+  * { box-sizing: border-box; }
+  a { color: var(--color-accent-700); text-decoration: none; }
+  a:hover { color: var(--color-accent-900); }
+  @keyframes auraBob { 0%,100%{ transform: translateY(0); } 50%{ transform: translateY(-4px); } }
+  @keyframes auraWalk { 0%,100%{ transform: translateY(0) rotate(-2deg); } 50%{ transform: translateY(-6px) rotate(2deg); } }
+  @keyframes auraBlink { 0%,90%,100%{ transform: scaleY(1); } 95%{ transform: scaleY(0.12); } }
+  @keyframes auraScan { 0%{ top: 0; opacity: .15; } 50%{ opacity: .9; } 100%{ top: 100%; opacity: .15; } }
+  @keyframes auraPulse { 0%{ box-shadow: 0 0 0 0 color-mix(in srgb, var(--color-accent) 45%, transparent); } 70%{ box-shadow: 0 0 0 12px transparent; } 100%{ box-shadow: 0 0 0 0 transparent; } }
+  @keyframes auraSpin { to { transform: rotate(360deg); } }
+  .aura-panel { border: 1px solid var(--color-divider); background: color-mix(in srgb, var(--color-neutral-100) 88%, transparent); border-radius: 0; box-shadow: var(--shadow-md); backdrop-filter: blur(3px); }
+  .aura-corner { position:absolute; width:9px; height:9px; color: var(--color-accent); }
+  .aura-corner::before,.aura-corner::after { content:""; position:absolute; background: currentColor; }
+  .aura-corner::before { left:0; top:4px; width:9px; height:1px; }
+  .aura-corner::after { top:0; left:4px; width:1px; height:9px; }
+  .aura-tl{ left:-1px; top:-1px } .aura-tr{ right:-1px; top:-1px } .aura-bl{ left:-1px; bottom:-1px } .aura-br{ right:-1px; bottom:-1px }
+  .aura-scope { display:flex; align-items:center; gap:8px; width:100%; text-align:start; padding:7px 9px; border:1px solid var(--color-divider); background:transparent; border-radius:0; cursor:pointer; font-family:var(--font-body); font-size:12.5px; color:var(--color-text); transition:background .12s; }
+  .aura-scope:hover { background: color-mix(in srgb, var(--color-accent) 10%, transparent); }
+  .aura-scope[data-on="1"] { background: var(--color-accent); color:#fff; border-color: var(--color-accent-700); }
+  .aura-scope[data-on="1"] .aura-dot { border-color:#fff; } .aura-scope[data-on="1"] .aura-dot i { background:#fff; }
+  .aura-dot { width:12px; height:12px; border:1.5px solid var(--color-accent-600); border-radius:50%; display:flex; align-items:center; justify-content:center; flex:none; }
+  .aura-dot i { width:5px; height:5px; border-radius:50%; background:transparent; display:block; }
+  .aura-scope[data-on="1"] .aura-dot i { background:#fff; }
+  .aura-kbd { font-family:var(--font-heading); font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:var(--color-neutral-600); }
+</style>
+</helmet>
+<div ref="{{ containerRef }}" onPointerMove="{{ onMove }}" onPointerUp="{{ onUp }}" onPointerLeave="{{ onUp }}" style="position:relative; width:100%; min-width:1360px; height:100vh; min-height:860px; overflow:hidden; font-family:var(--font-body); color:var(--color-text); background-image:linear-gradient(var(--color-neutral-200) 1px, transparent 1px), linear-gradient(90deg, var(--color-neutral-200) 1px, transparent 1px); background-size:28px 28px; background-color:var(--color-bg); user-select:none;">
+
+  <!-- ===== Mock desktop: app windows ===== -->
+  <div style="position:absolute; left:300px; top:120px; width:520px; height:410px; border:1px solid var(--color-neutral-400); background:#fff; box-shadow:var(--shadow-lg); display:flex; flex-direction:column;">
+    <div style="height:34px; background:var(--color-neutral-200); border-bottom:1px solid var(--color-neutral-300); display:flex; align-items:center; gap:8px; padding:0 12px;">
+      <div style="display:flex; gap:6px;"><i style="width:11px;height:11px;border:1px solid var(--color-neutral-500);border-radius:50%;display:block;"></i><i style="width:11px;height:11px;border:1px solid var(--color-neutral-500);border-radius:50%;display:block;"></i></div>
+      <span style="font-family:var(--font-heading); font-size:13px; letter-spacing:.03em; color:var(--color-neutral-800);">NEW MESSAGE — OUTLOOK</span>
+    </div>
+    <div style="padding:14px 16px; display:flex; flex-direction:column; gap:0; flex:1;">
+      <div style="display:flex; align-items:center; gap:10px; padding:8px 2px; border-bottom:1px solid var(--color-neutral-200);">
+        <span style="width:52px; font-size:12.5px; color:var(--color-neutral-600);">To</span>
+        <sc-if value="{{ o.to }}"><span style="font-size:13.5px;">{{ o.to }}</span></sc-if>
+        <sc-if value="{{ toEmpty }}" hint-placeholder-val="{{ true }}"><span style="font-size:13.5px; color:var(--color-neutral-400);">…</span></sc-if>
+      </div>
+      <div style="display:flex; align-items:center; gap:10px; padding:8px 2px; border-bottom:1px solid var(--color-neutral-200);">
+        <span style="width:52px; font-size:12.5px; color:var(--color-neutral-600);">Cc</span>
+        <span style="font-size:13.5px; color:var(--color-neutral-400);">…</span>
+      </div>
+      <div style="display:flex; align-items:center; gap:10px; padding:8px 2px; border-bottom:1px solid var(--color-neutral-300);">
+        <span style="width:52px; font-size:12.5px; color:var(--color-neutral-600);">Subject</span>
+        <sc-if value="{{ o.subject }}"><span style="font-size:13.5px; font-weight:600;">{{ o.subject }}</span></sc-if>
+        <sc-if value="{{ subjectEmpty }}" hint-placeholder-val="{{ true }}"><span style="font-size:13.5px; color:var(--color-neutral-400);">…</span></sc-if>
+      </div>
+      <div style="padding:14px 2px; font-size:13.5px; line-height:1.7; color:var(--color-neutral-800); flex:1;">{{ bodyText }}</div>
+      <sc-if value="{{ o.attached }}" hint-placeholder-val="{{ false }}">
+        <div style="display:inline-flex; align-items:center; gap:8px; align-self:flex-start; padding:6px 10px; border:1px solid var(--color-accent-500); background:var(--color-accent-100); font-size:12.5px; color:var(--color-accent-800);">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg>
+          IoT_Checklist.pdf
+        </div>
+      </sc-if>
+    </div>
+    <sc-if value="{{ outlookWatched }}" hint-placeholder-val="{{ false }}"><div style="position:absolute; inset:-2px; border:2px solid var(--color-accent); pointer-events:none;"></div></sc-if>
+  </div>
+
+  <div style="position:absolute; left:850px; top:150px; width:480px; height:470px; border:1px solid var(--color-neutral-400); background:#fff; box-shadow:var(--shadow-lg);">
+    <div style="height:34px; background:var(--color-neutral-200); border-bottom:1px solid var(--color-neutral-300); display:flex; align-items:center; gap:8px; padding:0 12px;">
+      <div style="display:flex; gap:6px;"><i style="width:11px;height:11px;border:1px solid var(--color-neutral-500);border-radius:50%;display:block;"></i></div>
+      <span style="font-family:var(--font-heading); font-size:13px; letter-spacing:.03em; color:var(--color-neutral-800);">DOCUMENT1 — WORD</span>
+    </div>
+    <div style="padding:30px 34px; display:flex; flex-direction:column; gap:20px;">
+      <div>
+        <div style="{{ wHeadStyle }}">{{ headText }}</div>
+        <span style="display:inline-block; margin-top:6px; font-size:10.5px; font-family:var(--font-heading); letter-spacing:.05em; padding:2px 6px; border:1px solid {{ wTagBorder }}; color:{{ wTagColor }};">{{ wHeadTag }}</span>
+      </div>
+      <div>
+        <div style="{{ wSubStyle }}">{{ subText }}</div>
+        <span style="display:inline-block; margin-top:6px; font-size:10.5px; font-family:var(--font-heading); letter-spacing:.05em; padding:2px 6px; border:1px solid {{ wTagBorder }}; color:{{ wTagColor }};">{{ wSubTag }}</span>
+      </div>
+      <div>
+        <div style="{{ wBodyStyle }}">{{ paraText }}</div>
+        <span style="display:inline-block; margin-top:6px; font-size:10.5px; font-family:var(--font-heading); letter-spacing:.05em; padding:2px 6px; border:1px solid {{ wTagBorder }}; color:{{ wTagColor }};">{{ wBodyTag }}</span>
+      </div>
+    </div>
+    <sc-if value="{{ wordWatched }}" hint-placeholder-val="{{ false }}"><div style="position:absolute; inset:-2px; border:2px solid var(--color-accent); pointer-events:none;"></div></sc-if>
+  </div>
+
+  <!-- ===== Monitoring region ===== -->
+  <sc-if value="{{ hasRegion }}" hint-placeholder-val="{{ false }}">
+    <div style="{{ regionStyle }}">
+      <i class="aura-corner aura-tl"></i><i class="aura-corner aura-tr"></i><i class="aura-corner aura-bl"></i><i class="aura-corner aura-br"></i>
+      <div style="position:absolute; top:-24px; left:-1px; height:22px; display:inline-flex; align-items:center; gap:6px; padding:0 8px; background:var(--color-accent); color:#fff; font-size:11.5px; font-family:var(--font-heading); letter-spacing:.04em; white-space:nowrap;">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+        {{ regionLabel }}
+      </div>
+      <sc-if value="{{ isWatching }}" hint-placeholder-val="{{ false }}">
+        <div style="position:absolute; left:0; right:0; height:2px; background:var(--color-accent); animation:auraScan 2.2s ease-in-out infinite;"></div>
+      </sc-if>
+    </div>
+  </sc-if>
+
+  <!-- ===== Draw capture layer ===== -->
+  <div onPointerDown="{{ onDrawDown }}" style="{{ drawLayerStyle }}"></div>
+
+  <!-- ===== Robot ===== -->
+  <div onPointerDown="{{ onRobotDown }}" style="{{ robotStyle }}">
+    <div style="{{ robotInnerStyle }}">
+      <div style="width:2px; height:15px; background:var(--color-accent-700); margin:0 auto;"></div>
+      <div style="{{ antennaDotStyle }}"></div>
+      <div style="position:relative; margin-top:3px; width:92px; height:64px; border:2px solid var(--color-accent-700); border-radius:13px; background:var(--color-neutral-100); box-shadow:var(--shadow-md);">
+        <div style="display:flex; gap:12px; justify-content:center; padding-top:15px;">
+          <div style="width:23px; height:25px; border-radius:50%; background:var(--color-accent-900); position:relative; overflow:hidden; animation:auraBlink 5.4s infinite; transform-origin:center;">
+            <div ref="{{ lpRef }}" style="position:absolute; left:6px; top:7px; width:10px; height:10px; border-radius:50%; background:#eef6ff;"></div>
+          </div>
+          <div style="width:23px; height:25px; border-radius:50%; background:var(--color-accent-900); position:relative; overflow:hidden; animation:auraBlink 5.4s infinite; transform-origin:center;">
+            <div ref="{{ rpRef }}" style="position:absolute; left:6px; top:7px; width:10px; height:10px; border-radius:50%; background:#eef6ff;"></div>
+          </div>
+        </div>
+        <div style="display:flex; justify-content:center; margin-top:5px; height:12px;">
+          <sc-if value="{{ moodNeutral }}" hint-placeholder-val="{{ true }}"><div style="width:16px; height:2px; background:var(--color-accent-700); border-radius:2px;"></div></sc-if>
+          <sc-if value="{{ moodAlert }}" hint-placeholder-val="{{ false }}"><div style="width:11px; height:11px; border:2px solid var(--color-accent-700); border-radius:50%;"></div></sc-if>
+          <sc-if value="{{ moodHappy }}" hint-placeholder-val="{{ false }}"><div style="width:20px; height:10px; border:2px solid var(--color-accent-700); border-top:none; border-radius:0 0 14px 14px;"></div></sc-if>
+        </div>
+      </div>
+      <sc-if value="{{ bodyVisible }}" hint-placeholder-val="{{ true }}">
+        <div style="width:66px; height:32px; margin:5px auto 0; border:2px solid var(--color-accent-700); border-radius:8px; background:var(--color-neutral-100); display:flex; align-items:center; justify-content:center;">
+          <div style="width:32px; height:13px; border-radius:3px; background:var(--color-accent-200); border:1px solid var(--color-accent-500);"></div>
+        </div>
+        <div style="display:flex; gap:16px; justify-content:center; margin-top:3px;">
+          <div style="width:14px; height:7px; border-radius:0 0 4px 4px; background:var(--color-accent-700);"></div>
+          <div style="width:14px; height:7px; border-radius:0 0 4px 4px; background:var(--color-accent-700);"></div>
+        </div>
+      </sc-if>
+    </div>
+  </div>
+
+  <!-- ===== Speech bubble ===== -->
+  <sc-if value="{{ showBubble }}" hint-placeholder-val="{{ false }}">
+    <div dir="{{ dir }}" style="{{ bubbleStyle }}">
+      <i class="aura-corner aura-tl"></i><i class="aura-corner aura-tr"></i><i class="aura-corner aura-bl"></i><i class="aura-corner aura-br"></i>
+      <sc-if value="{{ bubbleDraw }}"><div style="display:flex; gap:10px; align-items:flex-start;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent-700)" stroke-width="1.5" style="flex:none; margin-top:1px;"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg><span style="font-size:13.5px; line-height:1.6;">{{ L.drawHint }}</span></div></sc-if>
+      <sc-if value="{{ bubbleThinking }}"><div style="display:flex; gap:10px; align-items:center;"><div style="width:16px; height:16px; border:2px solid var(--color-accent-300); border-top-color:var(--color-accent); border-radius:50%; animation:auraSpin .8s linear infinite; flex:none;"></div><span style="font-size:13.5px;">{{ L.thinking }}</span></div></sc-if>
+      <sc-if value="{{ bubbleHappy }}"><div style="display:flex; gap:10px; align-items:center;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="1.5" style="flex:none;"><path d="M20 6 9 17l-5-5"/></svg><span style="font-size:13.5px; font-weight:600;">{{ L.allGood }}</span></div></sc-if>
+      <sc-if value="{{ bubbleAlert }}">
+        <div>
+          <div style="display:flex; align-items:center; justify-content:space-between; gap:10px; margin-bottom:6px;">
+            <div style="display:flex; align-items:center; gap:8px;">
+              <span style="{{ sevBadgeStyle }}">{{ sevLabel }}</span>
+              <strong style="font-family:var(--font-heading); font-size:15px; letter-spacing:.01em;">{{ alertTitle }}</strong>
+            </div>
+            <sc-if value="{{ showCounter }}"><span class="aura-kbd">{{ counterText }}</span></sc-if>
+          </div>
+          <p style="margin:0 0 12px; font-size:13px; line-height:1.65; color:var(--color-neutral-800);">{{ alertMsg }}</p>
+          <div style="display:flex; gap:8px; flex-wrap:wrap;">
+            <button onClick="{{ fixCurrent }}" class="btn btn-primary" style="font-size:12.5px; padding:6px 14px;">{{ L.fix }}</button>
+            <button onClick="{{ ignoreCurrent }}" class="btn btn-secondary" style="font-size:12.5px; padding:6px 14px;">{{ L.ignore }}</button>
+            <sc-if value="{{ showCounter }}"><button onClick="{{ nextAlert }}" class="btn btn-ghost" style="font-size:12.5px; padding:6px 12px;">{{ L.next }} →</button></sc-if>
+          </div>
+        </div>
+      </sc-if>
+    </div>
+  </sc-if>
+
+  <!-- ===== Left rail: control + scope + KB ===== -->
+  <div dir="{{ dir }}" style="position:absolute; top:20px; left:20px; width:258px; display:flex; flex-direction:column; gap:14px; z-index:60;">
+    <div class="aura-panel" style="position:relative; padding:16px;">
+      <i class="aura-corner aura-tl"></i><i class="aura-corner aura-tr"></i><i class="aura-corner aura-bl"></i><i class="aura-corner aura-br"></i>
+      <div style="display:flex; align-items:center; gap:10px; margin-bottom:14px;">
+        <div style="width:30px; height:30px; border:1.5px solid var(--color-accent-700); border-radius:7px; display:flex; align-items:center; justify-content:center; background:var(--color-accent-100);">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent-800)" stroke-width="1.5"><rect x="4" y="8" width="16" height="12" rx="2"/><path d="M12 8V4"/><circle cx="12" cy="3" r="1"/><path d="M9 14h.01M15 14h.01"/><path d="M8 20v2M16 20v2"/></svg>
+        </div>
+        <div style="line-height:1.15;">
+          <div style="font-family:var(--font-heading); font-size:19px; letter-spacing:.06em;">AURA</div>
+          <div style="font-size:10.5px; color:var(--color-neutral-600); letter-spacing:.02em;">{{ L.tagline }}</div>
+        </div>
+        <button onClick="{{ toggleLang }}" class="btn btn-ghost" style="margin-inline-start:auto; font-size:11.5px; padding:5px 9px;">{{ langBtnLabel }}</button>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:8px;">
+        <sc-if value="{{ isWatching }}" hint-placeholder-val="{{ false }}"><button onClick="{{ stop }}" class="btn btn-secondary btn-block" style="justify-content:center; gap:7px;"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" stroke="none"><rect x="6" y="6" width="12" height="12" rx="1"/></svg>{{ L.stop }}</button></sc-if>
+        <sc-if value="{{ notWatching }}" hint-placeholder-val="{{ true }}"><button onClick="{{ start }}" class="btn btn-primary btn-block" style="justify-content:center; gap:7px;"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M6 4l14 8-14 8z"/></svg>{{ L.start }}</button></sc-if>
+        <button onClick="{{ beginDraw }}" class="btn btn-ghost btn-block" style="justify-content:center; gap:7px;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 8V4h4M20 8V4h-4M4 16v4h4M20 16v4h-4"/></svg>{{ L.draw }}</button>
+      </div>
+    </div>
+
+    <div class="aura-panel" style="position:relative; padding:16px;">
+      <i class="aura-corner aura-tl"></i><i class="aura-corner aura-tr"></i><i class="aura-corner aura-bl"></i><i class="aura-corner aura-br"></i>
+      <div style="font-family:var(--font-heading); font-size:14px; letter-spacing:.05em; margin-bottom:10px; display:flex; align-items:center; gap:7px;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent-700)" stroke-width="1.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>{{ L.scopeTitle }}</div>
+      <div style="display:flex; flex-direction:column; gap:6px;">
+        <button class="aura-scope" data-on="{{ scopeOffOn }}" onClick="{{ setScopeOff }}"><span class="aura-dot"><i></i></span>{{ L.scopeOff }}</button>
+        <button class="aura-scope" data-on="{{ scopeRegionOn }}" onClick="{{ setScopeRegion }}"><span class="aura-dot"><i></i></span>{{ L.scopeRegion }}</button>
+        <button class="aura-scope" data-on="{{ scopeAppOn }}" onClick="{{ setScopeApp }}"><span class="aura-dot"><i></i></span>{{ L.scopeApp }}</button>
+        <button class="aura-scope" data-on="{{ scopeTaskOn }}" onClick="{{ setScopeTask }}"><span class="aura-dot"><i></i></span>{{ L.scopeTask }}</button>
+      </div>
+      <div style="margin-top:11px; padding-top:11px; border-top:1px solid var(--color-divider); display:flex; gap:7px; align-items:flex-start; font-size:11px; color:var(--color-neutral-700); line-height:1.5;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent-700)" stroke-width="1.5" style="flex:none; margin-top:1px;"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <span>{{ dataNote }}</span>
+      </div>
+    </div>
+
+    <div class="aura-panel" style="position:relative; padding:16px;">
+      <i class="aura-corner aura-tl"></i><i class="aura-corner aura-tr"></i><i class="aura-corner aura-bl"></i><i class="aura-corner aura-br"></i>
+      <div style="font-family:var(--font-heading); font-size:14px; letter-spacing:.05em; margin-bottom:4px; display:flex; align-items:center; gap:7px;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent-700)" stroke-width="1.5"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>{{ L.kbTitle }}</div>
+      <div style="font-size:10.5px; color:var(--color-neutral-600); margin-bottom:10px;">{{ L.kbNote }}</div>
+      <div style="display:flex; flex-wrap:wrap; gap:6px;">
+        <span class="tag tag-accent">IoT</span>
+        <span class="tag tag-outline">Type Approval</span>
+        <span class="tag tag-outline">VAS</span>
+        <span class="tag tag-outline">Satellite</span>
+        <span class="tag tag-outline">Email Templates</span>
+      </div>
+    </div>
+  </div>
+
+  <template id="__bundler_thumbnail" data-bg-color="#1d2d3d">
+    <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+      <rect width="1200" height="800" fill="#1d2d3d"/>
+      <g fill="none" stroke="#94bce3" stroke-width="10">
+        <rect x="470" y="300" width="260" height="180" rx="34"/>
+        <line x1="600" y1="300" x2="600" y2="250"/>
+        <rect x="500" y="500" width="200" height="90" rx="20"/>
+      </g>
+      <circle cx="558" cy="380" r="34" fill="#94bce3"/>
+      <circle cx="642" cy="380" r="34" fill="#94bce3"/>
+      <circle cx="600" cy="238" r="16" fill="#5980a6"/>
+    </svg>
+  </template>
+
+  <!-- ===== Bottom hint strip ===== -->
+  <div dir="{{ dir }}" style="position:absolute; bottom:20px; left:50%; transform:translateX(-50%); z-index:60; display:inline-flex; align-items:center; gap:10px; padding:9px 16px; background:var(--color-accent-900); color:var(--color-neutral-100); font-size:12.5px; box-shadow:var(--shadow-md);">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent-300)" stroke-width="1.5" style="flex:none;"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+    {{ hintText }}
+  </div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;language&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;ar&quot;,&quot;en&quot;],&quot;default&quot;:&quot;ar&quot;,&quot;tsType&quot;:&quot;'ar'|'en'&quot;,&quot;section&quot;:&quot;Assistant&quot;},&quot;assistantStyle&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;robot&quot;,&quot;minimal&quot;],&quot;default&quot;:&quot;robot&quot;,&quot;tsType&quot;:&quot;'robot'|'minimal'&quot;,&quot;section&quot;:&quot;Assistant&quot;}}">
+class Component extends DCLogic {
+  containerRef = React.createRef();
+  lpRef = React.createRef();
+  rpRef = React.createRef();
+  mouse = { x: 0, y: 0 };
+  drag = null;
+  draw = null;
+  _t = null;
+
+  wins = {
+    outlook: { x: 300, y: 120, w: 520, h: 410 },
+    word:    { x: 850, y: 150, w: 480, h: 470 },
+  };
+
+  state = {
+    lang: this.props.language === 'en' ? 'en' : 'ar',
+    robot: { x: 690, y: 470 },
+    mode: 'idle',            // idle | drawing | watching
+    region: null,
+    watchedApp: null,
+    scope: 'region',         // off | region | app | task
+    mood: 'idle',            // idle | thinking | alert | happy
+    alerts: [],
+    currentAlert: 0,
+    outlook: { to: '', subject: '', attached: false, mentionsAttach: true },
+    word: { fixed: false },
+  };
+
+  componentWillUnmount() { clearTimeout(this._t); }
+
+  updateEyes() {
+    const { robot } = this.state;
+    const cx = robot.x + 45, cy = robot.y + 44;
+    const dx = this.mouse.x - cx, dy = this.mouse.y - cy;
+    const a = Math.atan2(dy, dx);
+    const d = Math.min(4, Math.hypot(dx, dy) / 35);
+    const t = `translate(${(Math.cos(a) * d).toFixed(1)}px, ${(Math.sin(a) * d).toFixed(1)}px)`;
+    if (this.lpRef.current) this.lpRef.current.style.transform = t;
+    if (this.rpRef.current) this.rpRef.current.style.transform = t;
+  }
+
+  onMove = (e) => {
+    const el = this.containerRef.current; if (!el) return;
+    const r = el.getBoundingClientRect();
+    this.mouse = { x: e.clientX - r.left, y: e.clientY - r.top };
+    this.updateEyes();
+    if (this.drag) {
+      this.setState({ robot: { x: this.mouse.x - this.drag.dx, y: this.mouse.y - this.drag.dy } });
+    }
+    if (this.draw) {
+      const x = Math.min(this.draw.sx, this.mouse.x), y = Math.min(this.draw.sy, this.mouse.y);
+      const w = Math.abs(this.mouse.x - this.draw.sx), h = Math.abs(this.mouse.y - this.draw.sy);
+      this.setState({ region: { x, y, w, h } });
+    }
+  };
+
+  onUp = () => {
+    if (this.drag) this.drag = null;
+    if (this.draw) { this.draw = null; this.finishRegion(); }
+  };
+
+  onRobotDown = (e) => {
+    e.stopPropagation();
+    const r = this.containerRef.current.getBoundingClientRect();
+    this.drag = { dx: (e.clientX - r.left) - this.state.robot.x, dy: (e.clientY - r.top) - this.state.robot.y };
+  };
+
+  onDrawDown = (e) => {
+    if (this.state.mode !== 'drawing') return;
+    const r = this.containerRef.current.getBoundingClientRect();
+    const sx = e.clientX - r.left, sy = e.clientY - r.top;
+    this.draw = { sx, sy };
+    this.setState({ region: { x: sx, y: sy, w: 0, h: 0 } });
+  };
+
+  hitApp(r) {
+    let best = null, bestA = 0;
+    for (const k in this.wins) {
+      const w = this.wins[k];
+      const ox = Math.max(0, Math.min(r.x + r.w, w.x + w.w) - Math.max(r.x, w.x));
+      const oy = Math.max(0, Math.min(r.y + r.h, w.y + w.h) - Math.max(r.y, w.y));
+      const a = ox * oy;
+      if (a > bestA) { bestA = a; best = k; }
+    }
+    if (best && bestA > r.w * r.h * 0.18) return best;
+    return null;
+  }
+
+  finishRegion() {
+    const reg = this.state.region;
+    if (!reg || reg.w < 30 || reg.h < 30) { this.setState({ region: null, mode: 'idle', watchedApp: null }); return; }
+    this.setState({ mode: 'idle', watchedApp: this.hitApp(reg) });
+  }
+
+  buildAlerts(app) {
+    const o = this.state.outlook, w = this.state.word, A = [];
+    if (app === 'outlook') {
+      if (!o.subject) A.push({ id: 'subject', sev: 'warn', titleAr: 'نسيت عنوان الرسالة', titleEn: 'Subject is empty', msgAr: 'كتبت نص الإيميل بس خانة Subject لسه فاضية.', msgEn: 'You wrote the body but the Subject field is still empty.' });
+      if (!o.to) A.push({ id: 'recipient', sev: 'warn', titleAr: 'مفيش مستلم', titleEn: 'No recipient added', msgAr: 'مفيش أي حد في خانة To أو Cc.', msgEn: 'There is no one in the To or Cc fields.' });
+      if (o.mentionsAttach && !o.attached) A.push({ id: 'attach', sev: 'info', titleAr: 'مرفق مذكور بدون ملف', titleEn: 'Attachment mentioned, none attached', msgAr: 'ذكرت في النص إنك أرفقت مستند، بس مفيش ملف مُرفَق فعلاً.', msgEn: 'You mention an attached document, but no file is actually attached.' });
+    } else if (app === 'word') {
+      if (!w.fixed) A.push({ id: 'font', sev: 'warn', titleAr: 'الخطوط غير موحّدة', titleEn: 'Inconsistent fonts', msgAr: 'العنوان Times New Roman 22، والفرعي Georgia 18، والنص Arial 12. المقترح: عنوان Arial 22 Bold، فرعي 16 Bold، نص 12 Regular.', msgEn: 'Title is Times New Roman 22, subhead Georgia 18, body Arial 12. Suggested: Title Arial 22 Bold, Subhead 16 Bold, Body 12 Regular.' });
+    } else {
+      A.push({ id: 'noapp', sev: 'info', titleAr: 'مش عارف التطبيق', titleEn: 'App not detected', msgAr: 'ارسم منطقة فوق نافذة Outlook أو Word عشان أقدر أساعدك.', msgEn: 'Draw the region over the Outlook or Word window so I can help.' });
+    }
+    return A;
+  }
+
+  start = () => {
+    if (this.state.scope === 'off') return;
+    if (!this.state.region) { this.setState({ mode: 'drawing', region: null, watchedApp: null }); return; }
+    this.setState({ mode: 'watching', mood: 'thinking', alerts: [], currentAlert: 0 });
+    clearTimeout(this._t);
+    this._t = setTimeout(() => {
+      const alerts = this.buildAlerts(this.state.watchedApp);
+      this.setState({ alerts, currentAlert: 0, mood: alerts.length ? 'alert' : 'happy' });
+    }, 1600);
+  };
+
+  stop = () => { clearTimeout(this._t); this.setState({ mode: 'idle', mood: 'idle', alerts: [], currentAlert: 0 }); };
+
+  beginDraw = () => { clearTimeout(this._t); this.setState({ mode: 'drawing', region: null, watchedApp: null, alerts: [], mood: 'idle' }); };
+
+  toggleLang = () => this.setState(s => ({ lang: s.lang === 'ar' ? 'en' : 'ar' }));
+
+  setScopeOff = () => { clearTimeout(this._t); this.setState({ scope: 'off', mode: 'idle', mood: 'idle', alerts: [] }); };
+  setScopeRegion = () => this.setState({ scope: 'region' });
+  setScopeApp = () => this.setState({ scope: 'app' });
+  setScopeTask = () => this.setState({ scope: 'task' });
+
+  resolveCurrent(doFix) {
+    this.setState(st => {
+      const alerts = [...st.alerts];
+      const cur = alerts[st.currentAlert];
+      if (!cur) return null;
+      let outlook = st.outlook, word = st.word;
+      if (doFix) {
+        if (cur.id === 'subject') outlook = { ...outlook, subject: st.lang === 'ar' ? 'مراجعة طلب ترخيص IoT' : 'IoT Licensing Application Review' };
+        if (cur.id === 'recipient') outlook = { ...outlook, to: 'licensing@ntra.gov.eg' };
+        if (cur.id === 'attach') outlook = { ...outlook, attached: true };
+        if (cur.id === 'font') word = { ...word, fixed: true };
+      }
+      alerts.splice(st.currentAlert, 1);
+      const idx = Math.max(0, Math.min(st.currentAlert, alerts.length - 1));
+      return { alerts, currentAlert: idx, outlook, word, mood: alerts.length ? 'alert' : 'happy' };
+    });
+  }
+  fixCurrent = () => this.resolveCurrent(true);
+  ignoreCurrent = () => this.resolveCurrent(false);
+  nextAlert = () => this.setState(s => ({ currentAlert: s.alerts.length ? (s.currentAlert + 1) % s.alerts.length : 0 }));
+
+  strings(lang) {
+    const ar = {
+      tagline: 'مساعد سطح المكتب الذكي', start: 'ابدأ المراقبة', stop: 'إيقاف المراقبة', draw: 'حدّد منطقة',
+      scopeTitle: 'نطاق المراقبة', scopeOff: 'إيقاف تام', scopeRegion: 'منطقة محددة', scopeApp: 'تطبيق محدد', scopeTask: 'مهمة محددة',
+      kbTitle: 'قاعدة المعرفة', kbNote: 'يربط اللي قدامك بمعرفة شغلك',
+      drawHint: 'ارسم مربع حوالين المنطقة اللي عايزني أراقبها.', thinking: 'بحلّل المنطقة دي…', allGood: 'تمام! مفيش مشاكل ظاهرة.',
+      fix: 'إصلاح', ignore: 'تجاهل', next: 'التالي',
+    };
+    const en = {
+      tagline: 'Smart Desktop Assistant', start: 'Start Monitoring', stop: 'Stop Monitoring', draw: 'Select Area',
+      scopeTitle: 'Monitoring Scope', scopeOff: 'Off', scopeRegion: 'Selected Region', scopeApp: 'Selected App', scopeTask: 'Specific Task',
+      kbTitle: 'Knowledge Base', kbNote: 'Links what you see to your work',
+      drawHint: 'Draw a box around the area you want me to watch.', thinking: 'Analyzing this area…', allGood: 'All good! No issues found.',
+      fix: 'Fix', ignore: 'Ignore', next: 'Next',
+    };
+    return lang === 'ar' ? ar : en;
+  }
+
+  renderVals() {
+    const s = this.state;
+    const lang = s.lang, ar = lang === 'ar';
+    const L = this.strings(lang);
+    const assistantStyle = this.props.assistantStyle || 'robot';
+    const o = s.outlook, w = s.word;
+
+    // robot
+    const robotStyle = { position: 'absolute', left: s.robot.x + 'px', top: s.robot.y + 'px', width: '92px', zIndex: 40, cursor: 'grab', touchAction: 'none' };
+    const robotInnerStyle = { animation: s.mode === 'watching' ? 'auraWalk 1.1s ease-in-out infinite' : 'auraBob 3.4s ease-in-out infinite' };
+    const alertActive = s.mode === 'watching' && s.mood === 'alert';
+    const antennaDotStyle = { width: '11px', height: '11px', borderRadius: '50%', margin: '-4px auto 0', background: alertActive ? 'var(--color-accent)' : 'var(--color-accent-500)', animation: alertActive ? 'auraPulse 1.3s ease-out infinite' : 'none' };
+
+    // region
+    const hasRegion = !!s.region;
+    const regionStyle = s.region ? { position: 'absolute', left: s.region.x + 'px', top: s.region.y + 'px', width: s.region.w + 'px', height: s.region.h + 'px', border: '1.5px solid var(--color-accent)', background: 'color-mix(in srgb, var(--color-accent) 8%, transparent)', zIndex: 20, pointerEvents: 'none', overflow: 'hidden' } : { display: 'none' };
+    const drawLayerStyle = { position: 'absolute', inset: 0, zIndex: 30, cursor: s.mode === 'drawing' ? 'crosshair' : 'default', pointerEvents: s.mode === 'drawing' ? 'auto' : 'none', background: s.mode === 'drawing' ? 'color-mix(in srgb, var(--color-accent-900) 6%, transparent)' : 'transparent' };
+    const appName = { outlook: ar ? 'Outlook — كتابة إيميل' : 'Outlook — Compose', word: ar ? 'Word — مستند' : 'Word — Document' };
+    const regionLabel = s.watchedApp ? appName[s.watchedApp] : (ar ? 'منطقة الشاشة' : 'Screen region');
+
+    // bubble
+    const isWatching = s.mode === 'watching';
+    const bubbleThinking = isWatching && s.mood === 'thinking';
+    const bubbleAlert = isWatching && s.mood === 'alert' && s.alerts.length > 0;
+    const bubbleHappy = isWatching && s.mood === 'happy' && s.alerts.length === 0;
+    const bubbleDraw = s.mode === 'drawing';
+    const showBubble = bubbleThinking || bubbleAlert || bubbleHappy || bubbleDraw;
+    const bLeft = Math.max(16, s.robot.x - 130);
+    const bTop = Math.max(16, s.robot.y - 172);
+    const bubbleStyle = { position: 'absolute', left: bLeft + 'px', top: bTop + 'px', width: '300px', zIndex: 55, padding: '14px 16px', background: 'var(--color-neutral-100)', border: '1px solid var(--color-accent-700)', boxShadow: 'var(--shadow-lg)', textAlign: ar ? 'right' : 'left' };
+
+    const cur = s.alerts[s.currentAlert] || null;
+    const alertTitle = cur ? (ar ? cur.titleAr : cur.titleEn) : '';
+    const alertMsg = cur ? (ar ? cur.msgAr : cur.msgEn) : '';
+    const sev = cur ? cur.sev : 'info';
+    const sevLabel = sev === 'warn' ? (ar ? 'تنبيه' : 'Warning') : (ar ? 'اقتراح' : 'Suggestion');
+    const sevBadgeStyle = { fontFamily: 'var(--font-heading)', fontSize: '10.5px', letterSpacing: '.06em', padding: '2px 7px', color: '#fff', background: sev === 'warn' ? 'var(--color-accent-700)' : 'var(--color-accent-500)' };
+    const showCounter = s.alerts.length > 1;
+    const counterText = (s.currentAlert + 1) + ' / ' + s.alerts.length;
+
+    // mood mouth
+    const moodNeutral = s.mood === 'idle' || s.mood === 'thinking';
+    const moodAlert = s.mood === 'alert';
+    const moodHappy = s.mood === 'happy';
+
+    // word doc styling
+    const tnr = '"Times New Roman", Georgia, serif';
+    const wHeadStyle = { fontFamily: w.fixed ? 'Arial, sans-serif' : tnr, fontSize: '22px', fontWeight: 700, color: 'var(--color-neutral-900)' };
+    const wSubStyle = { fontFamily: w.fixed ? 'Arial, sans-serif' : 'Georgia, serif', fontSize: '16px', fontWeight: w.fixed ? 700 : 400, color: 'var(--color-neutral-800)' };
+    const wBodyStyle = { fontFamily: 'Arial, sans-serif', fontSize: '13px', lineHeight: 1.7, color: 'var(--color-neutral-800)' };
+    const wHeadTag = w.fixed ? 'Arial · 22 Bold' : 'Times New Roman · 22';
+    const wSubTag = w.fixed ? 'Arial · 16 Bold' : 'Georgia · 18';
+    const wBodyTag = w.fixed ? 'Arial · 12' : 'Arial · 12';
+    const wTagColor = w.fixed ? 'var(--color-accent-700)' : 'var(--color-neutral-600)';
+    const wTagBorder = w.fixed ? 'var(--color-accent-400)' : 'var(--color-neutral-400)';
+
+    // hint text
+    let hintText;
+    if (s.scope === 'off') hintText = ar ? 'المراقبة موقوفة تماماً — الروبوت مش بيشوف حاجة.' : 'Monitoring is fully off — the assistant sees nothing.';
+    else if (s.mode === 'drawing') hintText = ar ? 'اسحب بالماوس لترسم مربع المراقبة.' : 'Drag on the screen to draw the monitoring box.';
+    else if (isWatching) hintText = ar ? 'شغّال — بيراقب المنطقة اللي حددتها.' : 'Active — watching the region you selected.';
+    else if (hasRegion) hintText = ar ? 'جاهز — اضغط «ابدأ المراقبة». وتقدر تسحب الروبوت في أي مكان.' : 'Ready — press "Start Monitoring". You can drag the robot anywhere.';
+    else hintText = ar ? 'اضغط «حدّد منطقة» وارسم مربع فوق Outlook أو Word.' : 'Press "Select Area" and draw a box over Outlook or Word.';
+
+    return {
+      lang, dir: ar ? 'rtl' : 'ltr', L,
+      langBtnLabel: ar ? 'English' : 'العربية',
+      containerRef: this.containerRef, lpRef: this.lpRef, rpRef: this.rpRef,
+      onMove: this.onMove, onUp: this.onUp, onRobotDown: this.onRobotDown, onDrawDown: this.onDrawDown,
+      start: this.start, stop: this.stop, beginDraw: this.beginDraw, toggleLang: this.toggleLang,
+      fixCurrent: this.fixCurrent, ignoreCurrent: this.ignoreCurrent, nextAlert: this.nextAlert,
+      setScopeOff: this.setScopeOff, setScopeRegion: this.setScopeRegion, setScopeApp: this.setScopeApp, setScopeTask: this.setScopeTask,
+      robotStyle, robotInnerStyle, antennaDotStyle,
+      bodyVisible: assistantStyle !== 'minimal',
+      hasRegion, regionStyle, drawLayerStyle, regionLabel,
+      isWatching, notWatching: !isWatching,
+      outlookWatched: isWatching && s.watchedApp === 'outlook',
+      wordWatched: isWatching && s.watchedApp === 'word',
+      showBubble, bubbleThinking, bubbleAlert, bubbleHappy, bubbleDraw, bubbleStyle,
+      alertTitle, alertMsg, sevLabel, sevBadgeStyle, showCounter, counterText,
+      moodNeutral, moodAlert, moodHappy,
+      o, toEmpty: !o.to, subjectEmpty: !o.subject,
+      bodyText: ar ? 'حضرتك، مرفق طيّه المستند المطلوب لمراجعة طلب الترخيص. برجاء الاطلاع والإفادة.' : 'Dear team, please find the attached document for the licensing request review. Kindly review and advise.',
+      headText: ar ? 'طلب ترخيص إنترنت الأشياء' : 'IoT Licensing Request',
+      subText: ar ? 'نطاق الخدمة ومتطلبات التشغيل' : 'Service Scope and Operating Requirements',
+      paraText: ar ? 'تتقدم الشركة بطلب الحصول على ترخيص لتقديم خدمات إنترنت الأشياء وفقاً للإطار التنظيمي المعتمد.' : 'The company hereby applies for a license to provide IoT services in accordance with the approved regulatory framework.',
+      wHeadStyle, wSubStyle, wBodyStyle, wHeadTag, wSubTag, wBodyTag, wTagColor, wTagBorder,
+      dataNote: s.scope === 'off' ? (ar ? 'لا تُرسَل أي بيانات للـ AI.' : 'No data is sent to the AI.') : (ar ? 'البيانات المُرسَلة للـ AI: المنطقة المحددة فقط.' : 'Data sent to AI: the selected region only.'),
+      scopeOffOn: s.scope === 'off' ? '1' : '0',
+      scopeRegionOn: s.scope === 'region' ? '1' : '0',
+      scopeAppOn: s.scope === 'app' ? '1' : '0',
+      scopeTaskOn: s.scope === 'task' ? '1' : '0',
+      hintText,
+    };
+  }
+}
+</script>
+</body>
+</html>

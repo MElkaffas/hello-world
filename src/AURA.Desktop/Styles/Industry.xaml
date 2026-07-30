@@ -1,0 +1,141 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <FontFamily x:Key="HeadingFont">Barlow Condensed, Segoe UI Semibold</FontFamily>
+    <FontFamily x:Key="BodyFont">Barlow, Segoe UI</FontFamily>
+
+    <Color x:Key="BgColor">#F2F2F3</Color>
+    <Color x:Key="TextColor">#1D1F20</Color>
+    <Color x:Key="AccentColor">#5980A6</Color>
+    <Color x:Key="Accent2Color">#728FAB</Color>
+
+    <Color x:Key="Neutral100Color">#F5F5F8</Color>
+    <Color x:Key="Neutral200Color">#E7E7EA</Color>
+    <Color x:Key="Neutral300Color">#D4D4D7</Color>
+    <Color x:Key="Neutral400Color">#B7B7BA</Color>
+    <Color x:Key="Neutral500Color">#98989B</Color>
+    <Color x:Key="Neutral600Color">#7A7A7D</Color>
+    <Color x:Key="Neutral700Color">#5D5D60</Color>
+    <Color x:Key="Neutral800Color">#424244</Color>
+    <Color x:Key="Neutral900Color">#2B2B2D</Color>
+
+    <Color x:Key="Accent100Color">#EEF6FF</Color>
+    <Color x:Key="Accent200Color">#D6EBFF</Color>
+    <Color x:Key="Accent300Color">#B5D9FD</Color>
+    <Color x:Key="Accent400Color">#94BCE3</Color>
+    <Color x:Key="Accent500Color">#749DC4</Color>
+    <Color x:Key="Accent600Color">#597EA3</Color>
+    <Color x:Key="Accent700Color">#416180</Color>
+    <Color x:Key="Accent800Color">#2C455D</Color>
+    <Color x:Key="Accent900Color">#1D2D3D</Color>
+
+    <SolidColorBrush x:Key="BgBrush" Color="{StaticResource BgColor}" />
+    <SolidColorBrush x:Key="TextBrush" Color="{StaticResource TextColor}" />
+    <SolidColorBrush x:Key="AccentBrush" Color="{StaticResource AccentColor}" />
+    <SolidColorBrush x:Key="Accent2Brush" Color="{StaticResource Accent2Color}" />
+
+    <SolidColorBrush x:Key="Neutral100Brush" Color="{StaticResource Neutral100Color}" />
+    <SolidColorBrush x:Key="Neutral200Brush" Color="{StaticResource Neutral200Color}" />
+    <SolidColorBrush x:Key="Neutral300Brush" Color="{StaticResource Neutral300Color}" />
+    <SolidColorBrush x:Key="Neutral400Brush" Color="{StaticResource Neutral400Color}" />
+    <SolidColorBrush x:Key="Neutral500Brush" Color="{StaticResource Neutral500Color}" />
+    <SolidColorBrush x:Key="Neutral600Brush" Color="{StaticResource Neutral600Color}" />
+    <SolidColorBrush x:Key="Neutral700Brush" Color="{StaticResource Neutral700Color}" />
+    <SolidColorBrush x:Key="Neutral800Brush" Color="{StaticResource Neutral800Color}" />
+    <SolidColorBrush x:Key="Neutral900Brush" Color="{StaticResource Neutral900Color}" />
+
+    <SolidColorBrush x:Key="Accent100Brush" Color="{StaticResource Accent100Color}" />
+    <SolidColorBrush x:Key="Accent200Brush" Color="{StaticResource Accent200Color}" />
+    <SolidColorBrush x:Key="Accent300Brush" Color="{StaticResource Accent300Color}" />
+    <SolidColorBrush x:Key="Accent400Brush" Color="{StaticResource Accent400Color}" />
+    <SolidColorBrush x:Key="Accent500Brush" Color="{StaticResource Accent500Color}" />
+    <SolidColorBrush x:Key="Accent600Brush" Color="{StaticResource Accent600Color}" />
+    <SolidColorBrush x:Key="Accent700Brush" Color="{StaticResource Accent700Color}" />
+    <SolidColorBrush x:Key="Accent800Brush" Color="{StaticResource Accent800Color}" />
+    <SolidColorBrush x:Key="Accent900Brush" Color="{StaticResource Accent900Color}" />
+
+    <Style x:Key="BlueprintCardBorder" TargetType="Border">
+        <Setter Property="Background" Value="{StaticResource Neutral100Brush}" />
+        <Setter Property="BorderBrush" Value="{StaticResource Neutral300Brush}" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="CornerRadius" Value="0" />
+    </Style>
+
+    <Style x:Key="HeadingText" TargetType="TextBlock">
+        <Setter Property="FontFamily" Value="{StaticResource HeadingFont}" />
+        <Setter Property="FontWeight" Value="SemiBold" />
+        <Setter Property="Foreground" Value="{StaticResource TextBrush}" />
+    </Style>
+
+    <Style x:Key="BodyTextStyle" TargetType="TextBlock">
+        <Setter Property="FontFamily" Value="{StaticResource BodyFont}" />
+        <Setter Property="Foreground" Value="{StaticResource TextBrush}" />
+    </Style>
+
+    <Style x:Key="MutedText" TargetType="TextBlock" BasedOn="{StaticResource BodyTextStyle}">
+        <Setter Property="Foreground" Value="{StaticResource Neutral600Brush}" />
+        <Setter Property="FontSize" Value="11" />
+    </Style>
+
+    <Style x:Key="PrimaryButton" TargetType="Button">
+        <Setter Property="Background" Value="{StaticResource AccentBrush}" />
+        <Setter Property="Foreground" Value="{StaticResource BgBrush}" />
+        <Setter Property="FontFamily" Value="{StaticResource HeadingFont}" />
+        <Setter Property="FontWeight" Value="SemiBold" />
+        <Setter Property="Padding" Value="14,7" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border x:Name="Root" Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="{StaticResource Accent600Brush}" />
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Background" Value="{StaticResource Accent700Brush}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="SecondaryButton" TargetType="Button">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Foreground" Value="{StaticResource TextBrush}" />
+        <Setter Property="FontFamily" Value="{StaticResource HeadingFont}" />
+        <Setter Property="BorderBrush" Value="{StaticResource Neutral300Brush}" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="Padding" Value="14,7" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            Padding="{TemplateBinding Padding}">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="{StaticResource Neutral200Brush}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="CornerMark" TargetType="TextBlock">
+        <Setter Property="Text" Value="+" />
+        <Setter Property="FontFamily" Value="{StaticResource BodyFont}" />
+        <Setter Property="Foreground" Value="{StaticResource Accent500Brush}" />
+        <Setter Property="FontSize" Value="12" />
+    </Style>
+
+</ResourceDictionary>

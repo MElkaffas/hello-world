@@ -1,0 +1,13 @@
+{
+  "name": "Missing Email Subject",
+  "trigger": "email.compose",
+  "conditions": [
+    { "field": "email.bodyText", "op": "isNotEmpty" },
+    { "field": "email.subject", "op": "isEmpty" }
+  ],
+  "severity": "warning",
+  "message": { "ar": "نسيت عنوان الرسالة", "en": "Subject is empty" },
+  "suggestedAction": { "type": "setField", "field": "email.subject" },
+  "autonomy": "suggest",
+  "audit": true
+}

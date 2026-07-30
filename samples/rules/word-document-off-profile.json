@@ -1,0 +1,12 @@
+{
+  "name": "Document Off Standard Profile",
+  "trigger": "document.edit",
+  "conditions": [
+    { "field": "document.complianceScore", "op": "lessThan", "value": 1.0 }
+  ],
+  "severity": "warning",
+  "message": { "ar": "المستند لا يطابق المعيار المعتمد", "en": "Document doesn't match the standard profile" },
+  "suggestedAction": { "type": "applyStyle", "field": "document.styles" },
+  "autonomy": "suggest",
+  "audit": true
+}

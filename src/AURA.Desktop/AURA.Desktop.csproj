@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <UseWindowsForms>true</UseWindowsForms>
+    <RootNamespace>Aura.Desktop</RootNamespace>
+    <AssemblyName>Aura.Desktop</AssemblyName>
+    <StartupObject>Aura.Desktop.App</StartupObject>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AURA.Core\AURA.Core.csproj" />
+    <ProjectReference Include="..\AURA.Connectors.Outlook\AURA.Connectors.Outlook.csproj" />
+    <ProjectReference Include="..\AURA.Connectors.Word\AURA.Connectors.Word.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\samples\rules\**\*.json" LinkBase="Rules" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="..\..\samples\profiles\**\*.json" LinkBase="Profiles" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
+</Project>

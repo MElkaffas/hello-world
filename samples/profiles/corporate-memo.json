@@ -1,0 +1,10 @@
+{
+  "name": "Corporate Memo",
+  "roles": {
+    "title": { "font": "Arial", "size": 16, "bold": true },
+    "subtitle": { "font": "Arial", "size": 14, "bold": true },
+    "body": { "font": "Arial", "size": 12, "bold": false }
+  },
+  "alignment": "Justified",
+  "lineSpacing": 1.15
+}

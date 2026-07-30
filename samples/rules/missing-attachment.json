@@ -1,0 +1,13 @@
+{
+  "name": "Attachment Mentioned But Missing",
+  "trigger": "email.compose",
+  "conditions": [
+    { "field": "email.mentionsAttachment", "op": "equals", "value": true },
+    { "field": "email.attachments", "op": "isEmpty" }
+  ],
+  "severity": "warning",
+  "message": { "ar": "ذكرت مرفقاً لكن لم تقم بإرفاقه", "en": "You mentioned an attachment but didn't attach one" },
+  "suggestedAction": { "type": "insertAttachmentReminder", "field": "email.attachments" },
+  "autonomy": "suggest",
+  "audit": true
+}
