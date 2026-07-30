@@ -5,6 +5,7 @@ using Aura.Core.Connectors;
 using Aura.Core.Pipeline;
 using Aura.Core.Policy;
 using Aura.Core.Rules;
+using Aura.Core.Security;
 using Aura.Host.Configuration;
 using Aura.Host.Connectors;
 using Microsoft.Extensions.DependencyInjection;
@@ -79,12 +80,18 @@ public sealed class AuraHost
 
         services.AddSingleton<IAuditSink>(_ => new LocalFileAuditSink(AuraPaths.Expand(configuration.AuditFilePath)));
 
+        services.AddSingleton<IPrivacyGuard>(_ => new PrivacyGuard(
+            configuration.PrivacyZones.Select(ToPrivacyZone).ToList(),
+            new RegexSensitiveDataDetector(),
+            new DefaultRedactor()));
+
         services.AddSingleton(sp => new DetectionPipeline(
             sp.GetRequiredService<IRuleEngine>(),
             sp.GetRequiredService<IConfidenceEngine>(),
             sp.GetRequiredService<IPolicyEngine>(),
             sp.GetRequiredService<IAuditSink>(),
-            handlers));
+            handlers,
+            sp.GetRequiredService<IPrivacyGuard>()));
 
         var provider = services.BuildServiceProvider();
         var pipeline = provider.GetRequiredService<DetectionPipeline>();
@@ -98,6 +105,13 @@ public sealed class AuraHost
         App = config.App,
         RuleName = config.RuleName,
         Ceiling = ParseAutonomy(config.Ceiling),
+    };
+
+    private static PrivacyZone ToPrivacyZone(PrivacyZoneConfig config) => new()
+    {
+        Name = config.Name,
+        App = config.App,
+        Field = config.Field,
     };
 
     private static AutonomyLevel ParseAutonomy(string ceiling) => ceiling.ToLowerInvariant() switch

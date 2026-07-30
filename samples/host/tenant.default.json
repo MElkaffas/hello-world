@@ -3,11 +3,13 @@
   "rulesDirectory": "Rules",
   "auditSink": "local-file",
   "auditFilePath": "{localAppData}/AURA/audit.jsonl",
+  "sessionTimeLimitMinutes": 30,
   "policies": [
     { "app": "*", "ceiling": "askAndAct" }
   ],
   "connectors": [
     { "implementation": "mock-outlook", "enabled": true },
     { "implementation": "mock-word", "enabled": true }
-  ]
+  ],
+  "privacyZones": []
 }

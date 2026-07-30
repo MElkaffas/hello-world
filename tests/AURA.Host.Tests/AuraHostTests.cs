@@ -88,6 +88,13 @@ public class AuraHostTests : IDisposable
         Assert.Single(suggestions);
 
         var suggestion = suggestions[0];
+
+        // The mock connector's body text contains a real-looking email/phone (see
+        // MockConnector.OutlookComposeMissingSubjectAndAttachment) - AuraHost.Build should have
+        // wired a PrivacyGuard in by default, so the Finding's context is already sanitized.
+        Assert.True(suggestion.Finding.Context.SensitiveRedacted);
+        Assert.DoesNotContain("jane.doe@example.com", suggestion.Finding.Context.Email!.BodyText);
+
         await host.Pipeline.PreviewAsync(suggestion);
         await host.Pipeline.ApproveAsync(suggestion, approvedBy: "test-user");
 
@@ -96,6 +103,42 @@ public class AuraHostTests : IDisposable
         var entries = await host.AuditSink.ReadAllAsync();
         Assert.Single(entries);
         Assert.Equal("test-user", entries[0].ApprovedBy);
+    }
+
+    [Fact]
+    public async Task Build_AppliesConfiguredPrivacyZone_ClearingTheZonedField()
+    {
+        var rulesDirectory = CreateTempRulesDirectory("""
+            {
+              "name": "Missing Email Subject",
+              "trigger": "email.compose",
+              "conditions": [
+                { "field": "email.bodyText", "op": "isNotEmpty" },
+                { "field": "email.subject", "op": "isEmpty" }
+              ],
+              "autonomy": "suggest"
+            }
+            """);
+
+        var configuration = new AuraConfiguration
+        {
+            RulesDirectory = rulesDirectory,
+            AuditFilePath = TempFile(),
+            Connectors = new[] { new ConnectorConfig { Implementation = "mock-outlook", Enabled = true } },
+            PrivacyZones = new[]
+            {
+                new PrivacyZoneConfig { Name = "No body capture", App = "outlook", Field = "email.bodyText" },
+            },
+        };
+
+        var host = AuraHost.Build(configuration, BuildRegistry());
+        var context = await host.Connectors["outlook"].CaptureAsync();
+        var suggestions = host.Pipeline.Process(context);
+
+        // The zoned field is wholesale replaced, so "isNotEmpty" on it still passes (it's not
+        // empty, just not real content) and the rule still fires - only the field's value changed.
+        Assert.Single(suggestions);
+        Assert.Equal("[PRIVACY ZONE]", suggestions[0].Finding.Context.Email!.BodyText);
     }
 
     [Fact]

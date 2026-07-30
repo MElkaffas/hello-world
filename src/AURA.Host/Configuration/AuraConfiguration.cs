@@ -24,6 +24,22 @@ public sealed class AuraConfiguration
 
     public IReadOnlyList<PolicyRuleConfig> Policies { get; init; } = Array.Empty<PolicyRuleConfig>();
     public IReadOnlyList<ConnectorConfig> Connectors { get; init; } = Array.Empty<ConnectorConfig>();
+
+    /// <summary>Fields that must never leave this process in readable form (README §10),
+    /// evaluated before PII detection/redaction on every capture.</summary>
+    public IReadOnlyList<PrivacyZoneConfig> PrivacyZones { get; init; } = Array.Empty<PrivacyZoneConfig>();
+
+    /// <summary>Session-based permission (README §10): monitoring auto-stops after this many
+    /// minutes. 0 or negative disables the limit.</summary>
+    public double SessionTimeLimitMinutes { get; init; } = 30;
+}
+
+/// <summary>Maps to <see cref="Aura.Core.Security.PrivacyZone"/>.</summary>
+public sealed class PrivacyZoneConfig
+{
+    public required string Name { get; init; }
+    public string App { get; init; } = "*";
+    public required string Field { get; init; }
 }
 
 /// <summary>Maps to <see cref="Aura.Core.Policy.PolicyRule"/> - kept as plain strings here so the

@@ -1,4 +1,5 @@
 using System.Windows;
+using System.Windows.Threading;
 using Aura.Core.Actions;
 using Aura.Desktop.Views;
 using Aura.Host;
@@ -20,6 +21,7 @@ public sealed class AssistantController : IDisposable
     private AlertBubbleWindow? _alertWindow;
     private readonly List<Suggestion> _pending = new();
     private int _currentIndex;
+    private DispatcherTimer? _sessionTimer;
 
     private AssistantMode _mode = AssistantMode.Idle;
     private string _language = "en";
@@ -112,7 +114,8 @@ public sealed class AssistantController : IDisposable
         _avatar.SetMood(RobotMood.Thinking);
         _controlPanel.SetStartStopLabel("Stop");
         _controlPanel.SetStatus("Thinking…");
-        _controlPanel.SetPrivacyStatus($"{app} · {_scope} · Local AI");
+        _controlPanel.SetPrivacyStatus($"{app} · {_scope} · Local AI · Redaction: On");
+        StartSessionTimer();
 
         await Task.Delay(TimeSpan.FromMilliseconds(1600));
 
@@ -140,6 +143,7 @@ public sealed class AssistantController : IDisposable
 
     private void StopWatching()
     {
+        _sessionTimer?.Stop();
         _mode = AssistantMode.Idle;
         _avatar.SetMode(AssistantMode.Idle);
         _avatar.SetMood(RobotMood.Idle);
@@ -148,6 +152,27 @@ public sealed class AssistantController : IDisposable
         _controlPanel.SetPrivacyStatus("Nothing monitored.");
         CloseAlert();
         _pending.Clear();
+    }
+
+    /// <summary>Session-scoped permission (README §10): auto-stops monitoring after the
+    /// tenant-configured time limit, e.g. "Monitor Outlook for 30 min".</summary>
+    private void StartSessionTimer()
+    {
+        _sessionTimer?.Stop();
+
+        var limitMinutes = _host.Configuration.SessionTimeLimitMinutes;
+        if (limitMinutes <= 0)
+        {
+            return;
+        }
+
+        _sessionTimer = new DispatcherTimer { Interval = TimeSpan.FromMinutes(limitMinutes) };
+        _sessionTimer.Tick += (_, _) =>
+        {
+            StopWatching();
+            _controlPanel.SetStatus($"Session ended automatically after {limitMinutes:0.#} min (README §10).");
+        };
+        _sessionTimer.Start();
     }
 
     private async Task ShowCurrentSuggestionAsync()

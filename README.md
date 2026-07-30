@@ -74,9 +74,34 @@ history / commit log) - the short version of what changed and why:
   additively - `Email`/`Document` and every existing rule/test that references them are
   untouched.
 
-Deliberately **not** done in this pass (next up per the agreed phase order): redaction/PII
-detection/Privacy Zones, an AI Gateway or any LLM call, screen understanding (UIA/OCR/Vision),
-a no-code Rule Builder, identity/RBAC, or a plugin/DLL-loading connector model.
+**Phase 2 additions (Security/Privacy, done before any AI work per the agreed order):**
+
+- **`Aura.Core.Security`** (a namespace inside `AURA.Core`, not yet its own project - see note
+  below): `PrivacyZone`, `ISensitiveDataDetector` + a regex-based default (email/national-ID/
+  credit-card/phone patterns), `IRedactor` + a default that merges overlapping matches before
+  replacing them, and `IPrivacyGuard` combining all three into one context-sanitizing step.
+- **`DetectionPipeline.Process`** now runs `IPrivacyGuard.Apply` *before* the Rule Engine sees
+  the context (README §10's Capture → Privacy Zones → PII Detection → Redaction → Context
+  order). The guard is an optional constructor parameter (defaults to none/pass-through) so
+  every existing test and call site kept compiling unchanged; `AuraHost.Build` always supplies
+  a real one.
+- **`tenant.json` gained `privacyZones` and `sessionTimeLimitMinutes`.** Session-scoped
+  monitoring (README §10 - "Monitor Outlook for 30 min" auto-stop) is enforced in
+  `AssistantController` via a `DispatcherTimer` keyed off the configured limit.
+- The mock Outlook scenario's body text now contains a real-looking email address and phone
+  number specifically so redaction has something genuine to catch when you run the app.
+
+*Why Security lives inside `AURA.Core` rather than a separate `AURA.Core.Security` project (as
+sketched in the original review): a regex-based detector/redactor is a handful of small classes,
+not a subsystem - splitting it into its own project now would be premature. If/when a heavier
+detector (ML-based, a Presidio-style service) replaces the regex one, that's the point to give
+it its own project, mirroring how Connectors already work.*
+
+Deliberately **not** done in this pass (next up per the agreed phase order): Data Classification
+(a broader taxonomy beyond these four PII categories), Consent management, Secure Storage
+(encrypting the audit log at rest), Secret Management (credential vaulting - not needed while
+only mocks are wired), a full Permission Model/RBAC, an AI Gateway or any LLM call, screen
+understanding (UIA/OCR/Vision), a no-code Rule Builder, or a plugin/DLL-loading connector model.
 
 ## Build & run
 
@@ -182,17 +207,23 @@ default if the file is missing) via `Aura.Host.Configuration.AuraConfigurationLo
   "rulesDirectory": "Rules",
   "auditSink": "local-file",
   "auditFilePath": "{localAppData}/AURA/audit.jsonl",
+  "sessionTimeLimitMinutes": 30,
   "policies": [
     { "app": "*", "ceiling": "askAndAct" }
   ],
   "connectors": [
     { "implementation": "mock-outlook", "enabled": true },
     { "implementation": "mock-word", "enabled": true }
+  ],
+  "privacyZones": [
+    // { "name": "No body capture", "app": "outlook", "field": "email.bodyText" }
   ]
 }
 ```
 
-This is deliberately a single file for a single running Agent instance, not a multi-tenant
+`privacyZones` entries wholesale-clear a field (README §10) before PII detection even runs -
+`app` is the app id ("outlook"/"word"), `field` is the same dotted-path syntax rules use. This
+is deliberately a single file for a single running Agent instance, not a multi-tenant
 database - per the architecture review, multi-tenancy belongs in a future server/backend that
 this Agent would talk to, not inside the Desktop process itself.
 
@@ -223,8 +254,13 @@ Implemented, matching the build order in the brief:
 - **`IAuditSink`** (renamed from `IAuditLog`) with a `DeleteAllAsync` method, so "delete captured
   data" and swapping the storage backend both go through the interface, not a UI-layer file path.
 - **`AuraContext`'s `User`/`Session`/`Security`/`Environment`** sections exist as a stable shape
-  for future connectors/AI Gateway/identity work to populate - additive, nothing consumes them
-  yet.
+  for future connectors/AI Gateway/identity work to populate.
+- **Privacy Zones + PII detection + redaction**, run by `DetectionPipeline` before the Rule
+  Engine sees the context (README §10) - a regex-based detector (email/national-ID/credit-card/
+  phone) plus a redactor that safely merges overlapping matches, both behind interfaces so a
+  stronger detector can replace the regex one later without touching the pipeline.
+- **Session-scoped monitoring auto-stop** (README §10) - configurable per tenant via
+  `sessionTimeLimitMinutes`, enforced in `AssistantController`.
 
 Deliberately deferred (later roadmap items, §16, or explicitly lower priority in the brief):
 
@@ -238,8 +274,9 @@ Deliberately deferred (later roadmap items, §16, or explicitly lower priority i
 - **"Teach AURA" no-code Rule Builder UI** — point-at-an-element, label it, describe the rule in
   plain language, compile to JSON. The JSON rule format and loader exist; the authoring UI
   doesn't.
-- **Redaction/PII detection, Privacy Zones, session-scoped monitoring** — next phase after this
-  one, deliberately sequenced before any AI Gateway/screen-understanding work.
+- **Data Classification, Consent management, Secure Storage (encrypted audit log), Secret
+  Management, full Permission Model/RBAC** — the narrower parts of Phase 2 that were left out
+  (see "Architecture" above for why).
 - **AI Gateway (`IAiProvider`/Model Router), any LLM call** — `ConfidenceEngine` stays the
   deterministic heuristic it already was; no AI abstraction exists yet.
 - **Real plugin/DLL-loading connector model** — `ConnectorRegistry` today is populated in code

@@ -4,13 +4,14 @@ using Aura.Core.Confidence;
 using Aura.Core.Models;
 using Aura.Core.Policy;
 using Aura.Core.Rules;
+using Aura.Core.Security;
 
 namespace Aura.Core.Pipeline;
 
 /// <summary>
-/// Wires the full detection pipeline from README §6:
-/// Context (from a connector) → Rule Engine → Confidence Engine → Policy Engine → Suggestion,
-/// then Preview → Approve → Verify → Audit once the user acts (README §7).
+/// Wires the full detection pipeline from README §6/§10:
+/// Context (from a connector) → Privacy Guard → Rule Engine → Confidence Engine → Policy Engine
+/// → Suggestion, then Preview → Approve → Verify → Audit once the user acts (README §7).
 /// </summary>
 public sealed class DetectionPipeline
 {
@@ -19,26 +20,32 @@ public sealed class DetectionPipeline
     private readonly IPolicyEngine _policyEngine;
     private readonly IAuditSink _auditSink;
     private readonly Dictionary<string, IActionHandler> _handlers;
+    private readonly IPrivacyGuard? _privacyGuard;
 
     public DetectionPipeline(
         IRuleEngine ruleEngine,
         IConfidenceEngine confidenceEngine,
         IPolicyEngine policyEngine,
         IAuditSink auditSink,
-        IEnumerable<IActionHandler> handlers)
+        IEnumerable<IActionHandler> handlers,
+        IPrivacyGuard? privacyGuard = null)
     {
         _ruleEngine = ruleEngine;
         _confidenceEngine = confidenceEngine;
         _policyEngine = policyEngine;
         _auditSink = auditSink;
         _handlers = handlers.ToDictionary(h => h.App, StringComparer.OrdinalIgnoreCase);
+        _privacyGuard = privacyGuard;
     }
 
-    /// <summary>Runs Rule → Confidence → Policy over one captured context. Findings the policy
-    /// suppresses or merely observes are not returned - only ones worth surfacing to the user.</summary>
+    /// <summary>Runs Privacy Guard → Rule → Confidence → Policy over one captured context.
+    /// Findings the policy suppresses or merely observes are not returned - only ones worth
+    /// surfacing to the user. When no <see cref="IPrivacyGuard"/> was supplied, the context is
+    /// evaluated as-is (no redaction) - callers that care about README §10 must supply one.</summary>
     public IReadOnlyList<Suggestion> Process(AuraContext context)
     {
-        var findings = _ruleEngine.Evaluate(context);
+        var sanitized = _privacyGuard?.Apply(context) ?? context;
+        var findings = _ruleEngine.Evaluate(sanitized);
         var suggestions = new List<Suggestion>();
 
         foreach (var finding in findings)

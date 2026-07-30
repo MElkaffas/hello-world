@@ -5,6 +5,7 @@ using Aura.Core.Connectors;
 using Aura.Core.Models;
 using Aura.Core.Pipeline;
 using Aura.Core.Policy;
+using Aura.Core.Security;
 using Xunit;
 using RuleEngineImpl = Aura.Core.Rules.RuleEngine;
 
@@ -103,6 +104,38 @@ public class PipelineIntegrationTests : IDisposable
         var suggestions = pipeline.Process(context);
 
         Assert.Empty(suggestions);
+    }
+
+    [Fact]
+    public async Task Process_RunsPrivacyGuard_BeforeRuleEvaluation_WhenOneIsSupplied()
+    {
+        var ruleEngine = new RuleEngineImpl();
+        ruleEngine.LoadRules(new[] { MissingSubjectRule() });
+
+        var privacyGuard = new PrivacyGuard(
+            Array.Empty<PrivacyZone>(), new RegexSensitiveDataDetector(), new DefaultRedactor());
+
+        var pipeline = new DetectionPipeline(
+            ruleEngine,
+            new ConfidenceEngine(),
+            new PolicyEngine(),
+            new LocalFileAuditSink(_auditFile),
+            new[] { new MockActionHandler("outlook") },
+            privacyGuard);
+
+        var connector = MockConnector.OutlookComposeMissingSubjectAndAttachment();
+        var context = await connector.CaptureAsync();
+        Assert.Contains("jane.doe@example.com", context.Email!.BodyText);
+
+        var suggestions = pipeline.Process(context);
+
+        // The rule still fires - redaction doesn't change whether bodyText/subject are empty.
+        Assert.Single(suggestions);
+
+        var sanitizedContext = suggestions[0].Finding.Context;
+        Assert.True(sanitizedContext.SensitiveRedacted);
+        Assert.DoesNotContain("jane.doe@example.com", sanitizedContext.Email!.BodyText);
+        Assert.Contains("[REDACTED]", sanitizedContext.Email!.BodyText);
     }
 
     public void Dispose()

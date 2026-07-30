@@ -22,7 +22,9 @@ public sealed class MockConnector : IConnector
     public Task<AuraContext> CaptureAsync(CancellationToken cancellationToken = default) =>
         Task.FromResult(_factory());
 
-    /// <summary>Outlook compose window: body mentions an attachment but none is attached, subject empty.</summary>
+    /// <summary>Outlook compose window: body mentions an attachment but none is attached, subject
+    /// empty, and the body contains real-looking PII (an email address and a phone number) so
+    /// the Privacy Guard's redaction has something genuine to catch on every capture.</summary>
     public static MockConnector OutlookComposeMissingSubjectAndAttachment() => new("outlook", () => new AuraContext
     {
         App = "outlook",
@@ -34,7 +36,8 @@ public sealed class MockConnector : IConnector
             To = new[] { "client@example.com" },
             Cc = Array.Empty<string>(),
             Subject = string.Empty,
-            BodyText = "Please find the report attached for your review.",
+            BodyText = "Please find the report attached for your review. " +
+                       "Contact me directly at jane.doe@example.com or 01012345678 if you have questions.",
             MentionsAttachment = true,
             Attachments = Array.Empty<string>(),
         },
