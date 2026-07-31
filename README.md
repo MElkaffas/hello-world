@@ -120,14 +120,17 @@ dotnet test tests/AURA.Host.Tests/AURA.Host.Tests.csproj
 dotnet run --project src/AURA.Desktop/AURA.Desktop.csproj   # Windows only
 ```
 
-> **This code, including the `AURA.Host` project added in this pass, was written and reviewed
-> without a .NET toolchain available in the authoring environment** — outbound access to
-> NuGet, dot.net, and the package archive is blocked by the sandbox's egress policy (checked
-> and re-confirmed blocked more than once), so none of the above commands could actually be run
-> here. Every file was written carefully and reviewed line-by-line for correctness (including a
-> structural brace/paren balance pass), but this is still **the single highest-risk item in the
-> repo** — please run `dotnet build`/`dotnet test` on a real machine or CI before relying on any
-> of it, and treat that as blocking further work, not optional.
+> **Build status: verified green via CI** (`.github/workflows/build.yml`), not just hand-reviewed.
+> The authoring sandbox has no working .NET toolchain (NuGet/dot.net/apt are blocked by its
+> egress policy), so every commit up through "Add CI" was written without ever being compiled -
+> and the first real CI run immediately caught 6 genuine errors that hand-review had missed:
+> a `switch` pattern that didn't type-check against an OpenXML enum wrapper (`WordDocumentConnector.cs`),
+> and 5 `CS0104`/`CS0103` ambiguous-reference/missing-namespace errors caused by combining
+> `UseWPF` + `UseWindowsForms` in `AURA.Desktop.csproj` (see the "Architecture" section's commit
+> history for the exact fixes). Both are now fixed and both CI jobs - `ubuntu-latest` (Core/Host/
+> Connectors + both test projects) and `windows-latest` (the full solution including the WPF
+> Desktop app) - are green as of the latest commit. Re-run `dotnet build`/`dotnet test` yourself
+> any time; CI runs the same commands on every push.
 
 Once running, the Desktop app shows the tray icon and the robot avatar immediately. Use the
 **Control Panel** (tray icon → *Open Control Panel*, or double-click the tray icon) to pick a
