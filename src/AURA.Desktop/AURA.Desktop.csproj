@@ -17,7 +17,12 @@
        System.Windows.Input types of the same name (Application, Point, Size, MouseEventArgs,
        KeyEventArgs...) in every file, not just the one that actually needs WinForms (the tray
        icon). Removing the two implicit usings here and keeping them as ordinary file-scoped
-       `using`s in TrayIconService.cs (the only file that needs them) fixes it at the root. -->
+       `using`s in TrayIconService.cs (the only file that needs them) fixes it at the root.
+       Side effect confirmed via CI: for this WinExe+UseWPF+UseWindowsForms combination, System.IO
+       is bundled into the same implicit-usings set as Drawing/WinForms, so removing these two
+       also removes System.IO's implicit availability project-wide - every file using
+       Path/File/Directory needs its own explicit `using System.IO;` now (plain library projects
+       like AURA.Core are unaffected; they keep getting System.IO implicitly as normal). -->
   <ItemGroup>
     <Using Remove="System.Windows.Forms" />
     <Using Remove="System.Drawing" />
