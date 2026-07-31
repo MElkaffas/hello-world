@@ -12,6 +12,17 @@
     <StartupObject>Aura.Desktop.App</StartupObject>
   </PropertyGroup>
 
+  <!-- UseWPF + UseWindowsForms together make the SDK implicitly global-`using` both
+       System.Windows.Forms and System.Drawing project-wide, colliding with System.Windows /
+       System.Windows.Input types of the same name (Application, Point, Size, MouseEventArgs,
+       KeyEventArgs...) in every file, not just the one that actually needs WinForms (the tray
+       icon). Removing the two implicit usings here and keeping them as ordinary file-scoped
+       `using`s in TrayIconService.cs (the only file that needs them) fixes it at the root. -->
+  <ItemGroup>
+    <Using Remove="System.Windows.Forms" />
+    <Using Remove="System.Drawing" />
+  </ItemGroup>
+
   <ItemGroup>
     <ProjectReference Include="..\AURA.Core\AURA.Core.csproj" />
     <ProjectReference Include="..\AURA.Host\AURA.Host.csproj" />

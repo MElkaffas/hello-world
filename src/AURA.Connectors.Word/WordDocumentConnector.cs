@@ -78,12 +78,14 @@ public sealed class WordDocumentConnector : IConnector
         var bold = runProperties?.Bold is not null
             && (runProperties.Bold.Val is null || runProperties.Bold.Val.Value);
 
-        var alignment = paragraph.ParagraphProperties?.Justification?.Val?.Value switch
+        // Compared via ToString() rather than matching JustificationValues constants directly -
+        // EnumValue<T>'s wrapped value doesn't satisfy the compiler's constant-pattern check.
+        var alignment = paragraph.ParagraphProperties?.Justification?.Val?.Value.ToString() switch
         {
-            JustificationValues.Both => "Justified",
-            JustificationValues.Center => "Center",
-            JustificationValues.Right => "Right",
-            JustificationValues.Left => "Left",
+            "Both" => "Justified",
+            "Center" => "Center",
+            "Right" => "Right",
+            "Left" => "Left",
             _ => null,
         };
 
