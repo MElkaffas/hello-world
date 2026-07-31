@@ -1,0 +1,55 @@
+name: Build & Test
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  cross-platform:
+    name: Build & test Core/Host/Connectors (ubuntu-latest)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: "8.0.x"
+
+      - name: Build AURA.Core
+        run: dotnet build src/AURA.Core/AURA.Core.csproj --configuration Release
+
+      - name: Build AURA.Host
+        run: dotnet build src/AURA.Host/AURA.Host.csproj --configuration Release
+
+      - name: Build AURA.Connectors.Outlook
+        run: dotnet build src/AURA.Connectors.Outlook/AURA.Connectors.Outlook.csproj --configuration Release
+
+      - name: Build AURA.Connectors.Word
+        run: dotnet build src/AURA.Connectors.Word/AURA.Connectors.Word.csproj --configuration Release
+
+      - name: Test AURA.Core.Tests
+        run: dotnet test tests/AURA.Core.Tests/AURA.Core.Tests.csproj --configuration Release
+
+      - name: Test AURA.Host.Tests
+        run: dotnet test tests/AURA.Host.Tests/AURA.Host.Tests.csproj --configuration Release
+
+  windows-desktop:
+    name: Build full solution incl. WPF Desktop (windows-latest)
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: "8.0.x"
+
+      - name: Build full AURA.sln (Core, Host, Connectors, Desktop)
+        run: dotnet build AURA.sln --configuration Release
+
+      - name: Test AURA.Core.Tests
+        run: dotnet test tests/AURA.Core.Tests/AURA.Core.Tests.csproj --configuration Release
+
+      - name: Test AURA.Host.Tests
+        run: dotnet test tests/AURA.Host.Tests/AURA.Host.Tests.csproj --configuration Release
