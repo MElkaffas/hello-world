@@ -1,0 +1,24 @@
+[package]
+name = "kiln-core"
+description = "Kiln conversion engine: detection, capability catalog, job execution"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[lib]
+path = "src/lib.rs"
+
+[[bin]]
+name = "kiln-qa"
+path = "src/bin/kiln-qa.rs"
+
+[dependencies]
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+thiserror = "1"
+zip = { version = "2", default-features = false, features = ["deflate"] }
+cfb = "0.10"
+uuid = { version = "1", features = ["v4", "serde"] }
+chrono = { version = "0.4", default-features = false, features = ["clock", "serde"] }
+
+[dev-dependencies]

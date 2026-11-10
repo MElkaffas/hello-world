@@ -1,0 +1,66 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "Mostafa-converting app",
+  "mainBinaryName": "MostafaConverter",
+  "version": "1.0.0",
+  "identifier": "app.mostafa.converter",
+  "build": {
+    "beforeDevCommand": "npm run dev",
+    "devUrl": "http://localhost:1420",
+    "beforeBuildCommand": "npm run build",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "withGlobalTauri": false,
+    "windows": [
+      {
+        "label": "main",
+        "title": "Mostafa-converting app",
+        "width": 1180,
+        "height": 780,
+        "minWidth": 860,
+        "minHeight": 600,
+        "center": true,
+        "dragDropEnabled": true,
+        "visible": false
+      },
+      {
+        "label": "dropzone",
+        "title": "Mostafa Drop Zone",
+        "url": "index.html#dropzone",
+        "width": 300,
+        "height": 300,
+        "resizable": false,
+        "decorations": false,
+        "transparent": true,
+        "alwaysOnTop": true,
+        "skipTaskbar": true,
+        "visible": false,
+        "shadow": false,
+        "dragDropEnabled": true
+      }
+    ],
+    "security": {
+      "csp": "default-src 'self'; img-src 'self' data: asset: http://asset.localhost; style-src 'self' 'unsafe-inline'; font-src 'self' data:; connect-src ipc: http://ipc.localhost"
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": ["nsis"],
+    "publisher": "Mostafa",
+    "copyright": "© 2026 Mostafa. MIT License.",
+    "category": "Utility",
+    "shortDescription": "Convert and process files locally",
+    "longDescription": "Mostafa-converting app converts images, PDFs, audio, video, documents and archives on your PC. Drag, choose, convert. Nothing is uploaded.",
+    "icon": ["icons/32x32.png", "icons/128x128.png", "icons/128x128@2x.png", "icons/icon.ico"],
+    "resources": { "../resources/office.ps1": "resources/office.ps1", "../resources/selection.ps1": "resources/selection.ps1", "engines/": "engines/" },
+    "windows": {
+      "nsis": {
+        "installMode": "currentUser",
+        "displayLanguageSelector": false,
+        "installerHooks": "./installer-hooks.nsh"
+      },
+      "webviewInstallMode": { "type": "downloadBootstrapper", "silent": true }
+    }
+  }
+}

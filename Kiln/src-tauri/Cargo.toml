@@ -1,0 +1,27 @@
+[package]
+name = "kiln"
+description = "Kiln - local file converter and file tools for Windows"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[lib]
+name = "kiln_app"
+# Desktop only: no cdylib/staticlib (mobile targets) — MinGW's ld cannot export that many symbols.
+crate-type = ["rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+kiln-core = { path = "../crates/kiln-core" }
+tauri = { version = "2", features = ["tray-icon", "image-png"] }
+tauri-plugin-dialog = "2"
+tauri-plugin-opener = "2"
+tauri-plugin-global-shortcut = "2"
+tauri-plugin-autostart = "2"
+tauri-plugin-single-instance = "2"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+uuid = { version = "1", features = ["v4", "serde"] }
+winreg = "0.55"

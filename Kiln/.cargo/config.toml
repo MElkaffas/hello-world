@@ -1,0 +1,4 @@
+# Build output lives on D: because C: is nearly full on the development machine.
+# Remove or change this on other machines.
+[build]
+target-dir = "D:/kiln-build/target"

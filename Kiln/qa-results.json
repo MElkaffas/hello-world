@@ -1,0 +1,6142 @@
+[
+  {
+    "feature": "Image: JPEG",
+    "input": "PNG (sample.png)",
+    "output": "JPEG",
+    "expected": "valid JPEG",
+    "actual": "JPEG file, 33035 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.3
+  },
+  {
+    "feature": "Image: WebP",
+    "input": "PNG (sample.png)",
+    "output": "WebP",
+    "expected": "valid WebP",
+    "actual": "WebP file, 6486 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.3
+  },
+  {
+    "feature": "Image: AVIF",
+    "input": "PNG (sample.png)",
+    "output": "AVIF",
+    "expected": "valid AVIF",
+    "actual": "AVIF file, 3655 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.5
+  },
+  {
+    "feature": "Image: TIFF",
+    "input": "PNG (sample.png)",
+    "output": "TIFF",
+    "expected": "valid TIFF",
+    "actual": "TIFF file, 3072302 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.2
+  },
+  {
+    "feature": "Image: BMP",
+    "input": "PNG (sample.png)",
+    "output": "BMP",
+    "expected": "valid BMP",
+    "actual": "BMP file, 1152138 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.2
+  },
+  {
+    "feature": "Image: GIF",
+    "input": "PNG (sample.png)",
+    "output": "GIF",
+    "expected": "valid GIF",
+    "actual": "GIF file, 24854 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.3
+  },
+  {
+    "feature": "Image: ICO",
+    "input": "PNG (sample.png)",
+    "output": "ICO",
+    "expected": "valid ICO",
+    "actual": "ICO file, 370070 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.3
+  },
+  {
+    "feature": "Image: PDF",
+    "input": "PNG (sample.png)",
+    "output": "PDF",
+    "expected": "valid PDF",
+    "actual": "PDF file, 16691 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.2
+  },
+  {
+    "feature": "Image: Compress",
+    "input": "PNG (sample.png)",
+    "output": "PNG",
+    "expected": "valid PNG",
+    "actual": "PNG file, 30700 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.3
+  },
+  {
+    "feature": "Image: Resize",
+    "input": "PNG (sample.png)",
+    "output": "PNG",
+    "expected": "valid PNG",
+    "actual": "PNG file, 15254 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.3
+  },
+  {
+    "feature": "Image: Crop",
+    "input": "PNG (sample.png)",
+    "output": "PNG",
+    "expected": "valid PNG",
+    "actual": "PNG file, 742 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.2
+  },
+  {
+    "feature": "Image: Rotate / flip",
+    "input": "PNG (sample.png)",
+    "output": "PNG",
+    "expected": "valid PNG",
+    "actual": "PNG file, 33060 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.3
+  },
+  {
+    "feature": "Image: Remove metadata",
+    "input": "PNG (sample.png)",
+    "output": "PNG",
+    "expected": "valid PNG",
+    "actual": "PNG file, 30700 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.4
+  },
+  {
+    "feature": "Image: Combine into PDF",
+    "input": "PNG (sample.png)",
+    "output": "PDF",
+    "expected": "valid PDF",
+    "actual": "PDF file, 32691 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.2
+  },
+  {
+    "feature": "Image: OCR to text",
+    "input": "PNG (sample.png)",
+    "output": "Plain Text",
+    "expected": "valid Plain Text",
+    "actual": "Plain Text file, 15 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.6
+  },
+  {
+    "feature": "Image: OCR to searchable PDF",
+    "input": "PNG (sample.png)",
+    "output": "PDF",
+    "expected": "valid PDF",
+    "actual": "PDF file, 17984 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.6
+  },
+  {
+    "feature": "Image: Compress to ZIP",
+    "input": "PNG (sample.png)",
+    "output": "ZIP",
+    "expected": "valid ZIP",
+    "actual": "ZIP file, 51918 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.1
+  },
+  {
+    "feature": "Image: Compress to 7-Zip",
+    "input": "PNG (sample.png)",
+    "output": "7-Zip",
+    "expected": "valid 7-Zip",
+    "actual": "7-Zip file, 25874 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.1
+  },
+  {
+    "feature": "Image: Compress to TAR",
+    "input": "PNG (sample.png)",
+    "output": "TAR",
+    "expected": "valid TAR",
+    "actual": "TAR file, 65536 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.1
+  },
+  {
+    "feature": "Image: Compress to TAR.GZ",
+    "input": "PNG (sample.png)",
+    "output": "TAR.GZ",
+    "expected": "valid TAR.GZ",
+    "actual": "TAR.GZ file, 26210 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.2
+  },
+  {
+    "feature": "Image: JPEG",
+    "input": "HEIC (photo.heic)",
+    "output": "JPEG",
+    "expected": "valid JPEG",
+    "actual": "JPEG file, 548842 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.3
+  },
+  {
+    "feature": "Image: PNG",
+    "input": "HEIC (photo.heic)",
+    "output": "PNG",
+    "expected": "valid PNG",
+    "actual": "PNG file, 1941215 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.8
+  },
+  {
+    "feature": "Image: WebP",
+    "input": "HEIC (photo.heic)",
+    "output": "WebP",
+    "expected": "valid WebP",
+    "actual": "WebP file, 230052 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.4
+  },
+  {
+    "feature": "Image: AVIF",
+    "input": "HEIC (photo.heic)",
+    "output": "AVIF",
+    "expected": "valid AVIF",
+    "actual": "AVIF file, 126484 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 1.0
+  },
+  {
+    "feature": "Image: TIFF",
+    "input": "HEIC (photo.heic)",
+    "output": "TIFF",
+    "expected": "valid TIFF",
+    "actual": "TIFF file, 3279656 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.3
+  },
+  {
+    "feature": "Image: BMP",
+    "input": "HEIC (photo.heic)",
+    "output": "BMP",
+    "expected": "valid BMP",
+    "actual": "BMP file, 3279498 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.3
+  },
+  {
+    "feature": "Image: GIF",
+    "input": "HEIC (photo.heic)",
+    "output": "GIF",
+    "expected": "valid GIF",
+    "actual": "GIF file, 753950 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.7
+  },
+  {
+    "feature": "Image: ICO",
+    "input": "HEIC (photo.heic)",
+    "output": "ICO",
+    "expected": "valid ICO",
+    "actual": "ICO file, 370070 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.3
+  },
+  {
+    "feature": "Image: PDF",
+    "input": "HEIC (photo.heic)",
+    "output": "PDF",
+    "expected": "valid PDF",
+    "actual": "PDF file, 3302827 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.5
+  },
+  {
+    "feature": "Image: Compress (saves as JPEG)",
+    "input": "HEIC (photo.heic)",
+    "output": "HEIC",
+    "expected": "valid HEIC",
+    "actual": "JPEG file, 252884 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.3
+  },
+  {
+    "feature": "Image: Resize",
+    "input": "HEIC (photo.heic)",
+    "output": "HEIC",
+    "expected": "valid HEIC",
+    "actual": "JPEG file, 19962 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.3
+  },
+  {
+    "feature": "Image: Crop",
+    "input": "HEIC (photo.heic)",
+    "output": "HEIC",
+    "expected": "valid HEIC",
+    "actual": "JPEG file, 7520 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.3
+  },
+  {
+    "feature": "Image: Rotate / flip",
+    "input": "HEIC (photo.heic)",
+    "output": "HEIC",
+    "expected": "valid HEIC",
+    "actual": "JPEG file, 559757 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.4
+  },
+  {
+    "feature": "Image: Remove metadata",
+    "input": "HEIC (photo.heic)",
+    "output": "HEIC",
+    "expected": "valid HEIC",
+    "actual": "JPEG file, 679374 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.4
+  },
+  {
+    "feature": "Image: Combine into PDF",
+    "input": "HEIC (photo.heic)",
+    "output": "PDF",
+    "expected": "valid PDF",
+    "actual": "PDF file, 6604961 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.7
+  },
+  {
+    "feature": "Image: OCR to text",
+    "input": "HEIC (photo.heic)",
+    "output": "Plain Text",
+    "expected": "recognized text, or a 'no text' message for images without text",
+    "actual": "Output validation failed: No text was recognized in this image",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.9
+  },
+  {
+    "feature": "Image: OCR to searchable PDF",
+    "input": "HEIC (photo.heic)",
+    "output": "PDF",
+    "expected": "valid PDF",
+    "actual": "PDF file, 1953476 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.9
+  },
+  {
+    "feature": "Image: JPEG",
+    "input": "PNG (transparent.png)",
+    "output": "JPEG",
+    "expected": "valid JPEG",
+    "actual": "JPEG file, 7015 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.2
+  },
+  {
+    "feature": "Image: WebP",
+    "input": "PNG (transparent.png)",
+    "output": "WebP",
+    "expected": "valid WebP",
+    "actual": "WebP file, 2694 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.3
+  },
+  {
+    "feature": "Image: AVIF",
+    "input": "PNG (transparent.png)",
+    "output": "AVIF",
+    "expected": "valid AVIF",
+    "actual": "AVIF file, 2057 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.3
+  },
+  {
+    "feature": "Image: TIFF",
+    "input": "PNG (transparent.png)",
+    "output": "TIFF",
+    "expected": "valid TIFF",
+    "actual": "TIFF file, 360278 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.2
+  },
+  {
+    "feature": "Image: BMP",
+    "input": "PNG (transparent.png)",
+    "output": "BMP",
+    "expected": "valid BMP",
+    "actual": "BMP file, 270138 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.2
+  },
+  {
+    "feature": "Image: GIF",
+    "input": "PNG (transparent.png)",
+    "output": "GIF",
+    "expected": "valid GIF",
+    "actual": "GIF file, 2049 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.2
+  },
+  {
+    "feature": "Image: ICO",
+    "input": "PNG (transparent.png)",
+    "output": "ICO",
+    "expected": "valid ICO",
+    "actual": "ICO file, 370070 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.3
+  },
+  {
+    "feature": "Image: PDF",
+    "input": "PNG (transparent.png)",
+    "output": "PDF",
+    "expected": "valid PDF",
+    "actual": "PDF file, 4443 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.2
+  },
+  {
+    "feature": "Image: Compress",
+    "input": "PNG (transparent.png)",
+    "output": "PNG",
+    "expected": "valid PNG",
+    "actual": "PNG file, 1817 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.2
+  },
+  {
+    "feature": "Image: Resize",
+    "input": "PNG (transparent.png)",
+    "output": "PNG",
+    "expected": "valid PNG",
+    "actual": "PNG file, 2659 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.2
+  },
+  {
+    "feature": "Image: Crop",
+    "input": "PNG (transparent.png)",
+    "output": "PNG",
+    "expected": "valid PNG",
+    "actual": "PNG file, 634 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.2
+  },
+  {
+    "feature": "Image: Rotate / flip",
+    "input": "PNG (transparent.png)",
+    "output": "PNG",
+    "expected": "valid PNG",
+    "actual": "PNG file, 2030 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.2
+  },
+  {
+    "feature": "Image: Remove metadata",
+    "input": "PNG (transparent.png)",
+    "output": "PNG",
+    "expected": "valid PNG",
+    "actual": "PNG file, 1817 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.2
+  },
+  {
+    "feature": "Image: Combine into PDF",
+    "input": "PNG (transparent.png)",
+    "output": "PDF",
+    "expected": "valid PDF",
+    "actual": "PDF file, 8196 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.2
+  },
+  {
+    "feature": "Image: OCR to text",
+    "input": "PNG (transparent.png)",
+    "output": "Plain Text",
+    "expected": "recognized text, or a 'no text' message for images without text",
+    "actual": "Output validation failed: No text was recognized in this image",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.4
+  },
+  {
+    "feature": "Image: OCR to searchable PDF",
+    "input": "PNG (transparent.png)",
+    "output": "PDF",
+    "expected": "valid PDF",
+    "actual": "PDF file, 5319 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.5
+  },
+  {
+    "feature": "Image: Compress to ZIP",
+    "input": "PNG (transparent.png)",
+    "output": "ZIP",
+    "expected": "valid ZIP",
+    "actual": "ZIP file, 4532 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.1
+  },
+  {
+    "feature": "Image: Compress to 7-Zip",
+    "input": "PNG (transparent.png)",
+    "output": "7-Zip",
+    "expected": "valid 7-Zip",
+    "actual": "7-Zip file, 2266 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.1
+  },
+  {
+    "feature": "Image: Compress to TAR",
+    "input": "PNG (transparent.png)",
+    "output": "TAR",
+    "expected": "valid TAR",
+    "actual": "TAR file, 7168 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.1
+  },
+  {
+    "feature": "Image: Compress to TAR.GZ",
+    "input": "PNG (transparent.png)",
+    "output": "TAR.GZ",
+    "expected": "valid TAR.GZ",
+    "actual": "TAR.GZ file, 2265 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.1
+  },
+  {
+    "feature": "Image: PNG",
+    "input": "JPEG (sample.jpg)",
+    "output": "PNG",
+    "expected": "valid PNG",
+    "actual": "PNG file, 40189 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.3
+  },
+  {
+    "feature": "Image: WebP",
+    "input": "JPEG (sample.jpg)",
+    "output": "WebP",
+    "expected": "valid WebP",
+    "actual": "WebP file, 11770 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.2
+  },
+  {
+    "feature": "Image: AVIF",
+    "input": "JPEG (sample.jpg)",
+    "output": "AVIF",
+    "expected": "valid AVIF",
+    "actual": "AVIF file, 3546 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.4
+  },
+  {
+    "feature": "Image: TIFF",
+    "input": "JPEG (sample.jpg)",
+    "output": "TIFF",
+    "expected": "valid TIFF",
+    "actual": "TIFF file, 1152280 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.2
+  },
+  {
+    "feature": "Image: BMP",
+    "input": "JPEG (sample.jpg)",
+    "output": "BMP",
+    "expected": "valid BMP",
+    "actual": "BMP file, 1152138 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.2
+  },
+  {
+    "feature": "Image: GIF",
+    "input": "JPEG (sample.jpg)",
+    "output": "GIF",
+    "expected": "valid GIF",
+    "actual": "GIF file, 29011 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.3
+  },
+  {
+    "feature": "Image: ICO",
+    "input": "JPEG (sample.jpg)",
+    "output": "ICO",
+    "expected": "valid ICO",
+    "actual": "ICO file, 370070 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.2
+  },
+  {
+    "feature": "Image: PDF",
+    "input": "JPEG (sample.jpg)",
+    "output": "PDF",
+    "expected": "valid PDF",
+    "actual": "PDF file, 34711 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.2
+  },
+  {
+    "feature": "Image: Compress",
+    "input": "JPEG (sample.jpg)",
+    "output": "JPEG",
+    "expected": "valid JPEG",
+    "actual": "JPEG file, 19103 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.2
+  },
+  {
+    "feature": "Image: Resize",
+    "input": "JPEG (sample.jpg)",
+    "output": "JPEG",
+    "expected": "valid JPEG",
+    "actual": "JPEG file, 5671 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.2
+  },
+  {
+    "feature": "Image: Crop",
+    "input": "JPEG (sample.jpg)",
+    "output": "JPEG",
+    "expected": "valid JPEG",
+    "actual": "JPEG file, 725 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.2
+  },
+  {
+    "feature": "Image: Rotate / flip",
+    "input": "JPEG (sample.jpg)",
+    "output": "JPEG",
+    "expected": "valid JPEG",
+    "actual": "JPEG file, 38670 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.2
+  },
+  {
+    "feature": "Image: Remove metadata",
+    "input": "JPEG (sample.jpg)",
+    "output": "JPEG",
+    "expected": "valid JPEG",
+    "actual": "JPEG file, 40880 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.2
+  },
+  {
+    "feature": "Image: Combine into PDF",
+    "input": "JPEG (sample.jpg)",
+    "output": "PDF",
+    "expected": "valid PDF",
+    "actual": "PDF file, 68731 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.2
+  },
+  {
+    "feature": "Image: OCR to text",
+    "input": "JPEG (sample.jpg)",
+    "output": "Plain Text",
+    "expected": "valid Plain Text",
+    "actual": "Plain Text file, 15 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.4
+  },
+  {
+    "feature": "Image: OCR to searchable PDF",
+    "input": "JPEG (sample.jpg)",
+    "output": "PDF",
+    "expected": "valid PDF",
+    "actual": "PDF file, 43229 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.6
+  },
+  {
+    "feature": "Image: JPEG",
+    "input": "WebP (sample.webp)",
+    "output": "JPEG",
+    "expected": "valid JPEG",
+    "actual": "JPEG file, 36653 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.2
+  },
+  {
+    "feature": "Image: PNG",
+    "input": "WebP (sample.webp)",
+    "output": "PNG",
+    "expected": "valid PNG",
+    "actual": "PNG file, 58483 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.4
+  },
+  {
+    "feature": "Image: AVIF",
+    "input": "WebP (sample.webp)",
+    "output": "AVIF",
+    "expected": "valid AVIF",
+    "actual": "AVIF file, 4528 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.3
+  },
+  {
+    "feature": "Image: TIFF",
+    "input": "WebP (sample.webp)",
+    "output": "TIFF",
+    "expected": "valid TIFF",
+    "actual": "TIFF file, 1152280 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.2
+  },
+  {
+    "feature": "Image: BMP",
+    "input": "WebP (sample.webp)",
+    "output": "BMP",
+    "expected": "valid BMP",
+    "actual": "BMP file, 1152138 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.2
+  },
+  {
+    "feature": "Image: GIF",
+    "input": "WebP (sample.webp)",
+    "output": "GIF",
+    "expected": "valid GIF",
+    "actual": "GIF file, 46373 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.3
+  },
+  {
+    "feature": "Image: ICO",
+    "input": "WebP (sample.webp)",
+    "output": "ICO",
+    "expected": "valid ICO",
+    "actual": "ICO file, 370070 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.3
+  },
+  {
+    "feature": "Image: PDF",
+    "input": "WebP (sample.webp)",
+    "output": "PDF",
+    "expected": "valid PDF",
+    "actual": "PDF file, 930229 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.2
+  },
+  {
+    "feature": "Image: Compress",
+    "input": "WebP (sample.webp)",
+    "output": "WebP",
+    "expected": "valid WebP",
+    "actual": "WebP file, 6394 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.2
+  },
+  {
+    "feature": "Image: Resize",
+    "input": "WebP (sample.webp)",
+    "output": "WebP",
+    "expected": "valid WebP",
+    "actual": "WebP file, 1588 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.2
+  },
+  {
+    "feature": "Image: Crop",
+    "input": "WebP (sample.webp)",
+    "output": "WebP",
+    "expected": "valid WebP",
+    "actual": "WebP file, 152 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.2
+  },
+  {
+    "feature": "Image: Rotate / flip",
+    "input": "WebP (sample.webp)",
+    "output": "WebP",
+    "expected": "valid WebP",
+    "actual": "WebP file, 6596 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.2
+  },
+  {
+    "feature": "Image: Remove metadata",
+    "input": "WebP (sample.webp)",
+    "output": "WebP",
+    "expected": "valid WebP",
+    "actual": "WebP file, 14018 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.2
+  },
+  {
+    "feature": "Image: Combine into PDF",
+    "input": "WebP (sample.webp)",
+    "output": "PDF",
+    "expected": "valid PDF",
+    "actual": "PDF file, 1859767 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.3
+  },
+  {
+    "feature": "Image: OCR to text",
+    "input": "WebP (sample.webp)",
+    "output": "Plain Text",
+    "expected": "valid Plain Text",
+    "actual": "Plain Text file, 15 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.5
+  },
+  {
+    "feature": "Image: OCR to searchable PDF",
+    "input": "WebP (sample.webp)",
+    "output": "PDF",
+    "expected": "valid PDF",
+    "actual": "PDF file, 63507 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.6
+  },
+  {
+    "feature": "Image: JPEG",
+    "input": "AVIF (sample.avif)",
+    "output": "JPEG",
+    "expected": "valid JPEG",
+    "actual": "JPEG file, 32901 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.3
+  },
+  {
+    "feature": "Image: PNG",
+    "input": "AVIF (sample.avif)",
+    "output": "PNG",
+    "expected": "valid PNG",
+    "actual": "PNG file, 130736 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.6
+  },
+  {
+    "feature": "Image: WebP",
+    "input": "AVIF (sample.avif)",
+    "output": "WebP",
+    "expected": "valid WebP",
+    "actual": "WebP file, 6624 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.3
+  },
+  {
+    "feature": "Image: TIFF",
+    "input": "AVIF (sample.avif)",
+    "output": "TIFF",
+    "expected": "valid TIFF",
+    "actual": "TIFF file, 2304302 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.3
+  },
+  {
+    "feature": "Image: BMP",
+    "input": "AVIF (sample.avif)",
+    "output": "BMP",
+    "expected": "valid BMP",
+    "actual": "BMP file, 1152138 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.2
+  },
+  {
+    "feature": "Image: GIF",
+    "input": "AVIF (sample.avif)",
+    "output": "GIF",
+    "expected": "valid GIF",
+    "actual": "GIF file, 35503 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.4
+  },
+  {
+    "feature": "Image: ICO",
+    "input": "AVIF (sample.avif)",
+    "output": "ICO",
+    "expected": "valid ICO",
+    "actual": "ICO file, 370070 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.3
+  },
+  {
+    "feature": "Image: PDF",
+    "input": "AVIF (sample.avif)",
+    "output": "PDF",
+    "expected": "valid PDF",
+    "actual": "PDF file, 995033 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.3
+  },
+  {
+    "feature": "Image: Compress",
+    "input": "AVIF (sample.avif)",
+    "output": "AVIF",
+    "expected": "valid AVIF, or skipped when not smaller",
+    "actual": "skipped: Already optimized: the result (4.8 KB) was not smaller than the original (3.6 KB)",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.4
+  },
+  {
+    "feature": "Image: Resize",
+    "input": "AVIF (sample.avif)",
+    "output": "AVIF",
+    "expected": "valid AVIF",
+    "actual": "AVIF file, 1309 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.3
+  },
+  {
+    "feature": "Image: Crop",
+    "input": "AVIF (sample.avif)",
+    "output": "AVIF",
+    "expected": "valid AVIF",
+    "actual": "AVIF file, 534 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.3
+  },
+  {
+    "feature": "Image: Rotate / flip",
+    "input": "AVIF (sample.avif)",
+    "output": "AVIF",
+    "expected": "valid AVIF",
+    "actual": "AVIF file, 3831 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.5
+  },
+  {
+    "feature": "Image: Remove metadata",
+    "input": "AVIF (sample.avif)",
+    "output": "AVIF",
+    "expected": "valid AVIF",
+    "actual": "AVIF file, 9894 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.6
+  },
+  {
+    "feature": "Image: Combine into PDF",
+    "input": "AVIF (sample.avif)",
+    "output": "PDF",
+    "expected": "valid PDF",
+    "actual": "PDF file, 1989375 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.3
+  },
+  {
+    "feature": "Image: OCR to text",
+    "input": "AVIF (sample.avif)",
+    "output": "Plain Text",
+    "expected": "valid Plain Text",
+    "actual": "Plain Text file, 15 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.5
+  },
+  {
+    "feature": "Image: OCR to searchable PDF",
+    "input": "AVIF (sample.avif)",
+    "output": "PDF",
+    "expected": "valid PDF",
+    "actual": "PDF file, 49782 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.6
+  },
+  {
+    "feature": "Image: JPEG",
+    "input": "TIFF (sample.tiff)",
+    "output": "JPEG",
+    "expected": "valid JPEG",
+    "actual": "JPEG file, 33035 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.2
+  },
+  {
+    "feature": "Image: PNG",
+    "input": "TIFF (sample.tiff)",
+    "output": "PNG",
+    "expected": "valid PNG",
+    "actual": "PNG file, 31022 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.3
+  },
+  {
+    "feature": "Image: WebP",
+    "input": "TIFF (sample.tiff)",
+    "output": "WebP",
+    "expected": "valid WebP",
+    "actual": "WebP file, 6486 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.3
+  },
+  {
+    "feature": "Image: AVIF",
+    "input": "TIFF (sample.tiff)",
+    "output": "AVIF",
+    "expected": "valid AVIF",
+    "actual": "AVIF file, 3655 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.5
+  },
+  {
+    "feature": "Image: BMP",
+    "input": "TIFF (sample.tiff)",
+    "output": "BMP",
+    "expected": "valid BMP",
+    "actual": "BMP file, 1152138 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.3
+  },
+  {
+    "feature": "Image: GIF",
+    "input": "TIFF (sample.tiff)",
+    "output": "GIF",
+    "expected": "valid GIF",
+    "actual": "GIF file, 24854 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.3
+  },
+  {
+    "feature": "Image: ICO",
+    "input": "TIFF (sample.tiff)",
+    "output": "ICO",
+    "expected": "valid ICO",
+    "actual": "ICO file, 370070 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.3
+  },
+  {
+    "feature": "Image: PDF",
+    "input": "TIFF (sample.tiff)",
+    "output": "PDF",
+    "expected": "valid PDF",
+    "actual": "PDF file, 1449337 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.3
+  },
+  {
+    "feature": "Image: Compress",
+    "input": "TIFF (sample.tiff)",
+    "output": "TIFF",
+    "expected": "valid TIFF, or skipped when not smaller",
+    "actual": "skipped: Already optimized: the result (2.9 MB) was not smaller than the original (2.9 MB)",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.1
+  },
+  {
+    "feature": "Image: Resize",
+    "input": "TIFF (sample.tiff)",
+    "output": "TIFF",
+    "expected": "valid TIFF",
+    "actual": "TIFF file, 192278 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.2
+  },
+  {
+    "feature": "Image: Crop",
+    "input": "TIFF (sample.tiff)",
+    "output": "TIFF",
+    "expected": "valid TIFF",
+    "actual": "TIFF file, 64278 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.3
+  },
+  {
+    "feature": "Image: Rotate / flip",
+    "input": "TIFF (sample.tiff)",
+    "output": "TIFF",
+    "expected": "valid TIFF",
+    "actual": "TIFF file, 3072302 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.3
+  },
+  {
+    "feature": "Image: Remove metadata",
+    "input": "TIFF (sample.tiff)",
+    "output": "TIFF",
+    "expected": "valid TIFF",
+    "actual": "TIFF file, 3072302 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.4
+  },
+  {
+    "feature": "Image: Combine into PDF",
+    "input": "TIFF (sample.tiff)",
+    "output": "PDF",
+    "expected": "valid PDF",
+    "actual": "PDF file, 2897981 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.5
+  },
+  {
+    "feature": "Image: OCR to text",
+    "input": "TIFF (sample.tiff)",
+    "output": "Plain Text",
+    "expected": "valid Plain Text",
+    "actual": "Plain Text file, 15 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.5
+  },
+  {
+    "feature": "Image: OCR to searchable PDF",
+    "input": "TIFF (sample.tiff)",
+    "output": "PDF",
+    "expected": "valid PDF",
+    "actual": "PDF file, 17984 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.6
+  },
+  {
+    "feature": "Image: JPEG",
+    "input": "BMP (sample.bmp)",
+    "output": "JPEG",
+    "expected": "valid JPEG",
+    "actual": "JPEG file, 33035 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.2
+  },
+  {
+    "feature": "Image: PNG",
+    "input": "BMP (sample.bmp)",
+    "output": "PNG",
+    "expected": "valid PNG",
+    "actual": "PNG file, 19460 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.3
+  },
+  {
+    "feature": "Image: WebP",
+    "input": "BMP (sample.bmp)",
+    "output": "WebP",
+    "expected": "valid WebP",
+    "actual": "WebP file, 6486 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.2
+  },
+  {
+    "feature": "Image: AVIF",
+    "input": "BMP (sample.bmp)",
+    "output": "AVIF",
+    "expected": "valid AVIF",
+    "actual": "AVIF file, 3832 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.4
+  },
+  {
+    "feature": "Image: TIFF",
+    "input": "BMP (sample.bmp)",
+    "output": "TIFF",
+    "expected": "valid TIFF",
+    "actual": "TIFF file, 1536294 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.2
+  },
+  {
+    "feature": "Image: GIF",
+    "input": "BMP (sample.bmp)",
+    "output": "GIF",
+    "expected": "valid GIF",
+    "actual": "GIF file, 24165 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.3
+  },
+  {
+    "feature": "Image: ICO",
+    "input": "BMP (sample.bmp)",
+    "output": "ICO",
+    "expected": "valid ICO",
+    "actual": "ICO file, 370070 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.3
+  },
+  {
+    "feature": "Image: PDF",
+    "input": "BMP (sample.bmp)",
+    "output": "PDF",
+    "expected": "valid PDF",
+    "actual": "PDF file, 867482 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.2
+  },
+  {
+    "feature": "Image: Resize",
+    "input": "BMP (sample.bmp)",
+    "output": "BMP",
+    "expected": "valid BMP",
+    "actual": "BMP file, 72138 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.2
+  },
+  {
+    "feature": "Image: Crop",
+    "input": "BMP (sample.bmp)",
+    "output": "BMP",
+    "expected": "valid BMP",
+    "actual": "BMP file, 24138 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.2
+  },
+  {
+    "feature": "Image: Rotate / flip",
+    "input": "BMP (sample.bmp)",
+    "output": "BMP",
+    "expected": "valid BMP",
+    "actual": "BMP file, 1152138 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.3
+  },
+  {
+    "feature": "Image: Remove metadata",
+    "input": "BMP (sample.bmp)",
+    "output": "BMP",
+    "expected": "valid BMP",
+    "actual": "BMP file, 1152138 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.3
+  },
+  {
+    "feature": "Image: Combine into PDF",
+    "input": "BMP (sample.bmp)",
+    "output": "PDF",
+    "expected": "valid PDF",
+    "actual": "PDF file, 1734273 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.4
+  },
+  {
+    "feature": "Image: OCR to text",
+    "input": "BMP (sample.bmp)",
+    "output": "Plain Text",
+    "expected": "valid Plain Text",
+    "actual": "Plain Text file, 15 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.5
+  },
+  {
+    "feature": "Image: OCR to searchable PDF",
+    "input": "BMP (sample.bmp)",
+    "output": "PDF",
+    "expected": "valid PDF",
+    "actual": "PDF file, 20924 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.6
+  },
+  {
+    "feature": "Image: JPEG",
+    "input": "ICO (sample.ico)",
+    "output": "JPEG",
+    "expected": "valid JPEG",
+    "actual": "JPEG file, 6866 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.3
+  },
+  {
+    "feature": "Image: PNG",
+    "input": "ICO (sample.ico)",
+    "output": "PNG",
+    "expected": "valid PNG",
+    "actual": "PNG file, 7985 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.3
+  },
+  {
+    "feature": "Image: WebP",
+    "input": "ICO (sample.ico)",
+    "output": "WebP",
+    "expected": "valid WebP",
+    "actual": "WebP file, 1830 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.3
+  },
+  {
+    "feature": "Image: AVIF",
+    "input": "ICO (sample.ico)",
+    "output": "AVIF",
+    "expected": "valid AVIF",
+    "actual": "AVIF file, 1732 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.4
+  },
+  {
+    "feature": "Image: TIFF",
+    "input": "ICO (sample.ico)",
+    "output": "TIFF",
+    "expected": "valid TIFF",
+    "actual": "TIFF file, 157974 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.4
+  },
+  {
+    "feature": "Image: BMP",
+    "input": "ICO (sample.ico)",
+    "output": "BMP",
+    "expected": "valid BMP",
+    "actual": "BMP file, 118410 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.3
+  },
+  {
+    "feature": "Image: GIF",
+    "input": "ICO (sample.ico)",
+    "output": "GIF",
+    "expected": "valid GIF",
+    "actual": "GIF file, 6757 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.3
+  },
+  {
+    "feature": "Image: PDF",
+    "input": "ICO (sample.ico)",
+    "output": "PDF",
+    "expected": "valid PDF",
+    "actual": "PDF file, 93992 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.3
+  },
+  {
+    "feature": "Image: Resize",
+    "input": "ICO (sample.ico)",
+    "output": "ICO",
+    "expected": "valid ICO",
+    "actual": "ICO file, 370070 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.3
+  },
+  {
+    "feature": "Image: Crop",
+    "input": "ICO (sample.ico)",
+    "output": "ICO",
+    "expected": "valid ICO",
+    "actual": "ICO file, 370070 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.3
+  },
+  {
+    "feature": "Image: Rotate / flip",
+    "input": "ICO (sample.ico)",
+    "output": "ICO",
+    "expected": "valid ICO",
+    "actual": "ICO file, 370070 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.4
+  },
+  {
+    "feature": "Image: Remove metadata",
+    "input": "ICO (sample.ico)",
+    "output": "ICO",
+    "expected": "valid ICO",
+    "actual": "ICO file, 370070 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.3
+  },
+  {
+    "feature": "Image: Combine into PDF",
+    "input": "ICO (sample.ico)",
+    "output": "PDF",
+    "expected": "valid PDF",
+    "actual": "PDF file, 187294 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.2
+  },
+  {
+    "feature": "Image: OCR to text",
+    "input": "ICO (sample.ico)",
+    "output": "Plain Text",
+    "expected": "valid Plain Text",
+    "actual": "Plain Text file, 15 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.4
+  },
+  {
+    "feature": "Image: OCR to searchable PDF",
+    "input": "ICO (sample.ico)",
+    "output": "PDF",
+    "expected": "valid PDF",
+    "actual": "PDF file, 10490 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.5
+  },
+  {
+    "feature": "Image: JPEG",
+    "input": "HEIF (photo.heif)",
+    "output": "JPEG",
+    "expected": "valid JPEG",
+    "actual": "JPEG file, 548842 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.3
+  },
+  {
+    "feature": "Image: PNG",
+    "input": "HEIF (photo.heif)",
+    "output": "PNG",
+    "expected": "valid PNG",
+    "actual": "PNG file, 1941215 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.8
+  },
+  {
+    "feature": "Image: WebP",
+    "input": "HEIF (photo.heif)",
+    "output": "WebP",
+    "expected": "valid WebP",
+    "actual": "WebP file, 230052 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.4
+  },
+  {
+    "feature": "Image: AVIF",
+    "input": "HEIF (photo.heif)",
+    "output": "AVIF",
+    "expected": "valid AVIF",
+    "actual": "AVIF file, 126484 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 1.0
+  },
+  {
+    "feature": "Image: TIFF",
+    "input": "HEIF (photo.heif)",
+    "output": "TIFF",
+    "expected": "valid TIFF",
+    "actual": "TIFF file, 3279656 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.3
+  },
+  {
+    "feature": "Image: BMP",
+    "input": "HEIF (photo.heif)",
+    "output": "BMP",
+    "expected": "valid BMP",
+    "actual": "BMP file, 3279498 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.3
+  },
+  {
+    "feature": "Image: GIF",
+    "input": "HEIF (photo.heif)",
+    "output": "GIF",
+    "expected": "valid GIF",
+    "actual": "GIF file, 753950 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.7
+  },
+  {
+    "feature": "Image: ICO",
+    "input": "HEIF (photo.heif)",
+    "output": "ICO",
+    "expected": "valid ICO",
+    "actual": "ICO file, 370070 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.3
+  },
+  {
+    "feature": "Image: PDF",
+    "input": "HEIF (photo.heif)",
+    "output": "PDF",
+    "expected": "valid PDF",
+    "actual": "PDF file, 3302827 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.4
+  },
+  {
+    "feature": "Image: Compress (saves as JPEG)",
+    "input": "HEIF (photo.heif)",
+    "output": "HEIF",
+    "expected": "valid HEIF",
+    "actual": "JPEG file, 252884 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.3
+  },
+  {
+    "feature": "Image: Resize",
+    "input": "HEIF (photo.heif)",
+    "output": "HEIF",
+    "expected": "valid HEIF",
+    "actual": "JPEG file, 19962 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.3
+  },
+  {
+    "feature": "Image: Crop",
+    "input": "HEIF (photo.heif)",
+    "output": "HEIF",
+    "expected": "valid HEIF",
+    "actual": "JPEG file, 7520 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.3
+  },
+  {
+    "feature": "Image: Rotate / flip",
+    "input": "HEIF (photo.heif)",
+    "output": "HEIF",
+    "expected": "valid HEIF",
+    "actual": "JPEG file, 559757 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.4
+  },
+  {
+    "feature": "Image: Remove metadata",
+    "input": "HEIF (photo.heif)",
+    "output": "HEIF",
+    "expected": "valid HEIF",
+    "actual": "JPEG file, 679374 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.3
+  },
+  {
+    "feature": "Image: Combine into PDF",
+    "input": "HEIF (photo.heif)",
+    "output": "PDF",
+    "expected": "valid PDF",
+    "actual": "PDF file, 6604961 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.8
+  },
+  {
+    "feature": "Image: OCR to text",
+    "input": "HEIF (photo.heif)",
+    "output": "Plain Text",
+    "expected": "recognized text, or a 'no text' message for images without text",
+    "actual": "Output validation failed: No text was recognized in this image",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.8
+  },
+  {
+    "feature": "Image: OCR to searchable PDF",
+    "input": "HEIF (photo.heif)",
+    "output": "PDF",
+    "expected": "valid PDF",
+    "actual": "PDF file, 1953476 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 1.0
+  },
+  {
+    "feature": "Image: JPEG",
+    "input": "GIF (animated.gif)",
+    "output": "JPEG",
+    "expected": "valid JPEG",
+    "actual": "JPEG file, 512 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.2
+  },
+  {
+    "feature": "Image: PNG",
+    "input": "GIF (animated.gif)",
+    "output": "PNG",
+    "expected": "valid PNG",
+    "actual": "PNG file, 336 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.2
+  },
+  {
+    "feature": "Image: WebP",
+    "input": "GIF (animated.gif)",
+    "output": "WebP",
+    "expected": "valid WebP",
+    "actual": "WebP file, 560 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.2
+  },
+  {
+    "feature": "Image: AVIF",
+    "input": "GIF (animated.gif)",
+    "output": "AVIF",
+    "expected": "valid AVIF",
+    "actual": "AVIF file, 301 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.2
+  },
+  {
+    "feature": "Image: TIFF",
+    "input": "GIF (animated.gif)",
+    "output": "TIFF",
+    "expected": "valid TIFF",
+    "actual": "TIFF file, 2682 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.2
+  },
+  {
+    "feature": "Image: BMP",
+    "input": "GIF (animated.gif)",
+    "output": "BMP",
+    "expected": "valid BMP",
+    "actual": "BMP file, 2546 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.2
+  },
+  {
+    "feature": "Image: ICO",
+    "input": "GIF (animated.gif)",
+    "output": "ICO",
+    "expected": "valid ICO",
+    "actual": "ICO file, 370070 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.2
+  },
+  {
+    "feature": "Image: PDF",
+    "input": "GIF (animated.gif)",
+    "output": "PDF",
+    "expected": "valid PDF",
+    "actual": "PDF file, 2082 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.2
+  },
+  {
+    "feature": "Image: Compress",
+    "input": "GIF (animated.gif)",
+    "output": "GIF",
+    "expected": "valid GIF",
+    "actual": "GIF file, 809 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.2
+  },
+  {
+    "feature": "Image: Resize",
+    "input": "GIF (animated.gif)",
+    "output": "GIF",
+    "expected": "valid GIF",
+    "actual": "GIF file, 1005 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.2
+  },
+  {
+    "feature": "Image: Crop",
+    "input": "GIF (animated.gif)",
+    "output": "GIF",
+    "expected": "valid GIF",
+    "actual": "GIF file, 529 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.2
+  },
+  {
+    "feature": "Image: Rotate / flip",
+    "input": "GIF (animated.gif)",
+    "output": "GIF",
+    "expected": "valid GIF",
+    "actual": "GIF file, 809 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.2
+  },
+  {
+    "feature": "Image: Remove metadata",
+    "input": "GIF (animated.gif)",
+    "output": "GIF",
+    "expected": "valid GIF",
+    "actual": "GIF file, 809 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.2
+  },
+  {
+    "feature": "Image: Combine into PDF",
+    "input": "GIF (animated.gif)",
+    "output": "PDF",
+    "expected": "valid PDF",
+    "actual": "PDF file, 3474 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.2
+  },
+  {
+    "feature": "Image: Extract frames",
+    "input": "GIF (animated.gif)",
+    "output": "folder of PNG",
+    "expected": "valid folder of PNG",
+    "actual": "folder with 4 files (PNG)",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.7
+  },
+  {
+    "feature": "Image: OCR to text",
+    "input": "GIF (animated.gif)",
+    "output": "Plain Text",
+    "expected": "recognized text, or a 'no text' message for images without text",
+    "actual": "Output validation failed: No text was recognized in this image",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.4
+  },
+  {
+    "feature": "Image: OCR to searchable PDF",
+    "input": "GIF (animated.gif)",
+    "output": "PDF",
+    "expected": "valid PDF",
+    "actual": "PDF file, 3241 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.5
+  },
+  {
+    "feature": "Image: MP4",
+    "input": "GIF (animated.gif)",
+    "output": "MP4",
+    "expected": "valid MP4",
+    "actual": "MP4 file, 1850 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.8
+  },
+  {
+    "feature": "Image: WebM",
+    "input": "GIF (animated.gif)",
+    "output": "WebM",
+    "expected": "valid WebM",
+    "actual": "WebM file, 825 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.5
+  },
+  {
+    "feature": "Image: JPEG",
+    "input": "SVG (vector.svg)",
+    "output": "JPEG",
+    "expected": "valid JPEG",
+    "actual": "JPEG file, 5453 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.3
+  },
+  {
+    "feature": "Image: PNG",
+    "input": "SVG (vector.svg)",
+    "output": "PNG",
+    "expected": "valid PNG",
+    "actual": "PNG file, 5393 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.3
+  },
+  {
+    "feature": "Image: WebP",
+    "input": "SVG (vector.svg)",
+    "output": "WebP",
+    "expected": "valid WebP",
+    "actual": "WebP file, 1656 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.3
+  },
+  {
+    "feature": "Image: AVIF",
+    "input": "SVG (vector.svg)",
+    "output": "AVIF",
+    "expected": "valid AVIF",
+    "actual": "AVIF file, 1489 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.3
+  },
+  {
+    "feature": "Image: TIFF",
+    "input": "SVG (vector.svg)",
+    "output": "TIFF",
+    "expected": "valid TIFF",
+    "actual": "TIFF file, 192370 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.3
+  },
+  {
+    "feature": "Image: BMP",
+    "input": "SVG (vector.svg)",
+    "output": "BMP",
+    "expected": "valid BMP",
+    "actual": "BMP file, 72138 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.4
+  },
+  {
+    "feature": "Image: GIF",
+    "input": "SVG (vector.svg)",
+    "output": "GIF",
+    "expected": "valid GIF",
+    "actual": "GIF file, 2082 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.3
+  },
+  {
+    "feature": "Image: ICO",
+    "input": "SVG (vector.svg)",
+    "output": "ICO",
+    "expected": "valid ICO",
+    "actual": "ICO file, 370070 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.3
+  },
+  {
+    "feature": "Image: PDF",
+    "input": "SVG (vector.svg)",
+    "output": "PDF",
+    "expected": "valid PDF",
+    "actual": "PDF file, 61792 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.3
+  },
+  {
+    "feature": "Image: Combine into PDF",
+    "input": "SVG (vector.svg)",
+    "output": "PDF",
+    "expected": "valid PDF",
+    "actual": "PDF file, 291610 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.3
+  },
+  {
+    "feature": "Image: JPEG",
+    "input": "PNG (Ünïcødé 文件 (1).png)",
+    "output": "JPEG",
+    "expected": "valid JPEG",
+    "actual": "JPEG file, 33035 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.3
+  },
+  {
+    "feature": "Image: WebP",
+    "input": "PNG (Ünïcødé 文件 (1).png)",
+    "output": "WebP",
+    "expected": "valid WebP",
+    "actual": "WebP file, 6486 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.3
+  },
+  {
+    "feature": "Audio: MP3",
+    "input": "WAV (tone.wav)",
+    "output": "MP3",
+    "expected": "valid MP3",
+    "actual": "MP3 file, 73394 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.7
+  },
+  {
+    "feature": "Audio: AAC",
+    "input": "WAV (tone.wav)",
+    "output": "AAC",
+    "expected": "valid AAC",
+    "actual": "AAC file, 73173 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.8
+  },
+  {
+    "feature": "Audio: M4A",
+    "input": "WAV (tone.wav)",
+    "output": "M4A",
+    "expected": "valid M4A",
+    "actual": "M4A file, 73586 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.6
+  },
+  {
+    "feature": "Audio: FLAC",
+    "input": "WAV (tone.wav)",
+    "output": "FLAC",
+    "expected": "valid FLAC",
+    "actual": "FLAC file, 45616 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.6
+  },
+  {
+    "feature": "Audio: OGG Vorbis",
+    "input": "WAV (tone.wav)",
+    "output": "OGG Vorbis",
+    "expected": "valid OGG Vorbis",
+    "actual": "OGG Vorbis file, 20587 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.6
+  },
+  {
+    "feature": "Audio: Opus",
+    "input": "WAV (tone.wav)",
+    "output": "Opus",
+    "expected": "valid Opus",
+    "actual": "Opus file, 52273 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.7
+  },
+  {
+    "feature": "Audio: AIFF",
+    "input": "WAV (tone.wav)",
+    "output": "AIFF",
+    "expected": "valid AIFF",
+    "actual": "AIFF file, 529254 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.7
+  },
+  {
+    "feature": "Audio: WMA",
+    "input": "WAV (tone.wav)",
+    "output": "WMA",
+    "expected": "valid WMA",
+    "actual": "WMA file, 106142 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.6
+  },
+  {
+    "feature": "Audio: Trim",
+    "input": "WAV (tone.wav)",
+    "output": "WAV",
+    "expected": "valid WAV",
+    "actual": "WAV file, 264678 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.6
+  },
+  {
+    "feature": "Audio: Normalize loudness",
+    "input": "WAV (tone.wav)",
+    "output": "WAV",
+    "expected": "valid WAV",
+    "actual": "WAV file, 576078 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.7
+  },
+  {
+    "feature": "Audio: WAV",
+    "input": "MP3 (tone.mp3)",
+    "output": "WAV",
+    "expected": "valid WAV",
+    "actual": "WAV file, 529278 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 1.2
+  },
+  {
+    "feature": "Audio: AAC",
+    "input": "MP3 (tone.mp3)",
+    "output": "AAC",
+    "expected": "valid AAC",
+    "actual": "AAC file, 73333 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 1.2
+  },
+  {
+    "feature": "Audio: M4A",
+    "input": "MP3 (tone.mp3)",
+    "output": "M4A",
+    "expected": "valid M4A",
+    "actual": "M4A file, 73746 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.7
+  },
+  {
+    "feature": "Audio: FLAC",
+    "input": "MP3 (tone.mp3)",
+    "output": "FLAC",
+    "expected": "valid FLAC",
+    "actual": "FLAC file, 407653 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.6
+  },
+  {
+    "feature": "Audio: OGG Vorbis",
+    "input": "MP3 (tone.mp3)",
+    "output": "OGG Vorbis",
+    "expected": "valid OGG Vorbis",
+    "actual": "OGG Vorbis file, 21066 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.6
+  },
+  {
+    "feature": "Audio: Opus",
+    "input": "MP3 (tone.mp3)",
+    "output": "Opus",
+    "expected": "valid Opus",
+    "actual": "Opus file, 52536 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.6
+  },
+  {
+    "feature": "Audio: AIFF",
+    "input": "MP3 (tone.mp3)",
+    "output": "AIFF",
+    "expected": "valid AIFF",
+    "actual": "AIFF file, 529254 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.5
+  },
+  {
+    "feature": "Audio: WMA",
+    "input": "MP3 (tone.mp3)",
+    "output": "WMA",
+    "expected": "valid WMA",
+    "actual": "WMA file, 106142 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.5
+  },
+  {
+    "feature": "Audio: Compress",
+    "input": "MP3 (tone.mp3)",
+    "output": "MP3",
+    "expected": "valid MP3",
+    "actual": "MP3 file, 36719 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.5
+  },
+  {
+    "feature": "Audio: Trim",
+    "input": "MP3 (tone.mp3)",
+    "output": "MP3",
+    "expected": "valid MP3",
+    "actual": "MP3 file, 37659 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.5
+  },
+  {
+    "feature": "Audio: Normalize loudness",
+    "input": "MP3 (tone.mp3)",
+    "output": "MP3",
+    "expected": "valid MP3",
+    "actual": "MP3 file, 73196 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.8
+  },
+  {
+    "feature": "Audio: MP3",
+    "input": "AAC (tone.aac)",
+    "output": "MP3",
+    "expected": "valid MP3",
+    "actual": "MP3 file, 74648 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.6
+  },
+  {
+    "feature": "Audio: WAV",
+    "input": "AAC (tone.aac)",
+    "output": "WAV",
+    "expected": "valid WAV",
+    "actual": "WAV file, 536654 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.5
+  },
+  {
+    "feature": "Audio: M4A",
+    "input": "AAC (tone.aac)",
+    "output": "M4A",
+    "expected": "valid M4A",
+    "actual": "M4A file, 71808 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.6
+  },
+  {
+    "feature": "Audio: FLAC",
+    "input": "AAC (tone.aac)",
+    "output": "FLAC",
+    "expected": "valid FLAC",
+    "actual": "FLAC file, 223493 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.6
+  },
+  {
+    "feature": "Audio: OGG Vorbis",
+    "input": "AAC (tone.aac)",
+    "output": "OGG Vorbis",
+    "expected": "valid OGG Vorbis",
+    "actual": "OGG Vorbis file, 17014 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.6
+  },
+  {
+    "feature": "Audio: Opus",
+    "input": "AAC (tone.aac)",
+    "output": "Opus",
+    "expected": "valid Opus",
+    "actual": "Opus file, 59654 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.6
+  },
+  {
+    "feature": "Audio: AIFF",
+    "input": "AAC (tone.aac)",
+    "output": "AIFF",
+    "expected": "valid AIFF",
+    "actual": "AIFF file, 536630 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.5
+  },
+  {
+    "feature": "Audio: WMA",
+    "input": "AAC (tone.aac)",
+    "output": "WMA",
+    "expected": "valid WMA",
+    "actual": "WMA file, 106142 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.5
+  },
+  {
+    "feature": "Audio: Compress",
+    "input": "AAC (tone.aac)",
+    "output": "AAC",
+    "expected": "valid AAC",
+    "actual": "AAC file, 37573 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.6
+  },
+  {
+    "feature": "Audio: Trim",
+    "input": "AAC (tone.aac)",
+    "output": "AAC",
+    "expected": "valid AAC",
+    "actual": "AAC file, 37043 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.6
+  },
+  {
+    "feature": "Audio: Normalize loudness",
+    "input": "AAC (tone.aac)",
+    "output": "AAC",
+    "expected": "valid AAC",
+    "actual": "AAC file, 74075 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.7
+  },
+  {
+    "feature": "Audio: MP3",
+    "input": "M4A (tone.m4a)",
+    "output": "MP3",
+    "expected": "valid MP3",
+    "actual": "MP3 file, 73493 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.6
+  },
+  {
+    "feature": "Audio: WAV",
+    "input": "M4A (tone.m4a)",
+    "output": "WAV",
+    "expected": "valid WAV",
+    "actual": "WAV file, 529278 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.5
+  },
+  {
+    "feature": "Audio: AAC",
+    "input": "M4A (tone.m4a)",
+    "output": "AAC",
+    "expected": "valid AAC",
+    "actual": "AAC file, 69791 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.6
+  },
+  {
+    "feature": "Audio: FLAC",
+    "input": "M4A (tone.m4a)",
+    "output": "FLAC",
+    "expected": "valid FLAC",
+    "actual": "FLAC file, 220948 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.5
+  },
+  {
+    "feature": "Audio: OGG Vorbis",
+    "input": "M4A (tone.m4a)",
+    "output": "OGG Vorbis",
+    "expected": "valid OGG Vorbis",
+    "actual": "OGG Vorbis file, 15948 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.6
+  },
+  {
+    "feature": "Audio: Opus",
+    "input": "M4A (tone.m4a)",
+    "output": "Opus",
+    "expected": "valid Opus",
+    "actual": "Opus file, 58356 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.5
+  },
+  {
+    "feature": "Audio: AIFF",
+    "input": "M4A (tone.m4a)",
+    "output": "AIFF",
+    "expected": "valid AIFF",
+    "actual": "AIFF file, 529254 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.6
+  },
+  {
+    "feature": "Audio: WMA",
+    "input": "M4A (tone.m4a)",
+    "output": "WMA",
+    "expected": "valid WMA",
+    "actual": "WMA file, 106292 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.6
+  },
+  {
+    "feature": "Audio: Compress",
+    "input": "M4A (tone.m4a)",
+    "output": "M4A",
+    "expected": "valid M4A",
+    "actual": "M4A file, 37677 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.7
+  },
+  {
+    "feature": "Audio: Trim",
+    "input": "M4A (tone.m4a)",
+    "output": "M4A",
+    "expected": "valid M4A",
+    "actual": "M4A file, 35859 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.6
+  },
+  {
+    "feature": "Audio: Normalize loudness",
+    "input": "M4A (tone.m4a)",
+    "output": "M4A",
+    "expected": "valid M4A",
+    "actual": "M4A file, 73996 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.8
+  },
+  {
+    "feature": "Audio: MP3",
+    "input": "FLAC (tone.flac)",
+    "output": "MP3",
+    "expected": "valid MP3",
+    "actual": "MP3 file, 73394 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.5
+  },
+  {
+    "feature": "Audio: WAV",
+    "input": "FLAC (tone.flac)",
+    "output": "WAV",
+    "expected": "valid WAV",
+    "actual": "WAV file, 529278 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.6
+  },
+  {
+    "feature": "Audio: AAC",
+    "input": "FLAC (tone.flac)",
+    "output": "AAC",
+    "expected": "valid AAC",
+    "actual": "AAC file, 73173 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.6
+  },
+  {
+    "feature": "Audio: M4A",
+    "input": "FLAC (tone.flac)",
+    "output": "M4A",
+    "expected": "valid M4A",
+    "actual": "M4A file, 73586 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.6
+  },
+  {
+    "feature": "Audio: OGG Vorbis",
+    "input": "FLAC (tone.flac)",
+    "output": "OGG Vorbis",
+    "expected": "valid OGG Vorbis",
+    "actual": "OGG Vorbis file, 20587 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.6
+  },
+  {
+    "feature": "Audio: Opus",
+    "input": "FLAC (tone.flac)",
+    "output": "Opus",
+    "expected": "valid Opus",
+    "actual": "Opus file, 52273 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.5
+  },
+  {
+    "feature": "Audio: AIFF",
+    "input": "FLAC (tone.flac)",
+    "output": "AIFF",
+    "expected": "valid AIFF",
+    "actual": "AIFF file, 529254 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.5
+  },
+  {
+    "feature": "Audio: WMA",
+    "input": "FLAC (tone.flac)",
+    "output": "WMA",
+    "expected": "valid WMA",
+    "actual": "WMA file, 106142 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.5
+  },
+  {
+    "feature": "Audio: Trim",
+    "input": "FLAC (tone.flac)",
+    "output": "FLAC",
+    "expected": "valid FLAC",
+    "actual": "FLAC file, 38940 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.5
+  },
+  {
+    "feature": "Audio: Normalize loudness",
+    "input": "FLAC (tone.flac)",
+    "output": "FLAC",
+    "expected": "valid FLAC",
+    "actual": "FLAC file, 196225 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.7
+  },
+  {
+    "feature": "Audio: MP3",
+    "input": "OGG Vorbis (tone.ogg)",
+    "output": "MP3",
+    "expected": "valid MP3",
+    "actual": "MP3 file, 73394 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.5
+  },
+  {
+    "feature": "Audio: WAV",
+    "input": "OGG Vorbis (tone.ogg)",
+    "output": "WAV",
+    "expected": "valid WAV",
+    "actual": "WAV file, 529278 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.5
+  },
+  {
+    "feature": "Audio: AAC",
+    "input": "OGG Vorbis (tone.ogg)",
+    "output": "AAC",
+    "expected": "valid AAC",
+    "actual": "AAC file, 43520 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.8
+  },
+  {
+    "feature": "Audio: M4A",
+    "input": "OGG Vorbis (tone.ogg)",
+    "output": "M4A",
+    "expected": "valid M4A",
+    "actual": "M4A file, 43933 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.8
+  },
+  {
+    "feature": "Audio: FLAC",
+    "input": "OGG Vorbis (tone.ogg)",
+    "output": "FLAC",
+    "expected": "valid FLAC",
+    "actual": "FLAC file, 146922 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.9
+  },
+  {
+    "feature": "Audio: Opus",
+    "input": "OGG Vorbis (tone.ogg)",
+    "output": "Opus",
+    "expected": "valid Opus",
+    "actual": "Opus file, 60388 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.6
+  },
+  {
+    "feature": "Audio: AIFF",
+    "input": "OGG Vorbis (tone.ogg)",
+    "output": "AIFF",
+    "expected": "valid AIFF",
+    "actual": "AIFF file, 529254 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.5
+  },
+  {
+    "feature": "Audio: WMA",
+    "input": "OGG Vorbis (tone.ogg)",
+    "output": "WMA",
+    "expected": "valid WMA",
+    "actual": "WMA file, 106142 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.5
+  },
+  {
+    "feature": "Audio: Compress",
+    "input": "OGG Vorbis (tone.ogg)",
+    "output": "OGG Vorbis",
+    "expected": "valid OGG Vorbis, or skipped when not smaller",
+    "actual": "skipped: Already optimized: the result (11.6 KB) was not smaller than the original (11.6 KB)",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.4
+  },
+  {
+    "feature": "Audio: Trim",
+    "input": "OGG Vorbis (tone.ogg)",
+    "output": "OGG Vorbis",
+    "expected": "valid OGG Vorbis",
+    "actual": "OGG Vorbis file, 8386 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.5
+  },
+  {
+    "feature": "Audio: Normalize loudness",
+    "input": "OGG Vorbis (tone.ogg)",
+    "output": "OGG Vorbis",
+    "expected": "valid OGG Vorbis",
+    "actual": "OGG Vorbis file, 14568 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.7
+  },
+  {
+    "feature": "Audio: MP3",
+    "input": "Opus (tone.opus)",
+    "output": "MP3",
+    "expected": "valid MP3",
+    "actual": "MP3 file, 73196 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.5
+  },
+  {
+    "feature": "Audio: WAV",
+    "input": "Opus (tone.opus)",
+    "output": "WAV",
+    "expected": "valid WAV",
+    "actual": "WAV file, 576078 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.5
+  },
+  {
+    "feature": "Audio: AAC",
+    "input": "Opus (tone.opus)",
+    "output": "AAC",
+    "expected": "valid AAC",
+    "actual": "AAC file, 73535 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.6
+  },
+  {
+    "feature": "Audio: M4A",
+    "input": "Opus (tone.opus)",
+    "output": "M4A",
+    "expected": "valid M4A",
+    "actual": "M4A file, 73915 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.6
+  },
+  {
+    "feature": "Audio: FLAC",
+    "input": "Opus (tone.opus)",
+    "output": "FLAC",
+    "expected": "valid FLAC",
+    "actual": "FLAC file, 196138 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.6
+  },
+  {
+    "feature": "Audio: OGG Vorbis",
+    "input": "Opus (tone.opus)",
+    "output": "OGG Vorbis",
+    "expected": "valid OGG Vorbis",
+    "actual": "OGG Vorbis file, 21753 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.6
+  },
+  {
+    "feature": "Audio: AIFF",
+    "input": "Opus (tone.opus)",
+    "output": "AIFF",
+    "expected": "valid AIFF",
+    "actual": "AIFF file, 576054 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.5
+  },
+  {
+    "feature": "Audio: WMA",
+    "input": "Opus (tone.opus)",
+    "output": "WMA",
+    "expected": "valid WMA",
+    "actual": "WMA file, 106142 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.5
+  },
+  {
+    "feature": "Audio: Compress",
+    "input": "Opus (tone.opus)",
+    "output": "Opus",
+    "expected": "valid Opus",
+    "actual": "Opus file, 40919 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.5
+  },
+  {
+    "feature": "Audio: Trim",
+    "input": "Opus (tone.opus)",
+    "output": "Opus",
+    "expected": "valid Opus",
+    "actual": "Opus file, 25903 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.5
+  },
+  {
+    "feature": "Audio: Normalize loudness",
+    "input": "Opus (tone.opus)",
+    "output": "Opus",
+    "expected": "valid Opus",
+    "actual": "Opus file, 51358 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.7
+  },
+  {
+    "feature": "Audio: MP3",
+    "input": "AIFF (tone.aiff)",
+    "output": "MP3",
+    "expected": "valid MP3",
+    "actual": "MP3 file, 73394 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.5
+  },
+  {
+    "feature": "Audio: WAV",
+    "input": "AIFF (tone.aiff)",
+    "output": "WAV",
+    "expected": "valid WAV",
+    "actual": "WAV file, 529278 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.5
+  },
+  {
+    "feature": "Audio: AAC",
+    "input": "AIFF (tone.aiff)",
+    "output": "AAC",
+    "expected": "valid AAC",
+    "actual": "AAC file, 73173 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.6
+  },
+  {
+    "feature": "Audio: M4A",
+    "input": "AIFF (tone.aiff)",
+    "output": "M4A",
+    "expected": "valid M4A",
+    "actual": "M4A file, 73586 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.6
+  },
+  {
+    "feature": "Audio: FLAC",
+    "input": "AIFF (tone.aiff)",
+    "output": "FLAC",
+    "expected": "valid FLAC",
+    "actual": "FLAC file, 54706 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.5
+  },
+  {
+    "feature": "Audio: OGG Vorbis",
+    "input": "AIFF (tone.aiff)",
+    "output": "OGG Vorbis",
+    "expected": "valid OGG Vorbis",
+    "actual": "OGG Vorbis file, 20587 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.6
+  },
+  {
+    "feature": "Audio: Opus",
+    "input": "AIFF (tone.aiff)",
+    "output": "Opus",
+    "expected": "valid Opus",
+    "actual": "Opus file, 52273 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.5
+  },
+  {
+    "feature": "Audio: WMA",
+    "input": "AIFF (tone.aiff)",
+    "output": "WMA",
+    "expected": "valid WMA",
+    "actual": "WMA file, 106142 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.5
+  },
+  {
+    "feature": "Audio: Trim",
+    "input": "AIFF (tone.aiff)",
+    "output": "AIFF",
+    "expected": "valid AIFF",
+    "actual": "AIFF file, 264654 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.5
+  },
+  {
+    "feature": "Audio: Normalize loudness",
+    "input": "AIFF (tone.aiff)",
+    "output": "AIFF",
+    "expected": "valid AIFF",
+    "actual": "AIFF file, 576054 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.6
+  },
+  {
+    "feature": "Audio: MP3",
+    "input": "WMA (tone.wma)",
+    "output": "MP3",
+    "expected": "valid MP3",
+    "actual": "MP3 file, 72807 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.5
+  },
+  {
+    "feature": "Audio: WAV",
+    "input": "WMA (tone.wma)",
+    "output": "WAV",
+    "expected": "valid WAV",
+    "actual": "WAV file, 524366 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.5
+  },
+  {
+    "feature": "Audio: AAC",
+    "input": "WMA (tone.wma)",
+    "output": "AAC",
+    "expected": "valid AAC",
+    "actual": "AAC file, 45919 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.8
+  },
+  {
+    "feature": "Audio: M4A",
+    "input": "WMA (tone.wma)",
+    "output": "M4A",
+    "expected": "valid M4A",
+    "actual": "M4A file, 46406 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.7
+  },
+  {
+    "feature": "Audio: FLAC",
+    "input": "WMA (tone.wma)",
+    "output": "FLAC",
+    "expected": "valid FLAC",
+    "actual": "FLAC file, 124069 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.5
+  },
+  {
+    "feature": "Audio: OGG Vorbis",
+    "input": "WMA (tone.wma)",
+    "output": "OGG Vorbis",
+    "expected": "valid OGG Vorbis",
+    "actual": "OGG Vorbis file, 12592 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.6
+  },
+  {
+    "feature": "Audio: Opus",
+    "input": "WMA (tone.wma)",
+    "output": "Opus",
+    "expected": "valid Opus",
+    "actual": "Opus file, 50200 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.5
+  },
+  {
+    "feature": "Audio: AIFF",
+    "input": "WMA (tone.wma)",
+    "output": "AIFF",
+    "expected": "valid AIFF",
+    "actual": "AIFF file, 524342 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.5
+  },
+  {
+    "feature": "Audio: Compress",
+    "input": "WMA (tone.wma)",
+    "output": "WMA",
+    "expected": "valid WMA",
+    "actual": "WMA file, 42142 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.5
+  },
+  {
+    "feature": "Audio: Trim",
+    "input": "WMA (tone.wma)",
+    "output": "WMA",
+    "expected": "valid WMA",
+    "actual": "WMA file, 54942 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.5
+  },
+  {
+    "feature": "Audio: Normalize loudness",
+    "input": "WMA (tone.wma)",
+    "output": "WMA",
+    "expected": "valid WMA",
+    "actual": "WMA file, 102942 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.7
+  },
+  {
+    "feature": "Audio: MP3",
+    "input": "WAV (spaces & symbols #1.wav)",
+    "output": "MP3",
+    "expected": "valid MP3",
+    "actual": "MP3 file, 61693 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.6
+  },
+  {
+    "feature": "Video: MOV",
+    "input": "MP4 (clip.mp4)",
+    "output": "MOV",
+    "expected": "valid MOV",
+    "actual": "MOV file, 145015 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.8
+  },
+  {
+    "feature": "Video: MKV",
+    "input": "MP4 (clip.mp4)",
+    "output": "MKV",
+    "expected": "valid MKV",
+    "actual": "MKV file, 143432 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.7
+  },
+  {
+    "feature": "Video: AVI",
+    "input": "MP4 (clip.mp4)",
+    "output": "AVI",
+    "expected": "valid AVI",
+    "actual": "AVI file, 443436 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.6
+  },
+  {
+    "feature": "Video: WebM",
+    "input": "MP4 (clip.mp4)",
+    "output": "WebM",
+    "expected": "valid WebM",
+    "actual": "WebM file, 177580 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 1.1
+  },
+  {
+    "feature": "Video: WMV",
+    "input": "MP4 (clip.mp4)",
+    "output": "WMV",
+    "expected": "valid WMV",
+    "actual": "WMV file, 493869 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.6
+  },
+  {
+    "feature": "Video: MPEG",
+    "input": "MP4 (clip.mp4)",
+    "output": "MPEG",
+    "expected": "valid MPEG",
+    "actual": "MPEG file, 479232 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.6
+  },
+  {
+    "feature": "Video: Animated GIF",
+    "input": "MP4 (clip.mp4)",
+    "output": "GIF",
+    "expected": "valid GIF",
+    "actual": "GIF file, 947875 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 1.4
+  },
+  {
+    "feature": "Video: MP3 (audio only)",
+    "input": "MP4 (clip.mp4)",
+    "output": "MP3",
+    "expected": "valid MP3",
+    "actual": "MP3 file, 73497 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.6
+  },
+  {
+    "feature": "Video: M4A (audio only)",
+    "input": "MP4 (clip.mp4)",
+    "output": "M4A",
+    "expected": "valid M4A",
+    "actual": "M4A file, 43930 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.6
+  },
+  {
+    "feature": "Video: WAV (audio only)",
+    "input": "MP4 (clip.mp4)",
+    "output": "WAV",
+    "expected": "valid WAV",
+    "actual": "WAV file, 264678 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.6
+  },
+  {
+    "feature": "Video: AAC (audio only)",
+    "input": "MP4 (clip.mp4)",
+    "output": "AAC",
+    "expected": "valid AAC",
+    "actual": "AAC file, 43517 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.7
+  },
+  {
+    "feature": "Video: FLAC (audio only)",
+    "input": "MP4 (clip.mp4)",
+    "output": "FLAC",
+    "expected": "valid FLAC",
+    "actual": "FLAC file, 171462 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.5
+  },
+  {
+    "feature": "Video: OGG Vorbis (audio only)",
+    "input": "MP4 (clip.mp4)",
+    "output": "OGG Vorbis",
+    "expected": "valid OGG Vorbis",
+    "actual": "OGG Vorbis file, 26747 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.6
+  },
+  {
+    "feature": "Video: Opus (audio only)",
+    "input": "MP4 (clip.mp4)",
+    "output": "Opus",
+    "expected": "valid Opus",
+    "actual": "Opus file, 57000 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.5
+  },
+  {
+    "feature": "Video: Compress",
+    "input": "MP4 (clip.mp4)",
+    "output": "MP4",
+    "expected": "valid MP4",
+    "actual": "MP4 file, 105838 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.6
+  },
+  {
+    "feature": "Video: Trim",
+    "input": "MP4 (clip.mp4)",
+    "output": "MP4",
+    "expected": "valid MP4",
+    "actual": "MP4 file, 75802 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.6
+  },
+  {
+    "feature": "Video: Crop",
+    "input": "MP4 (clip.mp4)",
+    "output": "MP4",
+    "expected": "valid MP4",
+    "actual": "MP4 file, 66087 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.6
+  },
+  {
+    "feature": "Video: Change resolution / FPS",
+    "input": "MP4 (clip.mp4)",
+    "output": "MP4",
+    "expected": "valid MP4",
+    "actual": "MP4 file, 72742 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.7
+  },
+  {
+    "feature": "Video: Extract frames",
+    "input": "MP4 (clip.mp4)",
+    "output": "folder of PNG",
+    "expected": "valid folder of PNG",
+    "actual": "folder with 6 files (PNG)",
+    "status": "PASS",
+    "error": "",
+    "seconds": 1.1
+  },
+  {
+    "feature": "Video: Compress to ZIP",
+    "input": "MP4 (clip.mp4)",
+    "output": "ZIP",
+    "expected": "valid ZIP",
+    "actual": "ZIP file, 263716 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.4
+  },
+  {
+    "feature": "Video: Compress to 7-Zip",
+    "input": "MP4 (clip.mp4)",
+    "output": "7-Zip",
+    "expected": "valid 7-Zip",
+    "actual": "7-Zip file, 131822 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.4
+  },
+  {
+    "feature": "Video: Compress to TAR",
+    "input": "MP4 (clip.mp4)",
+    "output": "TAR",
+    "expected": "valid TAR",
+    "actual": "TAR file, 270336 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.3
+  },
+  {
+    "feature": "Video: Compress to TAR.GZ",
+    "input": "MP4 (clip.mp4)",
+    "output": "TAR.GZ",
+    "expected": "valid TAR.GZ",
+    "actual": "TAR.GZ file, 263483 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.4
+  },
+  {
+    "feature": "Video: MP4",
+    "input": "MOV (clip.mov)",
+    "output": "MP4",
+    "expected": "valid MP4",
+    "actual": "MP4 file, 144964 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.7
+  },
+  {
+    "feature": "Video: MKV",
+    "input": "MOV (clip.mov)",
+    "output": "MKV",
+    "expected": "valid MKV",
+    "actual": "MKV file, 143474 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.7
+  },
+  {
+    "feature": "Video: AVI",
+    "input": "MOV (clip.mov)",
+    "output": "AVI",
+    "expected": "valid AVI",
+    "actual": "AVI file, 443436 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.6
+  },
+  {
+    "feature": "Video: WebM",
+    "input": "MOV (clip.mov)",
+    "output": "WebM",
+    "expected": "valid WebM",
+    "actual": "WebM file, 177622 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 1.0
+  },
+  {
+    "feature": "Video: WMV",
+    "input": "MOV (clip.mov)",
+    "output": "WMV",
+    "expected": "valid WMV",
+    "actual": "WMV file, 493845 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.6
+  },
+  {
+    "feature": "Video: MPEG",
+    "input": "MOV (clip.mov)",
+    "output": "MPEG",
+    "expected": "valid MPEG",
+    "actual": "MPEG file, 479232 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.6
+  },
+  {
+    "feature": "Video: Animated GIF",
+    "input": "MOV (clip.mov)",
+    "output": "GIF",
+    "expected": "valid GIF",
+    "actual": "GIF file, 947875 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 1.2
+  },
+  {
+    "feature": "Video: MP3 (audio only)",
+    "input": "MOV (clip.mov)",
+    "output": "MP3",
+    "expected": "valid MP3",
+    "actual": "MP3 file, 73485 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.6
+  },
+  {
+    "feature": "Video: M4A (audio only)",
+    "input": "MOV (clip.mov)",
+    "output": "M4A",
+    "expected": "valid M4A",
+    "actual": "M4A file, 43930 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.6
+  },
+  {
+    "feature": "Video: WAV (audio only)",
+    "input": "MOV (clip.mov)",
+    "output": "WAV",
+    "expected": "valid WAV",
+    "actual": "WAV file, 264678 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.5
+  },
+  {
+    "feature": "Video: AAC (audio only)",
+    "input": "MOV (clip.mov)",
+    "output": "AAC",
+    "expected": "valid AAC",
+    "actual": "AAC file, 43517 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.6
+  },
+  {
+    "feature": "Video: FLAC (audio only)",
+    "input": "MOV (clip.mov)",
+    "output": "FLAC",
+    "expected": "valid FLAC",
+    "actual": "FLAC file, 171450 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.5
+  },
+  {
+    "feature": "Video: OGG Vorbis (audio only)",
+    "input": "MOV (clip.mov)",
+    "output": "OGG Vorbis",
+    "expected": "valid OGG Vorbis",
+    "actual": "OGG Vorbis file, 26745 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.7
+  },
+  {
+    "feature": "Video: Opus (audio only)",
+    "input": "MOV (clip.mov)",
+    "output": "Opus",
+    "expected": "valid Opus",
+    "actual": "Opus file, 56998 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.6
+  },
+  {
+    "feature": "Video: Compress",
+    "input": "MOV (clip.mov)",
+    "output": "MOV",
+    "expected": "valid MOV",
+    "actual": "MOV file, 105889 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.7
+  },
+  {
+    "feature": "Video: Trim",
+    "input": "MOV (clip.mov)",
+    "output": "MOV",
+    "expected": "valid MOV",
+    "actual": "MOV file, 75853 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.7
+  },
+  {
+    "feature": "Video: Crop",
+    "input": "MOV (clip.mov)",
+    "output": "MOV",
+    "expected": "valid MOV",
+    "actual": "MOV file, 66138 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.9
+  },
+  {
+    "feature": "Video: Change resolution / FPS",
+    "input": "MOV (clip.mov)",
+    "output": "MOV",
+    "expected": "valid MOV",
+    "actual": "MOV file, 72793 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 1.0
+  },
+  {
+    "feature": "Video: Extract frames",
+    "input": "MOV (clip.mov)",
+    "output": "folder of PNG",
+    "expected": "valid folder of PNG",
+    "actual": "folder with 6 files (PNG)",
+    "status": "PASS",
+    "error": "",
+    "seconds": 1.3
+  },
+  {
+    "feature": "Video: MP4",
+    "input": "MKV (clip.mkv)",
+    "output": "MP4",
+    "expected": "valid MP4",
+    "actual": "MP4 file, 145417 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.7
+  },
+  {
+    "feature": "Video: MOV",
+    "input": "MKV (clip.mkv)",
+    "output": "MOV",
+    "expected": "valid MOV",
+    "actual": "MOV file, 145468 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.7
+  },
+  {
+    "feature": "Video: AVI",
+    "input": "MKV (clip.mkv)",
+    "output": "AVI",
+    "expected": "valid AVI",
+    "actual": "AVI file, 444088 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.6
+  },
+  {
+    "feature": "Video: WebM",
+    "input": "MKV (clip.mkv)",
+    "output": "WebM",
+    "expected": "valid WebM",
+    "actual": "WebM file, 178084 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 1.0
+  },
+  {
+    "feature": "Video: WMV",
+    "input": "MKV (clip.mkv)",
+    "output": "WMV",
+    "expected": "valid WMV",
+    "actual": "WMV file, 493711 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.6
+  },
+  {
+    "feature": "Video: MPEG",
+    "input": "MKV (clip.mkv)",
+    "output": "MPEG",
+    "expected": "valid MPEG",
+    "actual": "MPEG file, 479232 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.6
+  },
+  {
+    "feature": "Video: Animated GIF",
+    "input": "MKV (clip.mkv)",
+    "output": "GIF",
+    "expected": "valid GIF",
+    "actual": "GIF file, 947875 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 1.3
+  },
+  {
+    "feature": "Video: MP3 (audio only)",
+    "input": "MKV (clip.mkv)",
+    "output": "MP3",
+    "expected": "valid MP3",
+    "actual": "MP3 file, 74021 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.6
+  },
+  {
+    "feature": "Video: M4A (audio only)",
+    "input": "MKV (clip.mkv)",
+    "output": "M4A",
+    "expected": "valid M4A",
+    "actual": "M4A file, 44383 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.6
+  },
+  {
+    "feature": "Video: WAV (audio only)",
+    "input": "MKV (clip.mkv)",
+    "output": "WAV",
+    "expected": "valid WAV",
+    "actual": "WAV file, 266318 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.5
+  },
+  {
+    "feature": "Video: AAC (audio only)",
+    "input": "MKV (clip.mkv)",
+    "output": "AAC",
+    "expected": "valid AAC",
+    "actual": "AAC file, 43978 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.6
+  },
+  {
+    "feature": "Video: FLAC (audio only)",
+    "input": "MKV (clip.mkv)",
+    "output": "FLAC",
+    "expected": "valid FLAC",
+    "actual": "FLAC file, 171875 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.5
+  },
+  {
+    "feature": "Video: OGG Vorbis (audio only)",
+    "input": "MKV (clip.mkv)",
+    "output": "OGG Vorbis",
+    "expected": "valid OGG Vorbis",
+    "actual": "OGG Vorbis file, 26987 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.6
+  },
+  {
+    "feature": "Video: Opus (audio only)",
+    "input": "MKV (clip.mkv)",
+    "output": "Opus",
+    "expected": "valid Opus",
+    "actual": "Opus file, 57558 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.5
+  },
+  {
+    "feature": "Video: Compress",
+    "input": "MKV (clip.mkv)",
+    "output": "MKV",
+    "expected": "valid MKV",
+    "actual": "MKV file, 104400 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.6
+  },
+  {
+    "feature": "Video: Trim",
+    "input": "MKV (clip.mkv)",
+    "output": "MKV",
+    "expected": "valid MKV",
+    "actual": "MKV file, 74652 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.8
+  },
+  {
+    "feature": "Video: Crop",
+    "input": "MKV (clip.mkv)",
+    "output": "MKV",
+    "expected": "valid MKV",
+    "actual": "MKV file, 64880 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.6
+  },
+  {
+    "feature": "Video: Change resolution / FPS",
+    "input": "MKV (clip.mkv)",
+    "output": "MKV",
+    "expected": "valid MKV",
+    "actual": "MKV file, 72281 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.9
+  },
+  {
+    "feature": "Video: Extract frames",
+    "input": "MKV (clip.mkv)",
+    "output": "folder of PNG",
+    "expected": "valid folder of PNG",
+    "actual": "folder with 6 files (PNG)",
+    "status": "PASS",
+    "error": "",
+    "seconds": 1.1
+  },
+  {
+    "feature": "Video: MP4",
+    "input": "AVI (clip.avi)",
+    "output": "MP4",
+    "expected": "valid MP4",
+    "actual": "MP4 file, 190750 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.7
+  },
+  {
+    "feature": "Video: MOV",
+    "input": "AVI (clip.avi)",
+    "output": "MOV",
+    "expected": "valid MOV",
+    "actual": "MOV file, 190801 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.7
+  },
+  {
+    "feature": "Video: MKV",
+    "input": "AVI (clip.avi)",
+    "output": "MKV",
+    "expected": "valid MKV",
+    "actual": "MKV file, 189477 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.8
+  },
+  {
+    "feature": "Video: WebM",
+    "input": "AVI (clip.avi)",
+    "output": "WebM",
+    "expected": "valid WebM",
+    "actual": "WebM file, 199200 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 1.6
+  },
+  {
+    "feature": "Video: WMV",
+    "input": "AVI (clip.avi)",
+    "output": "WMV",
+    "expected": "valid WMV",
+    "actual": "WMV file, 378561 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.7
+  },
+  {
+    "feature": "Video: MPEG",
+    "input": "AVI (clip.avi)",
+    "output": "MPEG",
+    "expected": "valid MPEG",
+    "actual": "MPEG file, 382976 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.5
+  },
+  {
+    "feature": "Video: Animated GIF",
+    "input": "AVI (clip.avi)",
+    "output": "GIF",
+    "expected": "valid GIF",
+    "actual": "GIF file, 1313997 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 1.8
+  },
+  {
+    "feature": "Video: MP3 (audio only)",
+    "input": "AVI (clip.avi)",
+    "output": "MP3",
+    "expected": "valid MP3",
+    "actual": "MP3 file, 74054 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.5
+  },
+  {
+    "feature": "Video: M4A (audio only)",
+    "input": "AVI (clip.avi)",
+    "output": "M4A",
+    "expected": "valid M4A",
+    "actual": "M4A file, 50500 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.6
+  },
+  {
+    "feature": "Video: WAV (audio only)",
+    "input": "AVI (clip.avi)",
+    "output": "WAV",
+    "expected": "valid WAV",
+    "actual": "WAV file, 267342 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.5
+  },
+  {
+    "feature": "Video: AAC (audio only)",
+    "input": "AVI (clip.avi)",
+    "output": "AAC",
+    "expected": "valid AAC",
+    "actual": "AAC file, 50090 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.6
+  },
+  {
+    "feature": "Video: FLAC (audio only)",
+    "input": "AVI (clip.avi)",
+    "output": "FLAC",
+    "expected": "valid FLAC",
+    "actual": "FLAC file, 169488 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.5
+  },
+  {
+    "feature": "Video: OGG Vorbis (audio only)",
+    "input": "AVI (clip.avi)",
+    "output": "OGG Vorbis",
+    "expected": "valid OGG Vorbis",
+    "actual": "OGG Vorbis file, 27534 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.5
+  },
+  {
+    "feature": "Video: Opus (audio only)",
+    "input": "AVI (clip.avi)",
+    "output": "Opus",
+    "expected": "valid Opus",
+    "actual": "Opus file, 57557 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.5
+  },
+  {
+    "feature": "Video: Compress",
+    "input": "AVI (clip.avi)",
+    "output": "AVI",
+    "expected": "valid AVI, or skipped when not smaller",
+    "actual": "skipped: Already optimized: the result (300.8 KB) was not smaller than the original (190.3 KB)",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.5
+  },
+  {
+    "feature": "Video: Trim",
+    "input": "AVI (clip.avi)",
+    "output": "AVI",
+    "expected": "valid AVI",
+    "actual": "AVI file, 172702 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.5
+  },
+  {
+    "feature": "Video: Crop",
+    "input": "AVI (clip.avi)",
+    "output": "AVI",
+    "expected": "valid AVI",
+    "actual": "AVI file, 156320 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.5
+  },
+  {
+    "feature": "Video: Change resolution / FPS",
+    "input": "AVI (clip.avi)",
+    "output": "AVI",
+    "expected": "valid AVI",
+    "actual": "AVI file, 164050 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.5
+  },
+  {
+    "feature": "Video: Extract frames",
+    "input": "AVI (clip.avi)",
+    "output": "folder of PNG",
+    "expected": "valid folder of PNG",
+    "actual": "folder with 6 files (PNG)",
+    "status": "PASS",
+    "error": "",
+    "seconds": 1.1
+  },
+  {
+    "feature": "Video: MP4",
+    "input": "WebM (clip.webm)",
+    "output": "MP4",
+    "expected": "valid MP4",
+    "actual": "MP4 file, 158993 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.7
+  },
+  {
+    "feature": "Video: MOV",
+    "input": "WebM (clip.webm)",
+    "output": "MOV",
+    "expected": "valid MOV",
+    "actual": "MOV file, 159044 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.8
+  },
+  {
+    "feature": "Video: MKV",
+    "input": "WebM (clip.webm)",
+    "output": "MKV",
+    "expected": "valid MKV",
+    "actual": "MKV file, 157613 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 4.6
+  },
+  {
+    "feature": "Video: AVI",
+    "input": "WebM (clip.webm)",
+    "output": "AVI",
+    "expected": "valid AVI",
+    "actual": "AVI file, 450036 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 4.3
+  },
+  {
+    "feature": "Video: WMV",
+    "input": "WebM (clip.webm)",
+    "output": "WMV",
+    "expected": "valid WMV",
+    "actual": "WMV file, 496911 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.6
+  },
+  {
+    "feature": "Video: MPEG",
+    "input": "WebM (clip.webm)",
+    "output": "MPEG",
+    "expected": "valid MPEG",
+    "actual": "MPEG file, 485376 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.6
+  },
+  {
+    "feature": "Video: Animated GIF",
+    "input": "WebM (clip.webm)",
+    "output": "GIF",
+    "expected": "valid GIF",
+    "actual": "GIF file, 928117 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 1.3
+  },
+  {
+    "feature": "Video: MP3 (audio only)",
+    "input": "WebM (clip.webm)",
+    "output": "MP3",
+    "expected": "valid MP3",
+    "actual": "MP3 file, 73196 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.5
+  },
+  {
+    "feature": "Video: M4A (audio only)",
+    "input": "WebM (clip.webm)",
+    "output": "M4A",
+    "expected": "valid M4A",
+    "actual": "M4A file, 56848 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.6
+  },
+  {
+    "feature": "Video: WAV (audio only)",
+    "input": "WebM (clip.webm)",
+    "output": "WAV",
+    "expected": "valid WAV",
+    "actual": "WAV file, 288078 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.5
+  },
+  {
+    "feature": "Video: AAC (audio only)",
+    "input": "WebM (clip.webm)",
+    "output": "AAC",
+    "expected": "valid AAC",
+    "actual": "AAC file, 56468 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.6
+  },
+  {
+    "feature": "Video: FLAC (audio only)",
+    "input": "WebM (clip.webm)",
+    "output": "FLAC",
+    "expected": "valid FLAC",
+    "actual": "FLAC file, 203160 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.5
+  },
+  {
+    "feature": "Video: OGG Vorbis (audio only)",
+    "input": "WebM (clip.webm)",
+    "output": "OGG Vorbis",
+    "expected": "valid OGG Vorbis",
+    "actual": "OGG Vorbis file, 29871 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.6
+  },
+  {
+    "feature": "Video: Opus (audio only)",
+    "input": "WebM (clip.webm)",
+    "output": "Opus",
+    "expected": "valid Opus",
+    "actual": "Opus file, 56793 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.5
+  },
+  {
+    "feature": "Video: Compress",
+    "input": "WebM (clip.webm)",
+    "output": "WebM",
+    "expected": "valid WebM, or skipped when not smaller",
+    "actual": "skipped: Already optimized: the result (180.6 KB) was not smaller than the original (107.9 KB)",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.8
+  },
+  {
+    "feature": "Video: Trim",
+    "input": "WebM (clip.webm)",
+    "output": "WebM",
+    "expected": "valid WebM",
+    "actual": "WebM file, 88092 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.8
+  },
+  {
+    "feature": "Video: Crop",
+    "input": "WebM (clip.webm)",
+    "output": "WebM",
+    "expected": "valid WebM",
+    "actual": "WebM file, 81423 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.7
+  },
+  {
+    "feature": "Video: Change resolution / FPS",
+    "input": "WebM (clip.webm)",
+    "output": "WebM",
+    "expected": "valid WebM",
+    "actual": "WebM file, 85516 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.7
+  },
+  {
+    "feature": "Video: Extract frames",
+    "input": "WebM (clip.webm)",
+    "output": "folder of PNG",
+    "expected": "valid folder of PNG",
+    "actual": "folder with 6 files (PNG)",
+    "status": "PASS",
+    "error": "",
+    "seconds": 1.1
+  },
+  {
+    "feature": "Video: MP4",
+    "input": "WMV (clip.wmv)",
+    "output": "MP4",
+    "expected": "valid MP4",
+    "actual": "MP4 file, 182168 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.7
+  },
+  {
+    "feature": "Video: MOV",
+    "input": "WMV (clip.wmv)",
+    "output": "MOV",
+    "expected": "valid MOV",
+    "actual": "MOV file, 182219 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.7
+  },
+  {
+    "feature": "Video: MKV",
+    "input": "WMV (clip.wmv)",
+    "output": "MKV",
+    "expected": "valid MKV",
+    "actual": "MKV file, 180762 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.7
+  },
+  {
+    "feature": "Video: AVI",
+    "input": "WMV (clip.wmv)",
+    "output": "AVI",
+    "expected": "valid AVI",
+    "actual": "AVI file, 322568 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.5
+  },
+  {
+    "feature": "Video: WebM",
+    "input": "WMV (clip.wmv)",
+    "output": "WebM",
+    "expected": "valid WebM",
+    "actual": "WebM file, 189241 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 1.0
+  },
+  {
+    "feature": "Video: MPEG",
+    "input": "WMV (clip.wmv)",
+    "output": "MPEG",
+    "expected": "valid MPEG",
+    "actual": "MPEG file, 376832 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.5
+  },
+  {
+    "feature": "Video: Animated GIF",
+    "input": "WMV (clip.wmv)",
+    "output": "GIF",
+    "expected": "valid GIF",
+    "actual": "GIF file, 1284738 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 1.5
+  },
+  {
+    "feature": "Video: MP3 (audio only)",
+    "input": "WMV (clip.wmv)",
+    "output": "MP3",
+    "expected": "valid MP3",
+    "actual": "MP3 file, 72807 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.5
+  },
+  {
+    "feature": "Video: M4A (audio only)",
+    "input": "WMV (clip.wmv)",
+    "output": "M4A",
+    "expected": "valid M4A",
+    "actual": "M4A file, 45517 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.6
+  },
+  {
+    "feature": "Video: WAV (audio only)",
+    "input": "WMV (clip.wmv)",
+    "output": "WAV",
+    "expected": "valid WAV",
+    "actual": "WAV file, 262222 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.5
+  },
+  {
+    "feature": "Video: AAC (audio only)",
+    "input": "WMV (clip.wmv)",
+    "output": "AAC",
+    "expected": "valid AAC",
+    "actual": "AAC file, 45030 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.6
+  },
+  {
+    "feature": "Video: FLAC (audio only)",
+    "input": "WMV (clip.wmv)",
+    "output": "FLAC",
+    "expected": "valid FLAC",
+    "actual": "FLAC file, 145034 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.5
+  },
+  {
+    "feature": "Video: OGG Vorbis (audio only)",
+    "input": "WMV (clip.wmv)",
+    "output": "OGG Vorbis",
+    "expected": "valid OGG Vorbis",
+    "actual": "OGG Vorbis file, 12449 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.5
+  },
+  {
+    "feature": "Video: Opus (audio only)",
+    "input": "WMV (clip.wmv)",
+    "output": "Opus",
+    "expected": "valid Opus",
+    "actual": "Opus file, 53106 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.5
+  },
+  {
+    "feature": "Video: Compress",
+    "input": "WMV (clip.wmv)",
+    "output": "WMV",
+    "expected": "valid WMV, or skipped when not smaller",
+    "actual": "skipped: Already optimized: the result (325.9 KB) was not smaller than the original (210.3 KB)",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.4
+  },
+  {
+    "feature": "Video: Trim",
+    "input": "WMV (clip.wmv)",
+    "output": "WMV",
+    "expected": "valid WMV",
+    "actual": "WMV file, 176899 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.5
+  },
+  {
+    "feature": "Video: Crop",
+    "input": "WMV (clip.wmv)",
+    "output": "WMV",
+    "expected": "valid WMV",
+    "actual": "WMV file, 160911 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.6
+  },
+  {
+    "feature": "Video: Change resolution / FPS",
+    "input": "WMV (clip.wmv)",
+    "output": "WMV",
+    "expected": "valid WMV",
+    "actual": "WMV file, 167311 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.6
+  },
+  {
+    "feature": "Video: Extract frames",
+    "input": "WMV (clip.wmv)",
+    "output": "folder of PNG",
+    "expected": "valid folder of PNG",
+    "actual": "folder with 6 files (PNG)",
+    "status": "PASS",
+    "error": "",
+    "seconds": 1.1
+  },
+  {
+    "feature": "Video: MP4",
+    "input": "MPEG (clip.mpeg)",
+    "output": "MP4",
+    "expected": "valid MP4",
+    "actual": "MP4 file, 216119 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.7
+  },
+  {
+    "feature": "Video: MOV",
+    "input": "MPEG (clip.mpeg)",
+    "output": "MOV",
+    "expected": "valid MOV",
+    "actual": "MOV file, 216170 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.8
+  },
+  {
+    "feature": "Video: MKV",
+    "input": "MPEG (clip.mpeg)",
+    "output": "MKV",
+    "expected": "valid MKV",
+    "actual": "MKV file, 214756 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.8
+  },
+  {
+    "feature": "Video: AVI",
+    "input": "MPEG (clip.mpeg)",
+    "output": "AVI",
+    "expected": "valid AVI",
+    "actual": "AVI file, 363152 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.5
+  },
+  {
+    "feature": "Video: WebM",
+    "input": "MPEG (clip.mpeg)",
+    "output": "WebM",
+    "expected": "valid WebM",
+    "actual": "WebM file, 218084 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 1.0
+  },
+  {
+    "feature": "Video: WMV",
+    "input": "MPEG (clip.mpeg)",
+    "output": "WMV",
+    "expected": "valid WMV",
+    "actual": "WMV file, 381711 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.5
+  },
+  {
+    "feature": "Video: Animated GIF",
+    "input": "MPEG (clip.mpeg)",
+    "output": "GIF",
+    "expected": "valid GIF",
+    "actual": "GIF file, 1259107 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 1.5
+  },
+  {
+    "feature": "Video: MP3 (audio only)",
+    "input": "MPEG (clip.mpeg)",
+    "output": "MP3",
+    "expected": "valid MP3",
+    "actual": "MP3 file, 73394 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.5
+  },
+  {
+    "feature": "Video: M4A (audio only)",
+    "input": "MPEG (clip.mpeg)",
+    "output": "M4A",
+    "expected": "valid M4A",
+    "actual": "M4A file, 55289 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.6
+  },
+  {
+    "feature": "Video: WAV (audio only)",
+    "input": "MPEG (clip.mpeg)",
+    "output": "WAV",
+    "expected": "valid WAV",
+    "actual": "WAV file, 265038 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.5
+  },
+  {
+    "feature": "Video: AAC (audio only)",
+    "input": "MPEG (clip.mpeg)",
+    "output": "AAC",
+    "expected": "valid AAC",
+    "actual": "AAC file, 54876 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.6
+  },
+  {
+    "feature": "Video: FLAC (audio only)",
+    "input": "MPEG (clip.mpeg)",
+    "output": "FLAC",
+    "expected": "valid FLAC",
+    "actual": "FLAC file, 66555 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.5
+  },
+  {
+    "feature": "Video: OGG Vorbis (audio only)",
+    "input": "MPEG (clip.mpeg)",
+    "output": "OGG Vorbis",
+    "expected": "valid OGG Vorbis",
+    "actual": "OGG Vorbis file, 38483 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.6
+  },
+  {
+    "feature": "Video: Opus (audio only)",
+    "input": "MPEG (clip.mpeg)",
+    "output": "Opus",
+    "expected": "valid Opus",
+    "actual": "Opus file, 56871 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.5
+  },
+  {
+    "feature": "Video: Compress",
+    "input": "MPEG (clip.mpeg)",
+    "output": "MPEG",
+    "expected": "valid MPEG, or skipped when not smaller",
+    "actual": "skipped: Already optimized: the result (310.0 KB) was not smaller than the original (298.0 KB)",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.4
+  },
+  {
+    "feature": "Video: Trim",
+    "input": "MPEG (clip.mpeg)",
+    "output": "MPEG",
+    "expected": "valid MPEG",
+    "actual": "MPEG file, 169984 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.5
+  },
+  {
+    "feature": "Video: Crop",
+    "input": "MPEG (clip.mpeg)",
+    "output": "MPEG",
+    "expected": "valid MPEG",
+    "actual": "MPEG file, 151552 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.5
+  },
+  {
+    "feature": "Video: Change resolution / FPS",
+    "input": "MPEG (clip.mpeg)",
+    "output": "MPEG",
+    "expected": "valid MPEG",
+    "actual": "MPEG file, 167936 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.5
+  },
+  {
+    "feature": "Video: Extract frames",
+    "input": "MPEG (clip.mpeg)",
+    "output": "folder of PNG",
+    "expected": "valid folder of PNG",
+    "actual": "folder with 6 files (PNG)",
+    "status": "PASS",
+    "error": "",
+    "seconds": 1.1
+  },
+  {
+    "feature": "Video: MOV",
+    "input": "MP4 (silent.mp4)",
+    "output": "MOV",
+    "expected": "valid MOV",
+    "actual": "MOV file, 100142 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.6
+  },
+  {
+    "feature": "Video: MKV",
+    "input": "MP4 (silent.mp4)",
+    "output": "MKV",
+    "expected": "valid MKV",
+    "actual": "MKV file, 99704 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.6
+  },
+  {
+    "feature": "Video: AVI",
+    "input": "MP4 (silent.mp4)",
+    "output": "AVI",
+    "expected": "valid AVI",
+    "actual": "AVI file, 363554 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.6
+  },
+  {
+    "feature": "Video: WebM",
+    "input": "MP4 (silent.mp4)",
+    "output": "WebM",
+    "expected": "valid WebM",
+    "actual": "WebM file, 119947 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 1.2
+  },
+  {
+    "feature": "Video: WMV",
+    "input": "MP4 (silent.mp4)",
+    "output": "WMV",
+    "expected": "valid WMV",
+    "actual": "WMV file, 407299 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.7
+  },
+  {
+    "feature": "Video: MPEG",
+    "input": "MP4 (silent.mp4)",
+    "output": "MPEG",
+    "expected": "valid MPEG",
+    "actual": "MPEG file, 405504 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.6
+  },
+  {
+    "feature": "Video: Animated GIF",
+    "input": "MP4 (silent.mp4)",
+    "output": "GIF",
+    "expected": "valid GIF",
+    "actual": "GIF file, 947875 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 1.5
+  },
+  {
+    "feature": "Video: Compress",
+    "input": "MP4 (silent.mp4)",
+    "output": "MP4",
+    "expected": "valid MP4",
+    "actual": "MP4 file, 60939 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.6
+  },
+  {
+    "feature": "Video: Trim",
+    "input": "MP4 (silent.mp4)",
+    "output": "MP4",
+    "expected": "valid MP4",
+    "actual": "MP4 file, 50001 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.6
+  },
+  {
+    "feature": "Video: Crop",
+    "input": "MP4 (silent.mp4)",
+    "output": "MP4",
+    "expected": "valid MP4",
+    "actual": "MP4 file, 21318 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.6
+  },
+  {
+    "feature": "Video: Change resolution / FPS",
+    "input": "MP4 (silent.mp4)",
+    "output": "MP4",
+    "expected": "valid MP4",
+    "actual": "MP4 file, 28549 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.6
+  },
+  {
+    "feature": "Video: Extract frames",
+    "input": "MP4 (silent.mp4)",
+    "output": "folder of PNG",
+    "expected": "valid folder of PNG",
+    "actual": "folder with 6 files (PNG)",
+    "status": "PASS",
+    "error": "",
+    "seconds": 1.1
+  },
+  {
+    "feature": "Video: Compress to ZIP",
+    "input": "MP4 (silent.mp4)",
+    "output": "ZIP",
+    "expected": "valid ZIP",
+    "actual": "ZIP file, 209030 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.4
+  },
+  {
+    "feature": "Video: Compress to 7-Zip",
+    "input": "MP4 (silent.mp4)",
+    "output": "7-Zip",
+    "expected": "valid 7-Zip",
+    "actual": "7-Zip file, 104553 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.4
+  },
+  {
+    "feature": "Video: Compress to TAR",
+    "input": "MP4 (silent.mp4)",
+    "output": "TAR",
+    "expected": "valid TAR",
+    "actual": "TAR file, 212992 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.3
+  },
+  {
+    "feature": "Video: Compress to TAR.GZ",
+    "input": "MP4 (silent.mp4)",
+    "output": "TAR.GZ",
+    "expected": "valid TAR.GZ",
+    "actual": "TAR.GZ file, 208916 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.6
+  },
+  {
+    "feature": "Document: PDF",
+    "input": "Markdown (doc.md)",
+    "output": "PDF",
+    "expected": "valid PDF",
+    "actual": "PDF file, 70844 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 11.8
+  },
+  {
+    "feature": "Document: Word 97-2003",
+    "input": "Markdown (doc.md)",
+    "output": "Word 97-2003",
+    "expected": "valid Word 97-2003",
+    "actual": "Word 97-2003 file, 34304 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 7.5
+  },
+  {
+    "feature": "Document: Word",
+    "input": "Markdown (doc.md)",
+    "output": "Word",
+    "expected": "valid Word",
+    "actual": "Word file, 11125 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.2
+  },
+  {
+    "feature": "Document: OpenDocument Text",
+    "input": "Markdown (doc.md)",
+    "output": "OpenDocument Text",
+    "expected": "valid OpenDocument Text",
+    "actual": "OpenDocument Text file, 7874 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.1
+  },
+  {
+    "feature": "Document: Rich Text",
+    "input": "Markdown (doc.md)",
+    "output": "Rich Text",
+    "expected": "valid Rich Text",
+    "actual": "Rich Text file, 1629 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.1
+  },
+  {
+    "feature": "Document: Plain Text",
+    "input": "Markdown (doc.md)",
+    "output": "Plain Text",
+    "expected": "valid Plain Text",
+    "actual": "Plain Text file, 244 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.1
+  },
+  {
+    "feature": "Document: HTML",
+    "input": "Markdown (doc.md)",
+    "output": "HTML",
+    "expected": "valid HTML",
+    "actual": "HTML file, 3705 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.6
+  },
+  {
+    "feature": "Document: EPUB",
+    "input": "Markdown (doc.md)",
+    "output": "EPUB",
+    "expected": "valid EPUB",
+    "actual": "EPUB file, 5683 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.1
+  },
+  {
+    "feature": "Document: PDF",
+    "input": "HTML (page.html)",
+    "output": "PDF",
+    "expected": "valid PDF",
+    "actual": "PDF file, 48504 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 8.2
+  },
+  {
+    "feature": "Document: Word 97-2003",
+    "input": "HTML (page.html)",
+    "output": "Word 97-2003",
+    "expected": "valid Word 97-2003",
+    "actual": "Word 97-2003 file, 23040 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 7.8
+  },
+  {
+    "feature": "Document: Word",
+    "input": "HTML (page.html)",
+    "output": "Word",
+    "expected": "valid Word",
+    "actual": "Word file, 12676 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 7.1
+  },
+  {
+    "feature": "Document: OpenDocument Text",
+    "input": "HTML (page.html)",
+    "output": "OpenDocument Text",
+    "expected": "valid OpenDocument Text",
+    "actual": "OpenDocument Text file, 4982 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 6.7
+  },
+  {
+    "feature": "Document: Rich Text",
+    "input": "HTML (page.html)",
+    "output": "Rich Text",
+    "expected": "valid Rich Text",
+    "actual": "Rich Text file, 43390 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 5.1
+  },
+  {
+    "feature": "Document: Plain Text",
+    "input": "HTML (page.html)",
+    "output": "Plain Text",
+    "expected": "valid Plain Text",
+    "actual": "Plain Text file, 40 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 5.4
+  },
+  {
+    "feature": "Document: Markdown",
+    "input": "HTML (page.html)",
+    "output": "Markdown",
+    "expected": "valid Markdown",
+    "actual": "Markdown file, 72 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.2
+  },
+  {
+    "feature": "Document: EPUB",
+    "input": "HTML (page.html)",
+    "output": "EPUB",
+    "expected": "valid EPUB",
+    "actual": "EPUB file, 5443 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.1
+  },
+  {
+    "feature": "Document: PDF",
+    "input": "Plain Text (notes.txt)",
+    "output": "PDF",
+    "expected": "valid PDF",
+    "actual": "PDF file, 43617 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 6.6
+  },
+  {
+    "feature": "Document: Word 97-2003",
+    "input": "Plain Text (notes.txt)",
+    "output": "Word 97-2003",
+    "expected": "valid Word 97-2003",
+    "actual": "Word 97-2003 file, 23040 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 5.2
+  },
+  {
+    "feature": "Document: Word",
+    "input": "Plain Text (notes.txt)",
+    "output": "Word",
+    "expected": "valid Word",
+    "actual": "Word file, 12598 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 6.6
+  },
+  {
+    "feature": "Document: OpenDocument Text",
+    "input": "Plain Text (notes.txt)",
+    "output": "OpenDocument Text",
+    "expected": "valid OpenDocument Text",
+    "actual": "OpenDocument Text file, 4983 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 6.7
+  },
+  {
+    "feature": "Document: Rich Text",
+    "input": "Plain Text (notes.txt)",
+    "output": "Rich Text",
+    "expected": "valid Rich Text",
+    "actual": "Rich Text file, 43536 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 6.9
+  },
+  {
+    "feature": "Document: HTML",
+    "input": "Plain Text (notes.txt)",
+    "output": "HTML",
+    "expected": "valid HTML",
+    "actual": "HTML file, 1384 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 6.9
+  },
+  {
+    "feature": "Document: Compress to ZIP",
+    "input": "Plain Text (notes.txt)",
+    "output": "ZIP",
+    "expected": "valid ZIP",
+    "actual": "ZIP file, 392 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.1
+  },
+  {
+    "feature": "Document: Compress to 7-Zip",
+    "input": "Plain Text (notes.txt)",
+    "output": "7-Zip",
+    "expected": "valid 7-Zip",
+    "actual": "7-Zip file, 231 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.1
+  },
+  {
+    "feature": "Document: Compress to TAR",
+    "input": "Plain Text (notes.txt)",
+    "output": "TAR",
+    "expected": "valid TAR",
+    "actual": "TAR file, 3072 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.1
+  },
+  {
+    "feature": "Document: Compress to TAR.GZ",
+    "input": "Plain Text (notes.txt)",
+    "output": "TAR.GZ",
+    "expected": "valid TAR.GZ",
+    "actual": "TAR.GZ file, 181 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.1
+  },
+  {
+    "feature": "Spreadsheet: PDF",
+    "input": "CSV (data.csv)",
+    "output": "PDF",
+    "expected": "valid PDF",
+    "actual": "PDF file, 18883 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 6.0
+  },
+  {
+    "feature": "Spreadsheet: Excel 97-2003",
+    "input": "CSV (data.csv)",
+    "output": "Excel 97-2003",
+    "expected": "valid Excel 97-2003",
+    "actual": "Excel 97-2003 file, 26112 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 4.6
+  },
+  {
+    "feature": "Spreadsheet: Excel",
+    "input": "CSV (data.csv)",
+    "output": "Excel",
+    "expected": "valid Excel",
+    "actual": "Excel file, 10120 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 4.5
+  },
+  {
+    "feature": "Spreadsheet: OpenDocument Sheet",
+    "input": "CSV (data.csv)",
+    "output": "OpenDocument Sheet",
+    "expected": "valid OpenDocument Sheet",
+    "actual": "OpenDocument Sheet file, 3984 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 5.0
+  },
+  {
+    "feature": "Document: PDF",
+    "input": "Word (doc.docx)",
+    "output": "PDF",
+    "expected": "valid PDF",
+    "actual": "PDF file, 70850 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 7.6
+  },
+  {
+    "feature": "Document: Word 97-2003",
+    "input": "Word (doc.docx)",
+    "output": "Word 97-2003",
+    "expected": "valid Word 97-2003",
+    "actual": "Word 97-2003 file, 34304 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 6.1
+  },
+  {
+    "feature": "Document: OpenDocument Text",
+    "input": "Word (doc.docx)",
+    "output": "OpenDocument Text",
+    "expected": "valid OpenDocument Text",
+    "actual": "OpenDocument Text file, 9512 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 7.7
+  },
+  {
+    "feature": "Document: Rich Text",
+    "input": "Word (doc.docx)",
+    "output": "Rich Text",
+    "expected": "valid Rich Text",
+    "actual": "Rich Text file, 58209 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 6.5
+  },
+  {
+    "feature": "Document: Plain Text",
+    "input": "Word (doc.docx)",
+    "output": "Plain Text",
+    "expected": "valid Plain Text",
+    "actual": "Plain Text file, 206 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 8.0
+  },
+  {
+    "feature": "Document: HTML",
+    "input": "Word (doc.docx)",
+    "output": "HTML",
+    "expected": "valid HTML",
+    "actual": "HTML file, 5099 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 5.2
+  },
+  {
+    "feature": "Document: Markdown",
+    "input": "Word (doc.docx)",
+    "output": "Markdown",
+    "expected": "valid Markdown",
+    "actual": "Markdown file, 278 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.9
+  },
+  {
+    "feature": "Document: EPUB",
+    "input": "Word (doc.docx)",
+    "output": "EPUB",
+    "expected": "valid EPUB",
+    "actual": "EPUB file, 5721 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.2
+  },
+  {
+    "feature": "Document: PDF",
+    "input": "OpenDocument Text (doc.odt)",
+    "output": "PDF",
+    "expected": "valid PDF",
+    "actual": "PDF file, 216954 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 8.1
+  },
+  {
+    "feature": "Document: Word 97-2003",
+    "input": "OpenDocument Text (doc.odt)",
+    "output": "Word 97-2003",
+    "expected": "valid Word 97-2003",
+    "actual": "Word 97-2003 file, 38912 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 6.7
+  },
+  {
+    "feature": "Document: Word",
+    "input": "OpenDocument Text (doc.odt)",
+    "output": "Word",
+    "expected": "valid Word",
+    "actual": "Word file, 20063 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 5.2
+  },
+  {
+    "feature": "Document: Rich Text",
+    "input": "OpenDocument Text (doc.odt)",
+    "output": "Rich Text",
+    "expected": "valid Rich Text",
+    "actual": "Rich Text file, 84759 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 5.4
+  },
+  {
+    "feature": "Document: Plain Text",
+    "input": "OpenDocument Text (doc.odt)",
+    "output": "Plain Text",
+    "expected": "valid Plain Text",
+    "actual": "Plain Text file, 211 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 6.7
+  },
+  {
+    "feature": "Document: HTML",
+    "input": "OpenDocument Text (doc.odt)",
+    "output": "HTML",
+    "expected": "valid HTML",
+    "actual": "HTML file, 4468 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 5.2
+  },
+  {
+    "feature": "Document: Markdown",
+    "input": "OpenDocument Text (doc.odt)",
+    "output": "Markdown",
+    "expected": "valid Markdown",
+    "actual": "Markdown file, 369 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.2
+  },
+  {
+    "feature": "Document: EPUB",
+    "input": "OpenDocument Text (doc.odt)",
+    "output": "EPUB",
+    "expected": "valid EPUB",
+    "actual": "EPUB file, 6210 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.2
+  },
+  {
+    "feature": "Document: PDF",
+    "input": "Rich Text (doc.rtf)",
+    "output": "PDF",
+    "expected": "valid PDF",
+    "actual": "PDF file, 112163 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 7.2
+  },
+  {
+    "feature": "Document: Word 97-2003",
+    "input": "Rich Text (doc.rtf)",
+    "output": "Word 97-2003",
+    "expected": "valid Word 97-2003",
+    "actual": "Word 97-2003 file, 28160 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 6.4
+  },
+  {
+    "feature": "Document: Word",
+    "input": "Rich Text (doc.rtf)",
+    "output": "Word",
+    "expected": "valid Word",
+    "actual": "Word file, 14831 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 5.2
+  },
+  {
+    "feature": "Document: OpenDocument Text",
+    "input": "Rich Text (doc.rtf)",
+    "output": "OpenDocument Text",
+    "expected": "valid OpenDocument Text",
+    "actual": "OpenDocument Text file, 6838 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 6.3
+  },
+  {
+    "feature": "Document: Plain Text",
+    "input": "Rich Text (doc.rtf)",
+    "output": "Plain Text",
+    "expected": "valid Plain Text",
+    "actual": "Plain Text file, 220 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 6.9
+  },
+  {
+    "feature": "Document: HTML",
+    "input": "Rich Text (doc.rtf)",
+    "output": "HTML",
+    "expected": "valid HTML",
+    "actual": "HTML file, 5263 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 5.0
+  },
+  {
+    "feature": "Document: Markdown",
+    "input": "Rich Text (doc.rtf)",
+    "output": "Markdown",
+    "expected": "valid Markdown",
+    "actual": "Markdown file, 314 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.1
+  },
+  {
+    "feature": "Document: EPUB",
+    "input": "Rich Text (doc.rtf)",
+    "output": "EPUB",
+    "expected": "valid EPUB",
+    "actual": "EPUB file, 6172 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.1
+  },
+  {
+    "feature": "Document: PDF",
+    "input": "EPUB (book.epub)",
+    "output": "PDF",
+    "expected": "valid PDF",
+    "actual": "PDF file, 72702 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 7.7
+  },
+  {
+    "feature": "Document: Word 97-2003",
+    "input": "EPUB (book.epub)",
+    "output": "Word 97-2003",
+    "expected": "valid Word 97-2003",
+    "actual": "Word 97-2003 file, 34304 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 5.5
+  },
+  {
+    "feature": "Document: Word",
+    "input": "EPUB (book.epub)",
+    "output": "Word",
+    "expected": "valid Word",
+    "actual": "Word file, 11385 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.1
+  },
+  {
+    "feature": "Document: OpenDocument Text",
+    "input": "EPUB (book.epub)",
+    "output": "OpenDocument Text",
+    "expected": "valid OpenDocument Text",
+    "actual": "OpenDocument Text file, 8035 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.1
+  },
+  {
+    "feature": "Document: Rich Text",
+    "input": "EPUB (book.epub)",
+    "output": "Rich Text",
+    "expected": "valid Rich Text",
+    "actual": "Rich Text file, 1780 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.1
+  },
+  {
+    "feature": "Document: Plain Text",
+    "input": "EPUB (book.epub)",
+    "output": "Plain Text",
+    "expected": "valid Plain Text",
+    "actual": "Plain Text file, 265 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.1
+  },
+  {
+    "feature": "Document: HTML",
+    "input": "EPUB (book.epub)",
+    "output": "HTML",
+    "expected": "valid HTML",
+    "actual": "HTML file, 3932 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.2
+  },
+  {
+    "feature": "Document: Markdown",
+    "input": "EPUB (book.epub)",
+    "output": "Markdown",
+    "expected": "valid Markdown",
+    "actual": "Markdown file, 607 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.1
+  },
+  {
+    "feature": "Presentation: PDF",
+    "input": "PowerPoint (slides.pptx)",
+    "output": "PDF",
+    "expected": "valid PDF",
+    "actual": "PDF file, 232183 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 6.0
+  },
+  {
+    "feature": "Presentation: PowerPoint 97-2003",
+    "input": "PowerPoint (slides.pptx)",
+    "output": "PowerPoint 97-2003",
+    "expected": "valid PowerPoint 97-2003",
+    "actual": "PowerPoint 97-2003 file, 57856 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 5.1
+  },
+  {
+    "feature": "Presentation: OpenDocument Slides",
+    "input": "PowerPoint (slides.pptx)",
+    "output": "OpenDocument Slides",
+    "expected": "valid OpenDocument Slides",
+    "actual": "OpenDocument Slides file, 29712 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 4.6
+  },
+  {
+    "feature": "Presentation: Slides to PNG",
+    "input": "PowerPoint (slides.pptx)",
+    "output": "folder of PNG",
+    "expected": "valid folder of PNG",
+    "actual": "PNG file, 14167 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 6.4
+  },
+  {
+    "feature": "Presentation: Slides to JPEG",
+    "input": "PowerPoint (slides.pptx)",
+    "output": "folder of JPEG",
+    "expected": "valid folder of JPEG",
+    "actual": "JPEG file, 51049 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 6.6
+  },
+  {
+    "feature": "Document: PDF",
+    "input": "Word 97-2003 (doc.doc)",
+    "output": "PDF",
+    "expected": "valid PDF",
+    "actual": "PDF file, 70992 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 9.2
+  },
+  {
+    "feature": "Document: Word",
+    "input": "Word 97-2003 (doc.doc)",
+    "output": "Word",
+    "expected": "valid Word",
+    "actual": "Word file, 15713 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 6.4
+  },
+  {
+    "feature": "Document: OpenDocument Text",
+    "input": "Word 97-2003 (doc.doc)",
+    "output": "OpenDocument Text",
+    "expected": "valid OpenDocument Text",
+    "actual": "OpenDocument Text file, 9523 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 6.6
+  },
+  {
+    "feature": "Document: Rich Text",
+    "input": "Word 97-2003 (doc.doc)",
+    "output": "Rich Text",
+    "expected": "valid Rich Text",
+    "actual": "Rich Text file, 53754 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 6.6
+  },
+  {
+    "feature": "Document: Plain Text",
+    "input": "Word 97-2003 (doc.doc)",
+    "output": "Plain Text",
+    "expected": "valid Plain Text",
+    "actual": "Plain Text file, 206 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 6.6
+  },
+  {
+    "feature": "Document: HTML",
+    "input": "Word 97-2003 (doc.doc)",
+    "output": "HTML",
+    "expected": "valid HTML",
+    "actual": "HTML file, 5045 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 5.7
+  },
+  {
+    "feature": "PDF: JPEG (one per page)",
+    "input": "PDF (document.pdf)",
+    "output": "JPEG (file or folder of pages)",
+    "expected": "valid JPEG (file or folder of pages)",
+    "actual": "folder with 2 files (JPEG)",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.6
+  },
+  {
+    "feature": "PDF: PNG (one per page)",
+    "input": "PDF (document.pdf)",
+    "output": "PNG (file or folder of pages)",
+    "expected": "valid PNG (file or folder of pages)",
+    "actual": "folder with 2 files (PNG)",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.7
+  },
+  {
+    "feature": "PDF: TIFF (one per page)",
+    "input": "PDF (document.pdf)",
+    "output": "TIFF (file or folder of pages)",
+    "expected": "valid TIFF (file or folder of pages)",
+    "actual": "folder with 2 files (TIFF)",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.6
+  },
+  {
+    "feature": "PDF: WebP (one per page)",
+    "input": "PDF (document.pdf)",
+    "output": "WebP (file or folder of pages)",
+    "expected": "valid WebP (file or folder of pages)",
+    "actual": "folder with 2 files (WebP)",
+    "status": "PASS",
+    "error": "",
+    "seconds": 1.3
+  },
+  {
+    "feature": "PDF: Plain Text",
+    "input": "PDF (document.pdf)",
+    "output": "Plain Text",
+    "expected": "valid Plain Text",
+    "actual": "Plain Text file, 267 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.2
+  },
+  {
+    "feature": "PDF: HTML",
+    "input": "PDF (document.pdf)",
+    "output": "HTML",
+    "expected": "valid HTML",
+    "actual": "folder with 3 files (HTML, PNG)",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.3
+  },
+  {
+    "feature": "PDF: Split into pages",
+    "input": "PDF (document.pdf)",
+    "output": "folder of PDF",
+    "expected": "valid folder of PDF",
+    "actual": "folder with 2 files (PDF)",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.3
+  },
+  {
+    "feature": "PDF: Extract / reorder pages",
+    "input": "PDF (document.pdf)",
+    "output": "PDF",
+    "expected": "valid PDF",
+    "actual": "PDF file, 64923 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.2
+  },
+  {
+    "feature": "PDF: Rotate pages",
+    "input": "PDF (document.pdf)",
+    "output": "PDF",
+    "expected": "valid PDF",
+    "actual": "PDF file, 69242 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.2
+  },
+  {
+    "feature": "PDF: Optimize size (lossless)",
+    "input": "PDF (document.pdf)",
+    "output": "PDF",
+    "expected": "valid PDF",
+    "actual": "PDF file, 64482 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.3
+  },
+  {
+    "feature": "PDF: Protect with password",
+    "input": "PDF (document.pdf)",
+    "output": "PDF",
+    "expected": "valid PDF",
+    "actual": "PDF file, 68350 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.2
+  },
+  {
+    "feature": "PDF: OCR to searchable PDF",
+    "input": "PDF (document.pdf)",
+    "output": "PDF",
+    "expected": "valid PDF",
+    "actual": "PDF file, 145098 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 2.0
+  },
+  {
+    "feature": "Spreadsheet: PDF",
+    "input": "Excel (sheet.xlsx)",
+    "output": "PDF",
+    "expected": "valid PDF",
+    "actual": "PDF file, 18883 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 5.8
+  },
+  {
+    "feature": "Spreadsheet: Excel 97-2003",
+    "input": "Excel (sheet.xlsx)",
+    "output": "Excel 97-2003",
+    "expected": "valid Excel 97-2003",
+    "actual": "Excel 97-2003 file, 26112 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 4.5
+  },
+  {
+    "feature": "Spreadsheet: OpenDocument Sheet",
+    "input": "Excel (sheet.xlsx)",
+    "output": "OpenDocument Sheet",
+    "expected": "valid OpenDocument Sheet",
+    "actual": "OpenDocument Sheet file, 3988 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 4.5
+  },
+  {
+    "feature": "Spreadsheet: CSV",
+    "input": "Excel (sheet.xlsx)",
+    "output": "CSV",
+    "expected": "valid CSV",
+    "actual": "CSV file, 58 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 4.4
+  },
+  {
+    "feature": "Spreadsheet: PDF",
+    "input": "Excel 97-2003 (sheet.xls)",
+    "output": "PDF",
+    "expected": "valid PDF",
+    "actual": "PDF file, 18883 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 5.0
+  },
+  {
+    "feature": "Spreadsheet: Excel",
+    "input": "Excel 97-2003 (sheet.xls)",
+    "output": "Excel",
+    "expected": "valid Excel",
+    "actual": "Excel file, 10247 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 4.5
+  },
+  {
+    "feature": "Spreadsheet: OpenDocument Sheet",
+    "input": "Excel 97-2003 (sheet.xls)",
+    "output": "OpenDocument Sheet",
+    "expected": "valid OpenDocument Sheet",
+    "actual": "OpenDocument Sheet file, 3987 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 4.5
+  },
+  {
+    "feature": "Spreadsheet: CSV",
+    "input": "Excel 97-2003 (sheet.xls)",
+    "output": "CSV",
+    "expected": "valid CSV",
+    "actual": "CSV file, 58 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 4.3
+  },
+  {
+    "feature": "Spreadsheet: PDF",
+    "input": "OpenDocument Sheet (sheet.ods)",
+    "output": "PDF",
+    "expected": "valid PDF",
+    "actual": "PDF file, 18883 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 5.0
+  },
+  {
+    "feature": "Spreadsheet: Excel 97-2003",
+    "input": "OpenDocument Sheet (sheet.ods)",
+    "output": "Excel 97-2003",
+    "expected": "valid Excel 97-2003",
+    "actual": "Excel 97-2003 file, 26112 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 4.4
+  },
+  {
+    "feature": "Spreadsheet: Excel",
+    "input": "OpenDocument Sheet (sheet.ods)",
+    "output": "Excel",
+    "expected": "valid Excel",
+    "actual": "Excel file, 10297 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 5.1
+  },
+  {
+    "feature": "Spreadsheet: CSV",
+    "input": "OpenDocument Sheet (sheet.ods)",
+    "output": "CSV",
+    "expected": "valid CSV",
+    "actual": "CSV file, 58 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 4.8
+  },
+  {
+    "feature": "Presentation: PDF",
+    "input": "PowerPoint 97-2003 (slides.ppt)",
+    "output": "PDF",
+    "expected": "valid PDF",
+    "actual": "PDF file, 232185 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 5.7
+  },
+  {
+    "feature": "Presentation: PowerPoint",
+    "input": "PowerPoint 97-2003 (slides.ppt)",
+    "output": "PowerPoint",
+    "expected": "valid PowerPoint",
+    "actual": "PowerPoint file, 31782 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 5.5
+  },
+  {
+    "feature": "Presentation: OpenDocument Slides",
+    "input": "PowerPoint 97-2003 (slides.ppt)",
+    "output": "OpenDocument Slides",
+    "expected": "valid OpenDocument Slides",
+    "actual": "OpenDocument Slides file, 28494 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 9.7
+  },
+  {
+    "feature": "Presentation: Slides to PNG",
+    "input": "PowerPoint 97-2003 (slides.ppt)",
+    "output": "folder of PNG",
+    "expected": "valid folder of PNG",
+    "actual": "PNG file, 14134 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 7.4
+  },
+  {
+    "feature": "Presentation: Slides to JPEG",
+    "input": "PowerPoint 97-2003 (slides.ppt)",
+    "output": "folder of JPEG",
+    "expected": "valid folder of JPEG",
+    "actual": "JPEG file, 51012 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 4.6
+  },
+  {
+    "feature": "Presentation: PDF",
+    "input": "OpenDocument Slides (slides.odp)",
+    "output": "PDF",
+    "expected": "valid PDF",
+    "actual": "PDF file, 243271 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 5.3
+  },
+  {
+    "feature": "Presentation: PowerPoint 97-2003",
+    "input": "OpenDocument Slides (slides.odp)",
+    "output": "PowerPoint 97-2003",
+    "expected": "valid PowerPoint 97-2003",
+    "actual": "PowerPoint 97-2003 file, 56320 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 4.6
+  },
+  {
+    "feature": "Presentation: PowerPoint",
+    "input": "OpenDocument Slides (slides.odp)",
+    "output": "PowerPoint",
+    "expected": "valid PowerPoint",
+    "actual": "PowerPoint file, 31587 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 4.4
+  },
+  {
+    "feature": "Presentation: Slides to PNG",
+    "input": "OpenDocument Slides (slides.odp)",
+    "output": "folder of PNG",
+    "expected": "valid folder of PNG",
+    "actual": "PNG file, 14569 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 4.7
+  },
+  {
+    "feature": "Presentation: Slides to JPEG",
+    "input": "OpenDocument Slides (slides.odp)",
+    "output": "folder of JPEG",
+    "expected": "valid folder of JPEG",
+    "actual": "JPEG file, 51636 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 4.6
+  },
+  {
+    "feature": "PDF: JPEG (one per page)",
+    "input": "PDF (scan.pdf)",
+    "output": "JPEG (file or folder of pages)",
+    "expected": "valid JPEG (file or folder of pages)",
+    "actual": "JPEG file, 33852 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.4
+  },
+  {
+    "feature": "PDF: PNG (one per page)",
+    "input": "PDF (scan.pdf)",
+    "output": "PNG (file or folder of pages)",
+    "expected": "valid PNG (file or folder of pages)",
+    "actual": "PNG file, 26666 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.4
+  },
+  {
+    "feature": "PDF: TIFF (one per page)",
+    "input": "PDF (scan.pdf)",
+    "output": "TIFF (file or folder of pages)",
+    "expected": "valid TIFF (file or folder of pages)",
+    "actual": "TIFF file, 1722804 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.4
+  },
+  {
+    "feature": "PDF: WebP (one per page)",
+    "input": "PDF (scan.pdf)",
+    "output": "WebP (file or folder of pages)",
+    "expected": "valid WebP (file or folder of pages)",
+    "actual": "WebP file, 10992 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.5
+  },
+  {
+    "feature": "PDF: Split into pages",
+    "input": "PDF (scan.pdf)",
+    "output": "folder of PDF",
+    "expected": "valid folder of PDF",
+    "actual": "PDF file, 55326 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.3
+  },
+  {
+    "feature": "PDF: Extract / reorder pages",
+    "input": "PDF (scan.pdf)",
+    "output": "PDF",
+    "expected": "valid PDF",
+    "actual": "PDF file, 55539 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.2
+  },
+  {
+    "feature": "PDF: Rotate pages",
+    "input": "PDF (scan.pdf)",
+    "output": "PDF",
+    "expected": "valid PDF",
+    "actual": "PDF file, 55807 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.2
+  },
+  {
+    "feature": "PDF: Optimize size (lossless)",
+    "input": "PDF (scan.pdf)",
+    "output": "PDF",
+    "expected": "valid PDF",
+    "actual": "PDF file, 55372 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.2
+  },
+  {
+    "feature": "PDF: Protect with password",
+    "input": "PDF (scan.pdf)",
+    "output": "PDF",
+    "expected": "valid PDF",
+    "actual": "PDF file, 56953 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.2
+  },
+  {
+    "feature": "PDF: OCR to searchable PDF",
+    "input": "PDF (scan.pdf)",
+    "output": "PDF",
+    "expected": "valid PDF",
+    "actual": "PDF file, 106609 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.9
+  },
+  {
+    "feature": "PDF: Remove password",
+    "input": "PDF (locked.pdf)",
+    "output": "PDF",
+    "expected": "valid PDF",
+    "actual": "PDF file, 69285 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.3
+  },
+  {
+    "feature": "Archive: Extract",
+    "input": "ZIP (bundle.zip)",
+    "output": "folder",
+    "expected": "valid folder",
+    "actual": "folder with 2 files (PNG, Plain Text)",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.1
+  },
+  {
+    "feature": "Archive: 7-Zip",
+    "input": "ZIP (bundle.zip)",
+    "output": "7-Zip",
+    "expected": "valid 7-Zip",
+    "actual": "7-Zip file, 25857 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.1
+  },
+  {
+    "feature": "Archive: TAR",
+    "input": "ZIP (bundle.zip)",
+    "output": "TAR",
+    "expected": "valid TAR",
+    "actual": "TAR file, 34304 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.1
+  },
+  {
+    "feature": "Archive: TAR.GZ",
+    "input": "ZIP (bundle.zip)",
+    "output": "TAR.GZ",
+    "expected": "valid TAR.GZ",
+    "actual": "TAR.GZ file, 25995 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.2
+  },
+  {
+    "feature": "Archive: Extract",
+    "input": "7-Zip (bundle.7z)",
+    "output": "folder",
+    "expected": "valid folder",
+    "actual": "folder with 2 files (PNG, Plain Text)",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.1
+  },
+  {
+    "feature": "Archive: ZIP",
+    "input": "7-Zip (bundle.7z)",
+    "output": "ZIP",
+    "expected": "valid ZIP",
+    "actual": "ZIP file, 26141 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.1
+  },
+  {
+    "feature": "Archive: TAR",
+    "input": "7-Zip (bundle.7z)",
+    "output": "TAR",
+    "expected": "valid TAR",
+    "actual": "TAR file, 34304 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.1
+  },
+  {
+    "feature": "Archive: TAR.GZ",
+    "input": "7-Zip (bundle.7z)",
+    "output": "TAR.GZ",
+    "expected": "valid TAR.GZ",
+    "actual": "TAR.GZ file, 25995 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.2
+  },
+  {
+    "feature": "Archive: Extract",
+    "input": "TAR (bundle.tar)",
+    "output": "folder",
+    "expected": "valid folder",
+    "actual": "folder with 2 files (PNG, Plain Text)",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.1
+  },
+  {
+    "feature": "Archive: ZIP",
+    "input": "TAR (bundle.tar)",
+    "output": "ZIP",
+    "expected": "valid ZIP",
+    "actual": "ZIP file, 26141 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.1
+  },
+  {
+    "feature": "Archive: 7-Zip",
+    "input": "TAR (bundle.tar)",
+    "output": "7-Zip",
+    "expected": "valid 7-Zip",
+    "actual": "7-Zip file, 25857 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.1
+  },
+  {
+    "feature": "Archive: TAR.GZ",
+    "input": "TAR (bundle.tar)",
+    "output": "TAR.GZ",
+    "expected": "valid TAR.GZ",
+    "actual": "TAR.GZ file, 25995 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.2
+  },
+  {
+    "feature": "Archive: Extract",
+    "input": "TAR.GZ (bundle.tar.gz)",
+    "output": "folder",
+    "expected": "valid folder",
+    "actual": "folder with 2 files (PNG, Plain Text)",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.1
+  },
+  {
+    "feature": "Archive: ZIP",
+    "input": "TAR.GZ (bundle.tar.gz)",
+    "output": "ZIP",
+    "expected": "valid ZIP",
+    "actual": "ZIP file, 26141 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.2
+  },
+  {
+    "feature": "Archive: 7-Zip",
+    "input": "TAR.GZ (bundle.tar.gz)",
+    "output": "7-Zip",
+    "expected": "valid 7-Zip",
+    "actual": "7-Zip file, 25857 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.2
+  },
+  {
+    "feature": "Archive: TAR",
+    "input": "TAR.GZ (bundle.tar.gz)",
+    "output": "TAR",
+    "expected": "valid TAR",
+    "actual": "TAR file, 34304 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.2
+  },
+  {
+    "feature": "Archive: Extract",
+    "input": "GZip (notes.txt.gz)",
+    "output": "folder",
+    "expected": "valid folder",
+    "actual": "folder with 1 files (Plain Text)",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.1
+  },
+  {
+    "feature": "Archive: Extract",
+    "input": "ZIP (secret.zip)",
+    "output": "folder",
+    "expected": "valid folder",
+    "actual": "folder with 1 files (Plain Text)",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.1
+  },
+  {
+    "feature": "Archive: 7-Zip",
+    "input": "ZIP (secret.zip)",
+    "output": "7-Zip",
+    "expected": "valid 7-Zip",
+    "actual": "7-Zip file, 174 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.1
+  },
+  {
+    "feature": "Archive: TAR",
+    "input": "ZIP (secret.zip)",
+    "output": "TAR",
+    "expected": "valid TAR",
+    "actual": "TAR file, 2048 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.1
+  },
+  {
+    "feature": "Archive: TAR.GZ",
+    "input": "ZIP (secret.zip)",
+    "output": "TAR.GZ",
+    "expected": "valid TAR.GZ",
+    "actual": "TAR.GZ file, 158 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.2
+  },
+  {
+    "feature": "Archive: Extract",
+    "input": "RAR (bundle.rar)",
+    "output": "folder",
+    "expected": "valid folder",
+    "actual": "folder with 1 files (Plain Text)",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.1
+  },
+  {
+    "feature": "Archive: ZIP",
+    "input": "RAR (bundle.rar)",
+    "output": "ZIP",
+    "expected": "valid ZIP",
+    "actual": "ZIP file, 200 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.1
+  },
+  {
+    "feature": "Archive: 7-Zip",
+    "input": "RAR (bundle.rar)",
+    "output": "7-Zip",
+    "expected": "valid 7-Zip",
+    "actual": "7-Zip file, 174 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.1
+  },
+  {
+    "feature": "Archive: TAR",
+    "input": "RAR (bundle.rar)",
+    "output": "TAR",
+    "expected": "valid TAR",
+    "actual": "TAR file, 2048 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.1
+  },
+  {
+    "feature": "Archive: TAR.GZ",
+    "input": "RAR (bundle.rar)",
+    "output": "TAR.GZ",
+    "expected": "valid TAR.GZ",
+    "actual": "TAR.GZ file, 158 bytes",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.2
+  },
+  {
+    "feature": "Batch: 6 WAV → MP3 in parallel (3 workers)",
+    "input": "WAV ×6",
+    "output": "-",
+    "expected": "6 jobs done, 6 MP3 outputs",
+    "actual": "6 done, 6 valid MP3 files",
+    "status": "PASS",
+    "error": "",
+    "seconds": 1.4
+  },
+  {
+    "feature": "Cancellation of running FFmpeg job",
+    "input": "MP4 60 s 720p → WebM",
+    "output": "-",
+    "expected": "status cancelled, no output file, temp folder removed",
+    "actual": "cancelled after progress 3%, no output, temp cleaned",
+    "status": "PASS",
+    "error": "",
+    "seconds": 1.9
+  },
+  {
+    "feature": "Progress percentage and ETA reported",
+    "input": "MP4 60 s 720p → MP4 720→240p",
+    "output": "-",
+    "expected": "progress increases, ETA present",
+    "actual": "unexpected",
+    "status": "FAIL",
+    "error": "samples 10, eta None",
+    "seconds": 2.4
+  },
+  {
+    "feature": "Filename collision handling",
+    "input": "PNG → JPEG twice",
+    "output": "-",
+    "expected": "sample.jpg and sample (2).jpg; source unchanged",
+    "actual": "sample.jpg, sample (2).jpg",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.4
+  },
+  {
+    "feature": "Conflict policy: skip existing",
+    "input": "PNG → JPEG with existing target",
+    "output": "-",
+    "expected": "job skipped, existing file untouched",
+    "actual": "skipped; existing file intact",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.2
+  },
+  {
+    "feature": "Default output location: beside original",
+    "input": "PNG → WebP, no output folder",
+    "output": "-",
+    "expected": "output in source folder",
+    "actual": "D:\\kiln-build\\qa\\scenarios\\beside.webp",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.2
+  },
+  {
+    "feature": "Custom naming template",
+    "input": "PNG → JPEG, template \"{name}-web\"",
+    "output": "-",
+    "expected": "sample-web.jpg",
+    "actual": "sample-web.jpg",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.2
+  },
+  {
+    "feature": "Unsupported conversion is rejected",
+    "input": "PNG → MP3",
+    "output": "-",
+    "expected": "rejected before any engine runs",
+    "actual": "Convert to MP3 is not available for PNG",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.0
+  },
+  {
+    "feature": "Invalid option values are rejected",
+    "input": "PNG resize width 0",
+    "output": "-",
+    "expected": "validation error",
+    "actual": "Width must be between 1 and 16384 pixels",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.0
+  },
+  {
+    "feature": "Damaged input handled",
+    "input": "broken.mp4",
+    "output": "-",
+    "expected": "clear error, no output written",
+    "actual": "Convert to MP3 is not available for MP4",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.1
+  },
+  {
+    "feature": "Damaged input handled",
+    "input": "broken.png",
+    "output": "-",
+    "expected": "clear error, no output written",
+    "actual": "ImageMagick failed (exit code 1): magick.exe: insufficient image data in file `D:\\kiln-build\\qa\\fixtures\\broken.png' @ error/png.c/ReadPNGImage/3962.",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.1
+  },
+  {
+    "feature": "Damaged input handled",
+    "input": "broken.pdf",
+    "output": "-",
+    "expected": "clear error, no output written",
+    "actual": "qpdf failed (exit code 2): qpdf: D:\\kiln-build\\qa\\fixtures\\broken.pdf: unable to find trailer dictionary while recovering damaged file",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.1
+  },
+  {
+    "feature": "PDF unlock with wrong password",
+    "input": "locked.pdf",
+    "output": "-",
+    "expected": "'password is incorrect' error",
+    "actual": "qpdf failed (exit code 2): The password is incorrect",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.2
+  },
+  {
+    "feature": "Encrypted ZIP without password",
+    "input": "secret.zip",
+    "output": "-",
+    "expected": "error, no prompt/hang",
+    "actual": "7-Zip failed (exit code 2): The password is incorrect",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.1
+  },
+  {
+    "feature": "Extract audio from video without audio",
+    "input": "silent.mp4 → MP3",
+    "output": "-",
+    "expected": "'no audio track' error",
+    "actual": "Convert to MP3 is not available for MP4",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.1
+  },
+  {
+    "feature": "Content detection beats wrong extension",
+    "input": "PNG renamed to .jpg",
+    "output": "-",
+    "expected": "detected as PNG, flagged as mismatch",
+    "actual": "PNG, mismatch flagged",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.0
+  },
+  {
+    "feature": "Mixed selection offers only shared actions",
+    "input": "PNG + MP3",
+    "output": "-",
+    "expected": "only archive actions",
+    "actual": "4 archive actions",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.0
+  },
+  {
+    "feature": "Compress a folder to ZIP",
+    "input": "folder",
+    "output": "-",
+    "expected": "ZIP containing the folder",
+    "actual": "4 entries",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.1
+  },
+  {
+    "feature": "Archive with ../ entries cannot escape",
+    "input": "evil.zip (../escape.txt)",
+    "output": "-",
+    "expected": "nothing written outside the output folder",
+    "actual": "extracted safely into D:\\kiln-build\\qa\\scenarios\\evil\\evil",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.1
+  },
+  {
+    "feature": "Interrupted job recovery",
+    "input": "history with a running entry",
+    "output": "-",
+    "expected": "entry reported as interrupted after restart",
+    "actual": "status = interrupted",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.0
+  },
+  {
+    "feature": "Temporary files cleaned up",
+    "input": "%TEMP%\\Kiln",
+    "output": "-",
+    "expected": "no leftover job folders",
+    "actual": "empty",
+    "status": "PASS",
+    "error": "",
+    "seconds": 0.0
+  }
+]

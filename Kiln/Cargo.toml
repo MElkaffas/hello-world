@@ -1,0 +1,16 @@
+[workspace]
+resolver = "2"
+members = ["crates/kiln-core", "src-tauri"]
+
+[workspace.package]
+version = "1.0.0"
+edition = "2021"
+license = "MIT"
+authors = ["Kiln contributors"]
+
+[profile.release]
+opt-level = "s"
+lto = true
+codegen-units = 1
+strip = true
+panic = "unwind"

@@ -1,0 +1,12 @@
+# dependencies / build output (cargo target dir is D:/kiln-build/target, see .cargo/config.toml)
+node_modules/
+target/
+dist/
+src-tauri/gen/schemas/
+
+# bundled conversion engines (~830 MB of third-party binaries).
+# Rebuilt from the installed tools by: scripts\stage-engines.ps1
+src-tauri/engines
+
+# local tool settings
+.claude/

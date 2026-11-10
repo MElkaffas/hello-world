@@ -1,0 +1,5 @@
+[toolchain]
+# The GNU toolchain links with its bundled MinGW tools, so no Visual Studio C++ workload is
+# required. Switch to "stable-x86_64-pc-windows-msvc" on machines that have MSVC installed.
+channel = "stable-x86_64-pc-windows-gnu"
+profile = "minimal"
